@@ -13,7 +13,7 @@
   <meta property="og:locale" content="en_GB">
   <meta property="og:url" content="https://thetechnologyframework.com/">
   <meta property="og:image" content="https://thetechnologyframework.com/images/mark-ttf.png">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="The Technology Framework | Premier IT Management Services in the UK">
   <meta name="twitter:description" content="Driving business forward with strategic IT Management.">
   <meta name="twitter:image" content="https://thetechnologyframework.com/images/mark-ttf.png">
@@ -34,7 +34,7 @@
       --muted: rgba(243,244,245,0.54);
       --faint: rgba(243,244,245,0.36);
       --ease: cubic-bezier(0.23, 1, 0.32, 1);
-      --max: 1280px;
+      --max: 1120px;
       --pad: 2.5rem;
       --header: 76px;
     }
@@ -45,14 +45,15 @@
     body {
       font-family: Inter, ui-sans-serif, system-ui, sans-serif;
       font-weight: 300;
-      line-height: 1.55;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
     ::selection { background: rgba(94,231,211,0.24); color: #fff; }
     img, svg { display: block; }
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; background: none; border: 0; color: inherit; cursor: pointer; }
+    button, input, textarea { font: inherit; }
+    button { background: none; border: 0; color: inherit; cursor: pointer; }
     ul { list-style: none; }
 
     .wrap {
@@ -68,80 +69,9 @@
       color: var(--faint);
     }
 
-    .media { overflow: hidden; }
-    .media img {
-      width: 100%;
-      height: 100%;
+    img {
       object-fit: cover;
-      display: block;
-    }
-    .bleed {
-      width: 100%;
-      height: min(64vw, 680px);
-      overflow: hidden;
-      position: relative;
-    }
-    .bleed img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .bleed-stat {
-      height: min(68vw, 740px);
-      display: flex;
-      align-items: flex-end;
-    }
-    .bleed-stat::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(7,8,10,0.12) 20%, rgba(7,8,10,0.78) 100%);
-      pointer-events: none;
-    }
-    .bleed-stat img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .bleed-stat .stat-copy {
-      position: relative;
-      z-index: 1;
-      width: min(var(--max), calc(100% - (var(--pad) * 2)));
-      margin-inline: auto;
-      padding-bottom: 3.4rem;
-    }
-    .bleed-stat .stat-copy p {
-      font-weight: 200;
-      font-size: clamp(1.5rem, 3.4vw, 2.4rem);
-      letter-spacing: -0.03em;
-      line-height: 1.22;
-      max-width: 22ch;
-      color: #fff;
-    }
-    .bleed-xl { height: min(72vw, 780px); }
-    .bleed-caption {
-      position: absolute;
-      left: var(--pad);
-      bottom: 1.4rem;
-      font-size: 0.6875rem;
-      font-weight: 400;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(243,244,245,0.78);
-    }
-    .card-media {
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      margin: -2.1rem -1.7rem 1.2rem;
-    }
-    .card-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+      max-width: 100%;
     }
 
     /* ——— Header ——— */
@@ -210,7 +140,7 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: #fff;
-      transition: border-color 0.4s var(--ease), background 0.4s var(--ease), color 0.4s var(--ease);
+      transition: border-color 0.4s var(--ease), background 0.4s var(--ease);
     }
     .btn-outline:hover {
       border-color: rgba(255,255,255,0.55);
@@ -262,32 +192,13 @@
     .nav-toggle[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
     .nav-toggle[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
 
-    /* ——— Hero ——— */
+    /* ——— Hero (type-first, compact) ——— */
     .hero {
       position: relative;
-      min-height: 100svh;
-      padding: calc(var(--header) + 4.5rem) 0 5.5rem;
+      padding: calc(var(--header) + 3.25rem) 0 3.5rem;
       overflow: hidden;
     }
-    .hero-photo {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .hero-veil {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(7,8,10,0.58) 0%, rgba(7,8,10,0.74) 48%, rgba(7,8,10,0.90) 100%),
-        linear-gradient(90deg, rgba(7,8,10,0.72) 0%, rgba(7,8,10,0.38) 58%, rgba(7,8,10,0.62) 100%);
-    }
-    .hero-stage { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+    .hero-stage { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
     .caustic {
       position: absolute;
       border-radius: 50%;
@@ -296,43 +207,41 @@
       will-change: transform, opacity;
     }
     .caustic-a {
-      width: min(78vw, 980px);
-      height: min(58vw, 720px);
-      top: -18%;
-      left: -16%;
+      width: min(70vw, 820px);
+      height: min(48vw, 560px);
+      top: -22%;
+      left: -18%;
       background: conic-gradient(from 200deg at 40% 40%,
         transparent 0deg,
-        rgba(94,231,211,0.38) 70deg,
-        rgba(57,183,200,0.22) 140deg,
+        rgba(94,231,211,0.32) 70deg,
+        rgba(57,183,200,0.18) 140deg,
         transparent 210deg,
-        rgba(94,231,211,0.12) 280deg,
+        rgba(94,231,211,0.10) 280deg,
         transparent 360deg);
       animation: drift-a 22s var(--ease) infinite alternate;
     }
     .caustic-b {
-      width: min(62vw, 780px);
-      height: min(48vw, 620px);
-      top: 6%;
-      right: -8%;
+      width: min(48vw, 560px);
+      height: min(36vw, 420px);
+      top: 8%;
+      right: -10%;
       background: radial-gradient(ellipse at 40% 40%,
-        rgba(217,145,91,0.34) 0%,
-        rgba(232,183,127,0.16) 38%,
+        rgba(217,145,91,0.28) 0%,
+        rgba(232,183,127,0.12) 38%,
         transparent 70%);
       animation: drift-b 26s var(--ease) infinite alternate;
     }
     .caustic-c {
-      width: min(40vw, 480px);
-      height: min(32vw, 380px);
-      bottom: 8%;
-      left: 28%;
-      background: radial-gradient(circle,
-        rgba(57,183,200,0.16) 0%,
-        transparent 68%);
+      width: min(32vw, 360px);
+      height: min(24vw, 280px);
+      bottom: 4%;
+      left: 32%;
+      background: radial-gradient(circle, rgba(57,183,200,0.14) 0%, transparent 68%);
       animation: drift-c 18s var(--ease) infinite alternate;
     }
     .refract {
       position: absolute;
-      top: 26%;
+      top: 38%;
       left: -18%;
       width: 140%;
       height: 1px;
@@ -346,16 +255,10 @@
       box-shadow: 0 0 18px rgba(94,231,211,0.28), 0 0 48px rgba(57,183,200,0.12);
       animation: refract-breathe 10s var(--ease) infinite alternate;
     }
-    .refract-2 {
-      top: 58%;
-      opacity: 0.35;
-      transform: rotate(14deg) translateY(12px);
-      animation-delay: -4s;
-    }
     .grain {
       position: absolute;
       inset: 0;
-      opacity: 0.18;
+      opacity: 0.16;
       mix-blend-mode: overlay;
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
     }
@@ -372,37 +275,37 @@
       to   { transform: translate(8%, -6%) scale(1.15); opacity: 1; }
     }
     @keyframes refract-breathe {
-      from { opacity: 0.55; filter: blur(0); }
-      to   { opacity: 0.95; filter: blur(0.2px); }
+      from { opacity: 0.55; }
+      to   { opacity: 0.95; }
     }
 
     .hero-grid {
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      gap: 3rem;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.7fr);
+      gap: 2.75rem;
       align-items: center;
     }
     .hero h1 {
       font-weight: 200;
-      font-size: clamp(2.4rem, 5.6vw, 4.35rem);
-      line-height: 1.04;
+      font-size: clamp(2.15rem, 4.6vw, 3.35rem);
+      line-height: 1.08;
       letter-spacing: -0.035em;
       max-width: 16ch;
     }
     .hero-sub {
-      margin-top: 1.5rem;
-      font-size: 1.125rem;
+      margin-top: 1.25rem;
+      font-size: 1.0625rem;
       font-weight: 300;
       color: var(--muted);
-      max-width: 36ch;
+      max-width: 38ch;
     }
     .hero-cta {
       display: flex;
       align-items: center;
       gap: 1.5rem;
-      margin-top: 2.25rem;
+      margin-top: 2rem;
       flex-wrap: wrap;
     }
     .link-underline {
@@ -417,38 +320,38 @@
     }
     .link-underline:hover { color: #fff; border-color: rgba(255,255,255,0.7); }
 
-    .mono {
+    .hero-still {
       justify-self: end;
-      width: min(100%, 520px);
-      aspect-ratio: 5 / 3.2;
-      filter: drop-shadow(0 0 28px rgba(94,231,211,0.08));
+      width: min(100%, 380px);
+      border: 1px solid var(--hair-strong);
+      background: var(--ink-900);
     }
-    .mono svg { width: 100%; height: 100%; }
+    .hero-still img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
 
     /* ——— Sections ——— */
     section { position: relative; }
     .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 3rem;
-      align-items: end;
-      padding: 5.5rem 0 2.75rem;
+      padding: 4.25rem 0 1.75rem;
     }
     .section-head h2 {
       font-weight: 200;
-      font-size: clamp(2rem, 3.6vw, 2.85rem);
+      font-size: clamp(1.85rem, 3.2vw, 2.55rem);
       letter-spacing: -0.03em;
-      line-height: 1.12;
-      max-width: 18ch;
+      line-height: 1.14;
+      max-width: 22ch;
     }
     .section-head p {
+      margin-top: 0.75rem;
       color: var(--muted);
-      font-size: 1rem;
-      max-width: 42ch;
-      justify-self: end;
+      font-size: 1.05rem;
+      max-width: 48ch;
     }
 
-    /* ——— Services ——— */
+    /* ——— Service index cards ——— */
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -457,50 +360,42 @@
     }
     .card {
       position: relative;
-      padding: 2.1rem 1.7rem 1.7rem;
+      padding: 1.35rem 1.35rem 1.4rem;
       border-right: 1px solid var(--hair);
       border-bottom: 1px solid var(--hair);
       background: transparent;
       overflow: hidden;
-      transition: transform 0.55s var(--ease), background 0.55s var(--ease);
-    }
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0;
-      box-shadow:
-        inset 0 0 0 1px rgba(94,231,211,0.0),
-        0 0 0 1px rgba(217,145,91,0.0);
-      transition: opacity 0.55s var(--ease), box-shadow 0.55s var(--ease);
+      transition: background 0.45s var(--ease);
     }
     .card:hover {
-      transform: translateY(-3px);
-      background: linear-gradient(180deg, rgba(94,231,211,0.025), transparent 55%);
-      z-index: 1;
+      background: linear-gradient(180deg, rgba(94,231,211,0.03), transparent 60%);
     }
-    .card:hover::after {
-      opacity: 1;
-      box-shadow:
-        inset 1px 0 0 rgba(94,231,211,0.45),
-        inset 0 0 0 1px rgba(217,145,91,0.22);
+    .card-media {
+      aspect-ratio: 16 / 9;
+      max-height: 220px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      border: 1px solid var(--hair);
     }
-    .card svg { width: 22px; height: 22px; stroke: rgba(243,244,245,0.55); fill: none; stroke-width: 1.3; }
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     .card h3 {
-      margin: 1.15rem 0 0.55rem;
-      font-size: 1.05rem;
+      margin: 0 0 0.45rem;
+      font-size: 1.02rem;
       font-weight: 500;
       letter-spacing: -0.01em;
     }
     .card p {
       color: var(--muted);
-      font-size: 0.9375rem;
-      line-height: 1.6;
+      font-size: 0.9rem;
+      line-height: 1.58;
     }
     .enquire {
       display: inline-block;
-      margin-top: 1.35rem;
+      margin-top: 1rem;
       font-size: 0.6875rem;
       font-weight: 400;
       letter-spacing: 0.22em;
@@ -510,78 +405,265 @@
     }
     .card:hover .enquire { color: var(--teal); }
 
-    /* ——— Stat ——— */
+    /* ——— Full write-ups ——— */
+    .writeups { padding-bottom: 1rem; }
+    .writeup {
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--hair);
+    }
+    .writeup-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+      gap: 2.75rem 3rem;
+      align-items: start;
+    }
+    .writeup.is-flip .writeup-grid {
+      grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+    }
+    .writeup.is-flip .writeup-copy { order: 2; }
+    .writeup.is-flip .writeup-still { order: 1; }
+    .writeup-still {
+      width: 100%;
+      max-width: 380px;
+      border: 1px solid var(--hair);
+      position: sticky;
+      top: calc(var(--header) + 1.25rem);
+    }
+    .writeup-still img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+    .writeup .lede {
+      color: var(--muted);
+      font-size: 1.02rem;
+      margin: 0.35rem 0 1.35rem;
+      max-width: 48ch;
+    }
+    .writeup h2 {
+      font-weight: 200;
+      font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+    .writeup h3 {
+      margin: 1.55rem 0 0.45rem;
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--copper);
+    }
+    .writeup .copy p {
+      color: rgba(243,244,245,0.72);
+      font-size: 0.975rem;
+      margin-bottom: 0.85rem;
+      max-width: 62ch;
+    }
+    .writeup .copy ul {
+      margin: 0.4rem 0 1rem 0.1rem;
+    }
+    .writeup .copy li {
+      position: relative;
+      padding-left: 1.05rem;
+      color: rgba(243,244,245,0.72);
+      font-size: 0.975rem;
+      margin: 0.28rem 0;
+    }
+    .writeup .copy li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 6px;
+      height: 1px;
+      background: var(--teal);
+    }
+    .close-line {
+      margin-top: 1.35rem;
+      font-weight: 400;
+      color: #fff;
+      font-size: 1.02rem;
+    }
+    .callout {
+      margin: 1.25rem 0 0.4rem;
+      padding: 0.95rem 1.05rem;
+      border-left: 2px solid var(--copper);
+      background: rgba(217,145,91,0.06);
+      color: rgba(243,244,245,0.82);
+      font-size: 0.95rem;
+      max-width: 52ch;
+    }
 
     /* ——— Why us ——— */
-    .process-visual {
-      aspect-ratio: 21 / 9;
-      overflow: hidden;
+    .why-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+      gap: 2.75rem 3rem;
+      align-items: start;
+    }
+    .why-still {
+      width: 100%;
+      max-width: 380px;
       border: 1px solid var(--hair);
     }
-    .process-visual img {
+    .why-still img {
       width: 100%;
-      height: 100%;
+      height: 240px;
       object-fit: cover;
+    }
+    .why-copy h3 {
+      margin: 1.55rem 0 0.45rem;
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--copper);
+    }
+    .why-copy h3:first-child { margin-top: 0; }
+    .why-copy p {
+      color: rgba(243,244,245,0.72);
+      font-size: 0.975rem;
+      margin-bottom: 0.85rem;
+      max-width: 62ch;
+    }
+    .why-copy strong {
       display: block;
-    }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-top: 1px solid var(--hair);
-      border-left: 1px solid var(--hair);
-    }
-    .reason {
-      padding: 2.1rem 1.7rem 1.7rem;
-      border-right: 1px solid var(--hair);
-      border-bottom: 1px solid var(--hair);
-      overflow: hidden;
-    }
-    .reason h3 {
-      font-size: 1.05rem;
       font-weight: 500;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.35rem;
+      color: #fff;
+      margin: 1.1rem 0 0.3rem;
+      font-size: 1rem;
+    }
+    .why-bullets {
+      margin: 1.6rem 0 0;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--hair);
+    }
+    .why-bullets li {
+      position: relative;
+      padding-left: 1.05rem;
+      color: rgba(243,244,245,0.72);
+      font-size: 0.975rem;
+      margin: 0.35rem 0;
+    }
+    .why-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 6px;
+      height: 1px;
+      background: var(--teal);
     }
 
-    /* ——— Close ——— */
+    /* ——— Contact ——— */
+    .contact-block { padding-bottom: 1rem; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+      gap: 2.75rem 3rem;
+      align-items: start;
+    }
+    .contact-meta {
+      display: grid;
+      gap: 1.15rem;
+      margin: 1.5rem 0 1.6rem;
+    }
+    .contact-meta dt {
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.25rem;
+    }
+    .contact-meta dd {
+      font-weight: 400;
+      font-size: 1.02rem;
+    }
+    .contact-meta a:hover { color: var(--teal); }
+    .contact-aside {
+      display: grid;
+      gap: 1.25rem;
+    }
+    .contact-still {
+      width: 100%;
+      max-width: 380px;
+      border: 1px solid var(--hair);
+    }
+    .contact-still img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .quick-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 46ch;
+    }
+    .form {
+      display: grid;
+      gap: 0.85rem;
+      max-width: 440px;
+    }
+    .form label {
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+    .form input,
+    .form textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--hair-strong);
+      color: var(--text);
+      padding: 0.7rem 0.8rem;
+      border-radius: 2px;
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: 0.95rem;
+      font-weight: 300;
+    }
+    .form input:focus,
+    .form textarea:focus {
+      outline: none;
+      border-color: rgba(94,231,211,0.45);
+    }
+    .form textarea { min-height: 110px; resize: vertical; }
+    .form-note {
+      color: var(--faint);
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .form-note a { color: rgba(243,244,245,0.7); border-bottom: 1px solid rgba(255,255,255,0.2); }
+    .form-note a:hover { color: var(--teal); }
+
     .close {
-      padding: 5.5rem 0 4.5rem;
+      padding: 4.25rem 0 3.5rem;
+      border-top: 1px solid var(--hair);
+      margin-top: 3.25rem;
     }
     .close h2 {
       font-weight: 200;
-      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-size: clamp(1.85rem, 3.4vw, 2.6rem);
       letter-spacing: -0.03em;
-      line-height: 1.12;
-      max-width: 16ch;
-      margin-bottom: 2rem;
+      line-height: 1.14;
+      max-width: 18ch;
+      margin-bottom: 1.6rem;
     }
-
-    /* ——— Trust ——— */
-    .trust {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--hair);
-      border-bottom: 1px solid var(--hair);
-    }
-    .trust-item {
-      padding: 1.6rem 1.4rem;
-      border-right: 1px solid var(--hair);
-    }
-    .trust-item:last-child { border-right: 0; }
-    .trust-item .overline { display: block; margin-bottom: 0.4rem; }
-    .trust-item strong {
-      font-weight: 400;
-      font-size: 1.05rem;
-    }
-    .trust-item a { transition: color 0.4s var(--ease); }
-    .trust-item a:hover { color: var(--teal); }
 
     /* ——— Footer ——— */
-    .footer { padding: 4rem 0 2.2rem; }
+    .footer { padding: 3.25rem 0 2.2rem; border-top: 1px solid var(--hair); }
     .footer-top {
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 0.7fr));
-      gap: 3rem 2rem;
+      gap: 2.5rem 2rem;
     }
     .footer-mark {
       font-weight: 500;
@@ -603,7 +685,6 @@
       font-size: 0.9375rem;
       border-bottom: 1px solid rgba(255,255,255,0.2);
       padding-bottom: 2px;
-      transition: color 0.4s var(--ease), border-color 0.4s var(--ease);
     }
     .footer-mail:hover { color: var(--teal); border-color: var(--teal); }
     .footer-col .overline { display: block; margin-bottom: 1rem; }
@@ -612,14 +693,13 @@
       color: var(--muted);
       font-size: 0.9375rem;
       padding: 0.28rem 0;
-      transition: color 0.35s var(--ease);
     }
     .footer-col a:hover { color: #fff; }
     .footer-bottom {
       display: flex;
       justify-content: space-between;
       gap: 2rem;
-      margin-top: 3.25rem;
+      margin-top: 2.75rem;
       padding-top: 1.5rem;
       border-top: 1px solid var(--hair);
       color: var(--faint);
@@ -627,10 +707,27 @@
     }
     .footer-bottom address { font-style: normal; line-height: 1.6; }
 
+    .privacy {
+      padding: 3.5rem 0 4rem;
+      border-top: 1px solid var(--hair);
+    }
+    .privacy h2 {
+      font-weight: 200;
+      font-size: clamp(1.6rem, 2.6vw, 2rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .privacy p {
+      color: var(--muted);
+      font-size: 0.9375rem;
+      max-width: 68ch;
+      margin-bottom: 0.8rem;
+    }
+
     /* ——— Mobile ——— */
     @media (max-width: 980px) {
       :root { --pad: 1.5rem; }
-      .header-inner { gap: 1rem; }
+      .header-inner { gap: 1rem; grid-template-columns: 1fr auto auto; }
       .brand-name { display: none; }
       .nav {
         display: none;
@@ -647,39 +744,41 @@
       .nav.is-open { display: flex; }
       .nav a { padding: 0.7rem 0; border-bottom: 1px solid var(--hair); }
       .nav-toggle { display: grid; }
-      .header-inner { grid-template-columns: 1fr auto auto; }
-      .hero { padding-top: calc(var(--header) + 3rem); padding-bottom: 3.5rem; }
-      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .hero h1 { max-width: 16ch; }
-      .mono { justify-self: start; width: min(100%, 420px); opacity: 0.9; }
-      .section-head { grid-template-columns: 1fr; gap: 1rem; padding-top: 4rem; }
-      .section-head p { justify-self: start; }
-      .grid-3,
-      .grid-2 { grid-template-columns: 1fr 1fr; }
-      .process-visual { aspect-ratio: 16 / 9; }
-      .trust { grid-template-columns: 1fr 1fr; }
-      .trust-item:nth-child(2n) { border-right: 0; }
-      .trust-item { border-bottom: 1px solid var(--hair); }
+      .hero { padding-top: calc(var(--header) + 2.4rem); padding-bottom: 2.5rem; }
+      .hero-grid,
+      .writeup-grid,
+      .writeup.is-flip .writeup-grid,
+      .why-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .writeup.is-flip .writeup-copy,
+      .writeup.is-flip .writeup-still { order: unset; }
+      .hero-still,
+      .writeup-still,
+      .why-still,
+      .contact-still { justify-self: start; max-width: 420px; position: static; }
+      .hero-still img,
+      .writeup-still img,
+      .why-still img { height: 200px; }
+      .contact-still img { height: 160px; }
+      .grid-3 { grid-template-columns: 1fr 1fr; }
       .footer-top { grid-template-columns: 1fr 1fr; }
       .footer-bottom { flex-direction: column; }
     }
     @media (max-width: 640px) {
       :root { --pad: 1.25rem; }
-      .hero h1 { font-size: clamp(2.15rem, 10vw, 2.9rem); }
-      .grid-3,
-      .grid-2 { grid-template-columns: 1fr; }
-      .process-visual { aspect-ratio: 16 / 9; }
+      .hero h1 { font-size: clamp(2rem, 9vw, 2.55rem); }
+      .grid-3 { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
       .btn-outline { padding-inline: 0.8rem; letter-spacing: 0.12em; }
-      .bleed { height: min(70vw, 480px); }
-      .bleed-stat, .bleed-xl { height: min(78vw, 520px); }
+      .hero-still img,
+      .writeup-still img,
+      .why-still img { height: 180px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .caustic, .refract { animation: none !important; }
       .card, .btn-solid, .nav a, .enquire { transition: none; }
-      .card:hover { transform: none; }
     }
   </style>
 </head>
@@ -704,16 +803,11 @@
 
   <main>
     <section class="hero" id="top">
-      <div class="hero-photo">
-        <img src="images/hero-boardroom.png" alt="Optical prism on a boardroom table in low light" width="1920" height="1080">
-        <div class="hero-veil" aria-hidden="true"></div>
-      </div>
       <div class="hero-stage" aria-hidden="true">
         <div class="caustic caustic-a"></div>
         <div class="caustic caustic-b"></div>
         <div class="caustic caustic-c"></div>
         <div class="refract"></div>
-        <div class="refract refract-2"></div>
         <div class="grain"></div>
       </div>
       <div class="wrap hero-grid">
@@ -725,42 +819,11 @@
             <a class="link-underline" href="#services">View our services</a>
           </div>
         </div>
-        <div class="mono" aria-hidden="true">
-          <svg viewBox="0 0 520 330" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="prismStroke" x1="40" y1="20" x2="500" y2="310" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#5EE7D3"/>
-                <stop offset="0.42" stop-color="#39B7C8"/>
-                <stop offset="1" stop-color="#D9915B"/>
-              </linearGradient>
-              <linearGradient id="prismGhost" x1="60" y1="40" x2="480" y2="280" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#5EE7D3" stop-opacity="0.18"/>
-                <stop offset="1" stop-color="#D9915B" stop-opacity="0.12"/>
-              </linearGradient>
-            </defs>
-            <g transform="translate(3 2)" stroke="url(#prismGhost)" stroke-width="1">
-              <path d="M28 46 H168 M98 46 V286"/>
-              <path d="M196 46 H336 M266 46 V286"/>
-              <path d="M364 46 V286 M364 46 H492 M364 152 H464"/>
-            </g>
-            <g stroke="url(#prismStroke)" stroke-width="1.15" stroke-linecap="square" stroke-linejoin="miter">
-              <path d="M26 44 H166 M96 44 V284"/>
-              <path d="M194 44 H334 M264 44 V284"/>
-              <path d="M362 44 V284 M362 44 H490 M362 150 H462"/>
-            </g>
-            <g fill="url(#prismStroke)" opacity="0.035">
-              <path d="M26 44 H166 V56 H106 V284 H86 V56 H26 Z"/>
-              <path d="M194 44 H334 V56 H274 V284 H254 V56 H194 Z"/>
-              <path d="M362 44 H490 V56 H374 V138 H462 V162 H374 V284 H362 Z"/>
-            </g>
-          </svg>
-        </div>
+        <figure class="hero-still">
+          <img src="images/hero-boardroom.png" alt="Optical prism on a boardroom table in low light" width="760" height="440">
+        </figure>
       </div>
     </section>
-
-    <div class="bleed bleed-xl">
-      <img src="images/estate-wide.png" alt="Wide view of an IT estate and communications room" width="1920" height="1080" loading="lazy">
-    </div>
 
     <section id="services">
       <div class="wrap">
@@ -769,146 +832,369 @@
         </div>
         <div class="grid-3">
           <article class="card">
-            <div class="card-media media">
-              <img src="images/svc-estate.png" alt="Server cabinet in a dimly lit data room" width="1200" height="900" loading="lazy">
+            <div class="card-media">
+              <img src="images/svc-estate.png" alt="Server cabinet in a dimly lit data room" width="640" height="360" loading="lazy">
             </div>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M8 21h8M12 17v4"/></svg>
             <h3>IT Management</h3>
             <p>We fine-tune your IT operations, ensuring they run at optimal efficiency.</p>
-            <a class="enquire" href="#contact">Find out more</a>
+            <a class="enquire" href="#it-management">Find out more</a>
           </article>
           <article class="card">
-            <div class="card-media media">
-              <img src="images/svc-devops.png" alt="Teal-to-copper light lines suggesting a deployment pipeline" width="1200" height="900" loading="lazy">
+            <div class="card-media">
+              <img src="images/svc-devops.png" alt="Teal-to-copper light lines suggesting a deployment pipeline" width="640" height="360" loading="lazy">
             </div>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M8 6h8M6 8v4.5A3.5 3.5 0 0 0 9.5 16H12"/></svg>
             <h3>Dev-Ops</h3>
             <p>Our approach closes the divide between development and operations, ensuring swift, seamless deployments.</p>
-            <a class="enquire" href="#contact">Find out more</a>
+            <a class="enquire" href="#dev-ops">Find out more</a>
           </article>
           <article class="card">
-            <div class="card-media media">
-              <img src="images/svc-cloud.png" alt="Glass atrium roof seen from below" width="1200" height="900" loading="lazy">
+            <div class="card-media">
+              <img src="images/svc-cloud.png" alt="Glass atrium roof seen from below" width="640" height="360" loading="lazy">
             </div>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17a4 4 0 0 1 .4-8 5.5 5.5 0 0 1 10.6 1.5A3.5 3.5 0 0 1 18 17H7z"/></svg>
             <h3>Cloud Migrations</h3>
             <p>We lift your infrastructure into the cloud, providing solutions that are not only secure but also scalable.</p>
-            <a class="enquire" href="#contact">Find out more</a>
+            <a class="enquire" href="#cloud-migrations">Find out more</a>
           </article>
           <article class="card">
-            <div class="card-media media">
-              <img src="images/svc-cost.png" alt="Open ledger with a gold pen" width="1200" height="900" loading="lazy">
+            <div class="card-media">
+              <img src="images/svc-cost.png" alt="Open ledger with a gold pen" width="640" height="360" loading="lazy">
             </div>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M13.2 7.6c-2.3-.4-4.2.7-4.2 2.5 0 3.4 6.4 1.6 6.4 5 0 1.9-1.9 3-4.4 2.6M12 6v1.4M12 16.6V18"/></svg>
             <h3>IT Cost Management</h3>
             <p>We’re focused on fine-tuning your IT expenditure, guaranteeing you see a substantial return on your investments.</p>
-            <a class="enquire" href="#contact">Find out more</a>
+            <a class="enquire" href="#it-cost-management">Find out more</a>
           </article>
           <article class="card">
-            <div class="card-media media">
-              <img src="images/svc-strategy.png" alt="Wood and glass architectural block model" width="1200" height="900" loading="lazy">
+            <div class="card-media">
+              <img src="images/svc-strategy.png" alt="Wood and glass architectural block model" width="640" height="360" loading="lazy">
             </div>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 12l5-2M12 12V6"/><circle cx="12" cy="12" r="1.2"/></svg>
             <h3>IT Strategy</h3>
             <p>Together, we’ll develop a visionary strategy that’s in perfect harmony with your business goals.</p>
-            <a class="enquire" href="#contact">Find out more</a>
+            <a class="enquire" href="#it-strategy">Find out more</a>
           </article>
           <article class="card">
-            <div class="card-media media">
-              <img src="images/svc-outsourced.png" alt="Empty office at dusk with city light in the windows" width="1200" height="900" loading="lazy">
+            <div class="card-media">
+              <img src="images/svc-outsourced.png" alt="Empty office at dusk with city light in the windows" width="640" height="360" loading="lazy">
             </div>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="2.2"/><circle cx="16" cy="9" r="1.8"/><path d="M4.5 18c.4-2.6 2.4-4 4.5-4s4.1 1.4 4.5 4M13.2 18c.2-1.6 1.3-2.7 2.8-2.7 1.4 0 2.5 1 2.8 2.7"/></svg>
             <h3>Outsourced Management</h3>
             <p>We bring our comprehensive expertise directly to you, acting as an integral extension of your team.</p>
-            <a class="enquire" href="#contact">Find out more</a>
+            <a class="enquire" href="#outsourced-management">Find out more</a>
           </article>
         </div>
       </div>
     </section>
 
-    <div class="bleed">
-      <img src="images/bleed-glass.png" alt="Extreme close-up of optical glass" width="1920" height="1080" loading="lazy">
-    </div>
+    <div class="writeups">
+      <article class="writeup" id="it-management">
+        <div class="wrap writeup-grid">
+          <div class="writeup-copy">
+            <p class="overline">IT Management</p>
+            <h2>Mastering IT Management.</h2>
+            <p class="lede">Transform complexity into clarity and efficiency.</p>
+            <div class="copy">
+              <h3>The challenge.</h3>
+              <p>In an age where IT underpins every facet of business, the complexity and demand on IT has never been higher. Navigating this ever-evolving landscape requires more than just oversight; it demands strategic foresight and expert management.</p>
+              <h3>Cutting through complexity with expertise and insight.</h3>
+              <p>At The Technology Framework, we redefine IT management by turning complex challenges into streamlined efficient and practical solutions.</p>
+              <p>Our approach isn’t just about keeping the lights on; it’s about illuminating the path to innovation and growth.</p>
+              <p>We provide a comprehensive suite of IT management services designed to:</p>
+              <ul>
+                <li>Enhance operational efficiency</li>
+                <li>Reduce downtime and mitigate risks</li>
+                <li>Align IT operations with your business goals</li>
+              </ul>
+              <h3>What we offer.</h3>
+              <p>Strategic IT Management tailored to your business needs. Our IT Management services are crafted to provide a holistic solution to your IT challenges.</p>
+              <p>We delve into the heart of your IT estate, applying best practices and innovative strategies to:</p>
+              <ul>
+                <li>Streamline IT processes and operations</li>
+                <li>Implement effective IT governance frameworks</li>
+                <li>Optimise IT resource utilisation</li>
+                <li>Ensure robust IT security and compliance</li>
+              </ul>
+              <p class="close-line">Empower your business with Strategic IT Management.</p>
+            </div>
+          </div>
+          <figure class="writeup-still">
+            <img src="images/svc-estate.png" alt="IT estate server cabinet representing managed operations" width="760" height="480" loading="lazy">
+          </figure>
+        </div>
+      </article>
 
-    <section class="bleed bleed-stat" aria-label="Cloud migration statistic">
-      <img src="images/migrate-wide.png" alt="Wide view of a cloud migration operations floor" width="1920" height="1080" loading="lazy">
-      <div class="stat-copy">
-        <p>Did you know Cloud Migrations can reduce IT costs by up to 40%, enhancing business efficiency?</p>
-      </div>
-    </section>
+      <article class="writeup is-flip" id="dev-ops">
+        <div class="wrap writeup-grid">
+          <div class="writeup-copy">
+            <p class="overline">Dev-Ops</p>
+            <h2>Seamless Outsourced Dev-Ops.</h2>
+            <p class="lede">Transform complexity into clarity and efficiency.</p>
+            <div class="copy">
+              <h3>Bridging the gap.</h3>
+              <p>In the fast-paced digital realm, the division between development (Dev) and IT operations (Ops) can stifle progress and innovation.</p>
+              <p>A unified Dev-Ops approach is essential for swift, dependable delivery cycles that align teams, processes, and technologies.</p>
+              <h3>Strategic integration.</h3>
+              <p>Our Outsourced Dev-Ops service is the linchpin for a cohesive, high-functioning workflow that revolutionises project delivery.</p>
+              <p>By synchronising development and operations, we not only enhance efficiency but also foster an environment where innovation thrives.</p>
+              <p>With our expert guidance, you’ll experience:</p>
+              <ul>
+                <li>Quicker deployments</li>
+                <li>Improved team synergy</li>
+                <li>Streamlined CI/CD processes</li>
+              </ul>
+              <h3>What we offer.</h3>
+              <p>In crafting our Dev-Ops strategies, we prioritise alignment with your unique business context, ensuring that every solution not only fits but enhances your existing processes.</p>
+              <p>Our approach transforms your operations to support agile, high-quality output, characterised by:</p>
+              <ul>
+                <li>A culture of innovation</li>
+                <li>Automated workflows</li>
+                <li>Enhanced code quality</li>
+                <li>Effective feedback loops</li>
+              </ul>
+              <p class="close-line">Discover how our bespoke Dev-Ops solutions can streamline your development and operations.</p>
+            </div>
+          </div>
+          <figure class="writeup-still">
+            <img src="images/svc-devops.png" alt="Abstract teal and copper lines suggesting a Dev-Ops pipeline" width="760" height="480" loading="lazy">
+          </figure>
+        </div>
+      </article>
 
-    <div class="bleed bleed-xl">
-      <img src="images/bleed-prism2.png" alt="Second prism of optical glass catching teal and copper light" width="1920" height="1080" loading="lazy">
-    </div>
+      <article class="writeup" id="cloud-migrations">
+        <div class="wrap writeup-grid">
+          <div class="writeup-copy">
+            <p class="overline">Cloud Migrations</p>
+            <h2>Strategic Cloud Migrations.</h2>
+            <p class="lede">Seamless transition to the cloud, tailored for your business.</p>
+            <div class="copy">
+              <h3>The Cloud landscape.</h3>
+              <p>Transitioning to the cloud presents a myriad of opportunities for scalability, flexibility, and innovation.</p>
+              <p>However, without a strategic approach, it can be fraught with complexity. Our Cloud Migration service demystifies this journey, ensuring a smooth, secure transition that aligns with your business objectives.</p>
+              <h3>Tailored migration strategies.</h3>
+              <p>Embarking on a cloud migration journey marks a crucial step for any business. It demands a deep understanding of both the technology and your unique operational landscape.</p>
+              <p>We go beyond mere system migration; we ensure a strategic, seamless transition to the cloud. This process starts with a comprehensive evaluation of your current setup and goals, allowing us to devise a migration plan that’s not just secure and robust but also attuned to your business’s future growth and efficiency needs.</p>
+              <p>With The Technology Framework, you’ll benefit from:</p>
+              <ul>
+                <li>Customised migration plans</li>
+                <li>Enhanced security and compliance</li>
+                <li>Optimised cloud architecture</li>
+              </ul>
+              <h3>What we offer.</h3>
+              <p>Our Cloud Migration services extend beyond mere transition; we aim to transform your infrastructure into a dynamic, agile asset.</p>
+              <p>We achieve this through:</p>
+              <ul>
+                <li>In-depth analysis and planning</li>
+                <li>Efficient resource utilisation</li>
+                <li>Continuous optimisation</li>
+                <li>Empowering innovation</li>
+              </ul>
+              <p class="callout">Did you know Cloud Migrations can reduce IT costs by up to 40%, enhancing business efficiency?</p>
+              <p class="close-line">Let's craft a Cloud Migration strategy that propels your business into the future.</p>
+            </div>
+          </div>
+          <figure class="writeup-still">
+            <img src="images/svc-cloud.png" alt="Glass atrium roof suggesting cloud-scale infrastructure" width="760" height="480" loading="lazy">
+          </figure>
+        </div>
+      </article>
 
-    <div class="bleed bleed-xl">
-      <img src="images/why-practice.png" alt="Still life of practice tools on a dark desk" width="1920" height="1080" loading="lazy">
+      <article class="writeup is-flip" id="it-cost-management">
+        <div class="wrap writeup-grid">
+          <div class="writeup-copy">
+            <p class="overline">IT Cost Management</p>
+            <h2>Strategic IT Cost Management.</h2>
+            <p class="lede">Optimise your IT spend for greater efficiency and innovation.</p>
+            <div class="copy">
+              <h3>Financial efficiency.</h3>
+              <p>In today’s competitive landscape, efficient management of IT is not just about cost-cutting; it’s about smart investing in technology that drives your business forward.</p>
+              <p>The Technology Framework specialises in transforming your IT cost structure, ensuring every penny spent enhances operational efficiency and fuels innovation.</p>
+              <h3>Precision in planning.</h3>
+              <p>Effective IT Cost Management begins with a strategic approach, meticulously tailored to the nuances of your unique business environment. Our process involves a deep dive into the complexities of your current IT expenditure, identifying not just the areas for cost reduction but also opportunities where smarter spending can lead to greater efficiency and innovation.</p>
+              <p>We analyse everything from your day-to-day operations to long-term strategic initiatives, ensuring that our optimisation strategies are comprehensive and aligned with your overall business objectives.</p>
+              <p>We’ll identify opportunities for optimisation, focusing on:</p>
+              <ul>
+                <li>Wise allocation of resources</li>
+                <li>Eliminating redundancies</li>
+                <li>Leveraging the latest technologies</li>
+              </ul>
+              <h3>What we offer.</h3>
+              <p>Our approach to IT Cost Management is centered around delivering maximum value, not just cutting costs.</p>
+              <p>We work closely with your team to:</p>
+              <ul>
+                <li>Enhance financial clarity and control</li>
+                <li>Implement scalable solutions</li>
+                <li>Drive innovation</li>
+                <li>Optimise vendor management and procurement</li>
+              </ul>
+              <p class="close-line">Let's elevate your IT Financial Management together.</p>
+            </div>
+          </div>
+          <figure class="writeup-still">
+            <img src="images/svc-cost.png" alt="Open ledger and gold pen representing IT cost control" width="760" height="480" loading="lazy">
+          </figure>
+        </div>
+      </article>
+
+      <article class="writeup" id="it-strategy">
+        <div class="wrap writeup-grid">
+          <div class="writeup-copy">
+            <p class="overline">IT Strategy</p>
+            <h2>Crafting future-ready IT Strategies.</h2>
+            <p class="lede">Strategic blueprints for technology-driven success.</p>
+            <div class="copy">
+              <h3>Strategic visioning.</h3>
+              <p>Developing a robust IT Strategy goes beyond aligning technology with current business needs; it’s about anticipating future trends and preparing for emerging opportunities.</p>
+              <p>The Technology Framework excels in crafting IT strategies that not only support your immediate objectives but also position you for long-term success and innovation.</p>
+              <p class="callout">Did you know companies are reporting an increase 33% year on year on cyber security attacks.</p>
+              <h3>Blueprint for success.</h3>
+              <p>A sound IT strategy is not just about leveraging current technology but envisioning the future of your business through a technological lens. It requires a comprehensive understanding of the latent potential within emerging tech trends and how they can be harnessed to meet and exceed your business goals.</p>
+              <p>At The Technology Framework, we delve into a collaborative process with your team, merging our tech expertise with your business insights.</p>
+              <p>We collaborate with your team to create a blueprint that encapsulates:</p>
+              <ul>
+                <li>Goal-oriented technology alignment</li>
+                <li>Agile and adaptive planning</li>
+                <li>Sustainable IT growth</li>
+              </ul>
+              <h3>What we offer.</h3>
+              <ul>
+                <li>Seamless integration</li>
+                <li>Enhanced decision-making</li>
+                <li>A culture of continuous improvement and innovation</li>
+                <li>Strategic alignment of IT and business objectives</li>
+              </ul>
+              <p class="close-line">Let's elevate your IT Financial Management together.</p>
+            </div>
+          </div>
+          <figure class="writeup-still">
+            <img src="images/svc-strategy.png" alt="Architectural block model representing a strategic IT blueprint" width="760" height="480" loading="lazy">
+          </figure>
+        </div>
+      </article>
+
+      <article class="writeup is-flip" id="outsourced-management">
+        <div class="wrap writeup-grid">
+          <div class="writeup-copy">
+            <p class="overline">Outsourced Management</p>
+            <h2>Outsourced IT Service Management.</h2>
+            <p class="lede">Expert management for uninterrupted performance and innovation.</p>
+            <div class="copy">
+              <h3>Seamless integration.</h3>
+              <p>Outsourced IT Service Management extends beyond mere support; it’s about integrating a team of IT experts into your ecosystem, ensuring your technology operates seamlessly and efficiently.</p>
+              <p>The Technology Framework provides a robust framework that aligns with your business objectives, offering not just solutions but a strategic partnership for growth.</p>
+              <h3>Holistic support model.</h3>
+              <p>Effective IT Service Management forms the bedrock of unparalleled operational excellence, serving as a vital enabler for your business’s day-to-day and operational functions.</p>
+              <p>At The Technology Framework, our approach is comprehensive, enveloping the entire spectrum of your IT ecosystem to ensure it not only meets your current demands but is also primed for future challenges and opportunities.</p>
+              <p>We craft a support model that’s meticulously tailored to your specific needs, encapsulating:</p>
+              <ul>
+                <li>Proactive monitoring and maintenance</li>
+                <li>Strategic advisory services</li>
+                <li>End-to-end cybersecurity</li>
+              </ul>
+              <h3>What we offer.</h3>
+              <p>Our goal is to make IT Management effortless for you, enabling your focus to remain on core business activities.</p>
+              <p>Our outsourced IT Service Management facilitates:</p>
+              <ul>
+                <li>Maximising resource allocation</li>
+                <li>Fostering a collaborative partnership</li>
+                <li>Providing access to expertise and advanced tech</li>
+              </ul>
+              <p class="close-line">Take the first step towards a future where your IT drives your business forward.</p>
+            </div>
+          </div>
+          <figure class="writeup-still">
+            <img src="images/svc-outsourced.png" alt="Dusk office interior representing an extended outsourced team" width="760" height="480" loading="lazy">
+          </figure>
+        </div>
+      </article>
     </div>
 
     <section id="why-us">
       <div class="wrap">
         <div class="section-head">
-          <h2>Why choose us?</h2>
-          <p>Choosing The Technology Framework means you’re partnering with a leader in IT solutions, dedicated to advancing your business. Our edge comes from a comprehensive approach to IT, a commitment to innovation, and a focus on your success.</p>
+          <h2>Discover The Technology Framework.</h2>
+          <p>Crafting the future of IT Management, One innovation at a time.</p>
         </div>
-        <p class="overline" style="margin: 0 0 1.1rem;">Here’s why we’re the top choice for those looking to elevate their IT capabilities:</p>
-        <div class="grid-2">
-          <article class="reason">
-            <div class="card-media media">
-              <img src="images/product-consultancy.png" alt="Walnut desk with an architectural model" width="1200" height="900" loading="lazy">
-            </div>
-            <h3>Bespoke solutions tailored to your needs</h3>
-          </article>
-          <article class="reason">
-            <div class="card-media media">
-              <img src="images/still-headset.png" alt="Headset and desk still life in low light" width="1200" height="900" loading="lazy">
-            </div>
-            <h3>Cutting-edge innovation at the forefront</h3>
-          </article>
-          <article class="reason">
-            <div class="card-media media">
-              <img src="images/still-laptop.png" alt="Laptop open on a dark desk" width="1200" height="900" loading="lazy">
-            </div>
-            <h3>A commitment to excellence and partnership</h3>
-          </article>
-          <article class="reason">
-            <div class="card-media media">
-              <img src="images/mark-ttf.png" alt="Engraved TTF mark on a stone slab" width="1200" height="900" loading="lazy">
-            </div>
-            <h3>Deep expertise and proven track record</h3>
-          </article>
+        <div class="why-grid">
+          <div class="why-copy">
+            <h3>Our story.</h3>
+            <p>In the vibrant tech hub of Bristol, The Technology Framework was born from a vision to bridge the gap between business aspirations and technological possibilities.</p>
+            <p>We’ve grown from a passionate IT boutique into a cornerstone of IT management and digital innovation, serving ambitious businesses across the UK.</p>
+            <p>Our journey is defined by a relentless pursuit of excellence, a deep understanding of the digital ecosystem, and a commitment to delivering bespoke, impactful IT solutions.</p>
+            <h3>Why The Technology Framework?</h3>
+            <strong>Bespoke solutions tailored to your business:</strong>
+            <p>We believe in a personalised approach, understanding that each business has unique challenges and opportunities. Our solutions are not off-the-shelf but carefully crafted to align with your specific objectives and industry demands.</p>
+            <strong>A Fusion of strategy and technology:</strong>
+            <p>Our team comprises not just IT experts but strategic thinkers who look beyond the code to how technology can drive your business forward. We blend innovative IT solutions with strategic foresight to ensure your technology ecosystem is a catalyst for growth, not just a support function.</p>
+            <strong>Proven track record of transforming IT</strong>
+            <p>Our portfolio speaks volumes, with success stories across various sectors. We’ve turned IT challenges into competitive advantages, driving efficiency, security, and innovation.</p>
+            <h3>Our mission.</h3>
+            <p>We’re on a mission to redefine what businesses can expect from their IT service provider.</p>
+            <p>Our vision is a future where IT is not just a department but a dynamic, strategic asset driving businesses to unprecedented levels of success.</p>
+            <p>We aim to be at the forefront of this shift, guiding our clients through the complexities of digital transformation and into a future where their IT estate is their strongest ally.</p>
+            <p class="close-line">Discover how we can make this vision a reality. Let's embark on a journey together.</p>
+            <ul class="why-bullets">
+              <li>Bespoke solutions tailored to your needs</li>
+              <li>Cutting-edge innovation at the forefront</li>
+              <li>A commitment to excellence and partnership</li>
+              <li>Deep expertise and proven track record</li>
+            </ul>
+          </div>
+          <figure class="why-still">
+            <img src="images/why-practice.png" alt="Still life of practice tools on a dark desk" width="760" height="480" loading="lazy">
+          </figure>
         </div>
       </div>
     </section>
 
-    <figure class="bleed bleed-xl" style="margin-top: 5.5rem;">
-      <img src="images/london-wide.png" alt="Wet London courtyard with a teal-lit window" width="1920" height="1080" loading="lazy">
-      <figcaption class="bleed-caption">20–22 Wenlock Road, London</figcaption>
-    </figure>
-
-    <section id="contact">
+    <section id="contact" class="contact-block">
       <div class="wrap">
-        <div class="trust">
-          <div class="trust-item">
-            <span class="overline">Registered address</span>
-            <strong>20–22 Wenlock Road, London N1 7GU</strong>
+        <div class="section-head">
+          <h2>Start your IT transformation journey today</h2>
+          <p>We're here to help your business navigate the IT Landscape.</p>
+        </div>
+        <div class="contact-grid">
+          <div>
+            <dl class="contact-meta">
+              <div>
+                <dt>Registered address</dt>
+                <dd>20-22 Wenlock Road<br>London, N1 7GU</dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+442045831054">+44 (0)20 4583 1054</a></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:hello@thetechnologyframework.com">hello@thetechnologyframework.com</a></dd>
+              </div>
+            </dl>
+            <p class="quick-note"><strong style="color:#fff;font-weight:500;">Quick contact.</strong> Scheduling a meeting with The Technology Framework is more than just an appointment; it’s an investment in your business’s future.</p>
+            <form class="form" id="book" action="mailto:hello@thetechnologyframework.com" method="post" enctype="text/plain">
+              <label>Name
+                <input type="text" name="Name" autocomplete="name" required>
+              </label>
+              <label>Business name
+                <input type="text" name="Business name" autocomplete="organization">
+              </label>
+              <label>Tel No.
+                <input type="tel" name="Tel No." autocomplete="tel">
+              </label>
+              <label>Email
+                <input type="email" name="Email" autocomplete="email" required>
+              </label>
+              <label>Message
+                <textarea name="Message" required></textarea>
+              </label>
+              <p class="form-note">By submitting this form, you agree to our use of your information as outlined in our <a href="#privacy">Privacy Policy</a> and consent to be contacted regarding your inquiry.</p>
+              <button class="btn-solid" type="submit">Book a meeting <span aria-hidden="true">→</span></button>
+            </form>
           </div>
-          <div class="trust-item">
-            <span class="overline">Phone number</span>
-            <strong><a href="tel:+442045831054">+44 (0)20 4583 1054</a></strong>
-          </div>
-          <div class="trust-item">
-            <span class="overline">Email address</span>
-            <strong><a href="mailto:hello@thetechnologyframework.com">hello@thetechnologyframework.com</a></strong>
-          </div>
-          <div class="trust-item">
-            <span class="overline">Company number</span>
-            <strong>13918137</strong>
-          </div>
+          <aside class="contact-aside">
+            <figure class="contact-still">
+              <img src="images/london-wide.png" alt="Wet London courtyard near Wenlock Road" width="760" height="360" loading="lazy">
+            </figure>
+          </aside>
         </div>
         <div class="close">
           <h2>Ready to transform your IT landscape? Let's make it happen.</h2>
-          <a class="btn-solid" id="book" href="mailto:hello@thetechnologyframework.com">Book a meeting <span aria-hidden="true">→</span></a>
+          <a class="btn-solid" href="mailto:hello@thetechnologyframework.com">Book a meeting <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -927,12 +1213,16 @@
           <a href="#why-us">Why us</a>
           <a href="#services">Our services</a>
           <a href="#contact">Contact us</a>
+          <a href="#privacy">Privacy Notice</a>
         </div>
         <div class="footer-col">
           <span class="overline">Services</span>
-          <a href="#services">IT Management</a>
-          <a href="#services">Cloud Migrations</a>
-          <a href="#services">IT Strategy</a>
+          <a href="#it-management">IT Management</a>
+          <a href="#dev-ops">Dev-Ops</a>
+          <a href="#cloud-migrations">Cloud Migrations</a>
+          <a href="#it-cost-management">IT Cost Management</a>
+          <a href="#it-strategy">IT Strategy</a>
+          <a href="#outsourced-management">Outsourced Management</a>
         </div>
         <div class="footer-col">
           <span class="overline">Contact</span>
@@ -947,10 +1237,20 @@
           20-22 Wenlock Road, London N1 7GU<br>
           +44 (0)20 4583 1054
         </address>
-        <p>Co. No. 13918137 · © 2026 The Technology Framework Ltd</p>
+        <p>Co. No. 13918137 · <a href="#privacy">Privacy Notice</a> · © 2026 The Technology Framework Ltd</p>
       </div>
     </div>
   </footer>
+
+  <section class="privacy" id="privacy">
+    <div class="wrap">
+      <h2>Privacy Notice</h2>
+      <p>The Technology Framework Ltd (Co. No. 13918137), of 20-22 Wenlock Road, London N1 7GU, is the data controller for enquiries sent through this website.</p>
+      <p>If you contact us by form, email or telephone, we use the details you provide — typically your name, business name, telephone number, email address and message — solely to respond to your enquiry and to arrange a meeting if requested. We do not sell your information.</p>
+      <p>Enquiry records are retained only for as long as needed to handle your request and any follow-up, then deleted unless we have a continuing business relationship or a legal reason to keep them.</p>
+      <p>You may ask us for a copy of the information we hold about you, or ask us to correct or delete it, by writing to <a href="mailto:hello@thetechnologyframework.com" style="color:#fff;border-bottom:1px solid rgba(255,255,255,0.28);">hello@thetechnologyframework.com</a>.</p>
+    </div>
+  </section>
 
   <script>
     (function () {
