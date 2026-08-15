@@ -277,7 +277,6 @@
     .field {
       padding: clamp(4.5rem, 9vw, 8.5rem) var(--gutter);
     }
-    .field-inner { max-width: 58rem; }
     .field h2 {
       font-family: var(--display);
       font-optical-sizing: auto;
@@ -299,6 +298,42 @@
     }
     .field.on-indigo .deck { color: var(--paper-soft); }
     .field-actions { margin-top: 2.25rem; }
+
+    /* --- Cost of waiting --- */
+    .cost-split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.48fr) minmax(0, 0.52fr);
+      gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: center;
+      min-height: min(28rem, 64vh);
+    }
+    .field .cost-copy h2 { max-width: none; }
+    .field .cost-copy .deck { max-width: 38ch; }
+    .cost-stats {
+      display: grid;
+    }
+    .cost-stat {
+      padding: 1.35rem 0 1.45rem;
+    }
+    .cost-stat + .cost-stat {
+      border-top: 1px solid rgba(0, 195, 220, 0.42);
+    }
+    .cost-figure {
+      font-family: var(--display);
+      font-optical-sizing: auto;
+      font-size: clamp(2.8rem, 5.2vw, 4.4rem);
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 0.92;
+      color: var(--paper);
+      margin-bottom: 0.45rem;
+    }
+    .cost-stat p {
+      font-family: var(--sans);
+      font-size: 0.98rem;
+      line-height: 1.4;
+      color: var(--paper-soft);
+    }
 
     /* --- Situations --- */
     .situations { background: var(--white); }
@@ -630,12 +665,14 @@
       .you-split,
       .how-split,
       .proof-split,
+      .cost-split,
       .situation-grid,
       .method-grid,
       .close-grid { grid-template-columns: 1fr; }
       .you-split,
       .how-split,
-      .proof-split { min-height: 0; }
+      .proof-split,
+      .cost-split { min-height: 0; }
       .method-col,
       .method-col:last-child {
         border-right: 0;
@@ -711,13 +748,29 @@
     </article>
 
     <section class="slab field on-indigo" id="cost">
-      <div class="field-inner">
-        <p class="kicker">The cost of waiting</p>
-        <h2>Every month you wait, the bill renews itself.</h2>
-        <p class="deck">Contracts keep auto-renewing. Copilot is sitting on a tenant that would fail an insurer. The next cyber form comes back with questions nobody can answer. A full-time IT director costs £130k before they have started. Fill the seat instead.</p>
-        <div class="field-actions">
-          <a class="btn" href="#book">Book a conversation</a>
+      <div class="cost-split">
+        <div class="cost-copy">
+          <p class="kicker">The cost of waiting</p>
+          <h2>Every month you wait, the bill renews itself.</h2>
+          <p class="deck">Contracts keep auto-renewing. Copilot is sitting on a tenant that would fail an insurer. The next cyber form comes back with questions nobody can answer. A full-time IT director costs £130k before they have started. Fill the seat instead.</p>
+          <div class="field-actions">
+            <a class="btn" href="#book">Book a conversation</a>
+          </div>
         </div>
+        <ol class="cost-stats" aria-label="The cost of waiting">
+          <li class="cost-stat">
+            <p class="cost-figure">£130k</p>
+            <p>Full-time IT director, before they have started</p>
+          </li>
+          <li class="cost-stat">
+            <p class="cost-figure">Auto-renew</p>
+            <p>Contracts that keep signing themselves</p>
+          </li>
+          <li class="cost-stat">
+            <p class="cost-figure">No owner</p>
+            <p>The next cyber form, and nobody to answer it</p>
+          </li>
+        </ol>
       </div>
     </section>
 
