@@ -1,17 +1,32 @@
 (function () {
   var toggle = document.querySelector("[data-nav-toggle]");
   var nav = document.querySelector("[data-nav]");
+  var offers = document.querySelector("[data-offers]");
+
+  function setOpen(open) {
+    if (!toggle || !nav) return;
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    if (!open && offers) offers.removeAttribute("open");
+  }
+
   if (toggle && nav) {
-    function setOpen(open) {
-      nav.classList.toggle("is-open", open);
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    }
     toggle.addEventListener("click", function () {
       setOpen(!nav.classList.contains("is-open"));
     });
     nav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () { setOpen(false); });
+    });
+  }
+
+  if (offers) {
+    document.addEventListener("click", function (event) {
+      if (!offers.open) return;
+      if (!offers.contains(event.target)) offers.removeAttribute("open");
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && offers.open) offers.removeAttribute("open");
     });
   }
 
