@@ -1,0 +1,18 @@
+{
+  "trailingSlash": "always",
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/404.html",
+      "statusCode": 404
+    }
+  },
+  "navigationFallback": {
+    "rewrite": "/404.html",
+    "exclude": [
+      "/images/*",
+      "/css/*",
+      "/js/*",
+      "/.well-known/*"
+    ]
+  }
+}
