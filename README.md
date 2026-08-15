@@ -4,24 +4,24 @@ Static marketing site for [thetechnologyframework.com](https://thetechnologyfram
 
 Hosted on Azure Static Web Apps (`ttf-2026`). There is no build step: HTML, `css/`, `js/`, and `images/` are served as-is.
 
-`staticwebapp.config.json` uses `"trailingSlash": "never"`, 301s old first-pass and WordPress leftover URLs, and a custom 404. Canonical host is `https://thetechnologyframework.com` (never the Azure preview host).
+`staticwebapp.config.json` uses `"trailingSlash": "always"`, 301s old first-pass and WordPress leftover URLs, and a custom 404. Canonical host is `https://thetechnologyframework.com` (never the Azure preview host). Canonicals, sitemap, and internal links use trailing slashes.
 
 The homepage is the magazine landing page. The sitemap is the 14 URLs in `docs/ttf-seo-geo-pack.md`:
 
 - `/`
-- `/fractional-head-of-it`
-- `/cyber-essentials-iso-27001`
-- `/microsoft-copilot-readiness`
-- `/azure-finops`
-- `/production-it-agent`
-- `/how-we-work`
-- `/who-we-work-with`
-- `/south-west-wealth-ifa`
-- `/pe-carve-out-it`
-- `/professional-services-it`
-- `/proof`
-- `/contact`
-- `/privacy`
+- `/fractional-head-of-it/`
+- `/cyber-essentials-iso-27001/`
+- `/microsoft-copilot-readiness/`
+- `/azure-finops/`
+- `/production-it-agent/`
+- `/how-we-work/`
+- `/who-we-work-with/`
+- `/south-west-wealth-ifa/`
+- `/pe-carve-out-it/`
+- `/professional-services-it/`
+- `/proof/`
+- `/contact/`
+- `/privacy/`
 
 `/docs/*` is not a public page. Offers is a header disclosure menu, not a sixth page.
 
