@@ -1,5 +1,4 @@
 {
-  "trailingSlash": "always",
   "routes": [
     { "route": "/docs/*", "redirect": "/", "statusCode": 301 },
 
