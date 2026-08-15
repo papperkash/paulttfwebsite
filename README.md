@@ -4,7 +4,7 @@ Static marketing site for [www.thetechnologyframework.com](https://www.thetechno
 
 Hosted on Azure Static Web Apps (`ttf-2026`). There is no build step: HTML, `css/`, `js/`, and `images/` are served as-is.
 
-`staticwebapp.config.json` uses `"trailingSlash": "always"`, 301s old first-pass and WordPress leftover URLs, and a custom 404. Canonical host is `https://www.thetechnologyframework.com` (never the Azure preview host or the apex host). Canonicals, sitemap, and internal links use trailing slashes.
+`staticwebapp.config.json` omits `trailingSlash` so root files (`robots.txt`, `sitemap.xml`, `llms.txt`, and the Google Search Console HTML verification file) return 200 at their exact paths. Folder pages and leftover WordPress URLs are 301'd via `routes`. Custom 404 stays. Canonical host is `https://www.thetechnologyframework.com` (never the Azure preview host or the apex host). Canonicals, sitemap, and internal links use trailing slashes.
 
 The homepage is the magazine landing page. The sitemap is the 14 URLs in `docs/ttf-seo-geo-pack.md`:
 

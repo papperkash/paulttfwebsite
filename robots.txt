@@ -3,4 +3,4 @@ Allow: /
 Disallow: /docs/
 
 # llms: https://www.thetechnologyframework.com/llms.txt
-Sitemap: https://www.thetechnologyframework.com/sitemap.xml/
+Sitemap: https://www.thetechnologyframework.com/sitemap.xml
