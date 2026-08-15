@@ -207,7 +207,7 @@ No volume numbers. None were pulled for this draft. Do not invent them.
 | IFA IT security / SIPP IT / wealth manager IT South West | `/south-west-wealth-ifa` | Sector + region. |
 | PE carve-out IT / TSA IT / Day-1 IT separation | `/pe-carve-out-it` | Named project, not a sixth offer. |
 | IT for professional services 50-200 | `/professional-services-it` | Size qualifier stays on the page. |
-| Head of IT Bristol / fractional IT South West | `/south-west-wealth-ifa` and `/fractional-head-of-it` | 0117 number. No Bristol street address. |
+| Head of IT Bristol / fractional IT South West | `/south-west-wealth-ifa` and `/fractional-head-of-it` | 0117 number. |
 
 **Local entities you may use:** Bristol, South West England, London (registered office), United Kingdom, phone 0117 456 5486.
 
@@ -667,9 +667,6 @@ No. A tenant that would fail an insurer still needs [the evidence pack](/cyber-e
 **Do you keep our MSP?**  
 Yes, if it works. We sit above it. The MSP still handles the tickets the new labels create.
 
-**Do you work from Bristol?**  
-The public number is 0117. We work with South West firms and with UK firms further out. The registered office is 20-22 Wenlock Road, London N1 7GU. There is no Bristol street address on this site.
-
 #### CTA
 
 Book a conversation.  
@@ -1082,9 +1079,6 @@ Yes. You keep the MSP if it works. We sit above it.
 **Is PE carve-out a separate product?**  
 No. It is a named project under this hub. The offers stay the five on the homepage.
 
-**Where are you based?**  
-Registered office: 20-22 Wenlock Road, London N1 7GU. Public phone: 0117 456 5486. We work with firms around Bristol and across the UK. We do not list a Bristol street address.
-
 #### CTA
 
 Book a conversation.  
@@ -1121,8 +1115,6 @@ Email [hello@thetechnologyframework.com](mailto:hello@thetechnologyframework.com
 Advice firms, SIPP operators, and wealth managers in Bristol and the wider South West. You hold other people's money, and the insurer knows it.
 
 A named Head of IT. One or two days a week. You keep the MSP. We sit above it.
-
-The public number is 0117. That is a Bristol-area phone. The registered office is in London. There is no Bristol street address on this site.
 
 #### Who this is for
 
@@ -1164,9 +1156,6 @@ The work is ownership, the tenant, and the evidence pack. Client data, access, a
 
 **Are you a Bristol IT support company?**  
 No. We do not sell helpdesk or MSP tickets. The number is 0117. The offer is a named Head of IT plus assurance.
-
-**Do you have an office in Bristol?**  
-No street address. Bristol-area phone. London registered office. The hero image is the Clifton Suspension Bridge.
 
 **Will this help with FCA or insurer questions?**  
 The evidence sprint is built for the insurance cyber questionnaire and for buyers who ask for CE+ or ISO 27001. FCA permissions stay with you and your compliance lead.
@@ -1495,9 +1484,6 @@ If the current mailto pattern stays, keep the subject `Conversation with The Tec
 We read what you sent. We reply to arrange a conversation. Bring the thing that hurts: the insurer form, the TSA date, the Copilot licences, or the bill, if it is over £10k a month.
 
 #### FAQs
-
-**Is the 0117 number a Bristol office?**  
-It is a Bristol-area phone. The registered office is 20-22 Wenlock Road, London N1 7GU. We do not publish a Bristol street address.
 
 **Can I book without the form?**  
 Yes. Call 0117 456 5486 or write to hello@thetechnologyframework.com.
