@@ -161,8 +161,39 @@
       padding: 0 var(--gutter);
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: 1.5rem;
+    }
+    .header-cluster {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-left: auto;
+    }
+    .header-tools {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      flex-shrink: 0;
+    }
+    .header-phone {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--display);
+      font-optical-sizing: auto;
+      font-size: 1.02rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--indigo);
+      white-space: nowrap;
+      padding: 0.28rem 0 0.2rem;
+      border-bottom: 1px solid var(--cyan);
+      transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+    }
+    .header-phone:hover { color: #1a0f33; border-bottom-color: var(--indigo); }
+    .header-phone:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 3px;
     }
     .brand {
       display: flex;
@@ -634,6 +665,43 @@
     .privacy p { max-width: 72ch; }
     .privacy a { color: var(--paper); border-bottom: 1px solid rgba(0, 195, 220, 0.4); }
 
+    .enquiry-agent {
+      position: fixed;
+      right: max(1.15rem, env(safe-area-inset-right));
+      bottom: max(1.25rem, env(safe-area-inset-bottom));
+      z-index: 30;
+    }
+    .enquiry-close {
+      position: fixed;
+      right: max(1.15rem, env(safe-area-inset-right));
+      bottom: calc(5.85rem + env(safe-area-inset-bottom, 0px));
+      z-index: 36;
+      width: 2.15rem;
+      height: 2.15rem;
+      display: grid;
+      place-items: center;
+      background: var(--paper);
+      color: var(--indigo);
+      border: 1px solid var(--line-strong);
+      box-shadow: 0 1px 0 rgba(38, 28, 64, 0.04);
+      transition: background 0.3s var(--ease), color 0.3s var(--ease);
+    }
+    .enquiry-close:hover {
+      background: var(--indigo);
+      color: var(--paper);
+    }
+    .enquiry-close:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 2px;
+    }
+    .enquiry-close svg { width: 0.85rem; height: 0.85rem; }
+    elevenlabs-convai {
+      position: fixed;
+      right: max(1.15rem, env(safe-area-inset-right));
+      bottom: max(1.25rem, env(safe-area-inset-bottom));
+      z-index: 30;
+    }
+
     @media (max-width: 900px) {
       .header { height: 4rem; }
       :root { --header: 4rem; }
@@ -657,6 +725,10 @@
       }
       .nav .btn { margin-top: 0.85rem; width: max-content; }
       .nav-toggle { display: grid; }
+      .header-inner { gap: 0.85rem; }
+      .header-cluster { gap: 0.75rem; }
+      .brand { min-width: 0; }
+      .header-phone { font-size: 0.95rem; }
       .slab-split,
       .slab-split.is-flip { grid-template-columns: 1fr; min-height: 0; }
       .slab-split.is-flip .slab-media { order: 0; }
@@ -694,12 +766,13 @@
       .proof-card:last-child { grid-column: auto; }
       .slab-type h1 { font-size: clamp(2.15rem, 10vw, 2.8rem); }
       .field h2 { font-size: clamp(2.15rem, 10vw, 2.9rem); }
-      .brand-name { max-width: 14ch; }
+      .brand-name { max-width: 11ch; }
+      .header-phone { font-size: 0.88rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .btn, .text-link, .slab-media img { transition: none; }
+      .btn, .text-link, .slab-media img, .header-phone, .enquiry-close { transition: none; }
       .slab-split:hover .slab-media img { transform: none; }
     }
   </style>
@@ -718,16 +791,21 @@
         </svg>
         <span class="brand-name">The Technology Framework</span>
       </a>
-      <nav class="nav" data-nav aria-label="Primary">
-        <a href="#offers">Offers</a>
-        <a href="#you">Is this you?</a>
-        <a href="#how">How we work</a>
-        <a href="#proof">Proof</a>
-        <a class="btn" href="#book">Book a conversation</a>
-      </nav>
-      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Open menu">
-        <span></span>
-      </button>
+      <div class="header-cluster">
+        <nav class="nav" data-nav aria-label="Primary">
+          <a href="#offers">Offers</a>
+          <a href="#you">Is this you?</a>
+          <a href="#how">How we work</a>
+          <a href="#proof">Proof</a>
+          <a class="btn" href="#book">Book a conversation</a>
+        </nav>
+        <div class="header-tools">
+          <a class="header-phone" href="tel:+441174565486">0117 456 5486</a>
+          <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Open menu">
+            <span></span>
+          </button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -925,7 +1003,7 @@
             </div>
             <div>
               <dt>Telephone</dt>
-              <dd><a href="tel:+442045831054">+44 (0)20 4583 1054</a></dd>
+              <dd><a href="tel:+441174565486">0117 456 5486</a></dd>
             </div>
             <div>
               <dt>Registered office</dt>
@@ -992,6 +1070,21 @@
     <p>The Technology Framework Ltd (company number 13918137), of 20-22 Wenlock Road, London N1 7GU, uses enquiry details only to reply and to arrange a conversation. We do not sell your information. Write to <a href="mailto:hello@thetechnologyframework.com">hello@thetechnologyframework.com</a> to ask for a copy, a correction or a deletion.</p>
   </section>
 
+  <div class="enquiry-agent" data-enquiry-agent>
+    <button class="enquiry-close" type="button" data-enquiry-close aria-label="Close assistant">
+      <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+        <path d="M3 3l10 10M13 3L3 13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/>
+      </svg>
+    </button>
+    <elevenlabs-convai
+      agent-id="agent_3501m02qhmeeegbr47yphctb93a4"
+      dismissible="true"
+      action-text="Talk to an agent"
+      start-call-text="Talk to an agent"
+    ></elevenlabs-convai>
+  </div>
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
   <script>
     (function () {
       var toggle = document.querySelector("[data-nav-toggle]");
@@ -1007,6 +1100,16 @@
         });
         nav.querySelectorAll("a").forEach(function (link) {
           link.addEventListener("click", function () { setOpen(false); });
+        });
+      }
+
+      var agentDock = document.querySelector("[data-enquiry-agent]");
+      var agentClose = document.querySelector("[data-enquiry-close]");
+      if (agentDock && agentClose) {
+        agentClose.addEventListener("click", function () {
+          var widget = agentDock.querySelector("elevenlabs-convai");
+          if (widget) widget.remove();
+          agentDock.remove();
         });
       }
 
