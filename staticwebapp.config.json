@@ -1,8 +1,8 @@
 {
   "trailingSlash": "always",
   "routes": [
-    { "route": "/docs/*", "rewrite": "/404.html", "statusCode": 404 },
-    { "route": "/*.md", "rewrite": "/404.html", "statusCode": 404 },
+    { "route": "/docs/*", "rewrite": "/404.html" },
+    { "route": "/*.md", "rewrite": "/404.html" },
 
     { "route": "/cyber-essentials-iso", "redirect": "/cyber-essentials-iso-27001/", "statusCode": 301 },
     { "route": "/cyber-essentials-iso/", "redirect": "/cyber-essentials-iso-27001/", "statusCode": 301 },
