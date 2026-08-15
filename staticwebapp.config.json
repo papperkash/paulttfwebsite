@@ -1,8 +1,7 @@
 {
   "trailingSlash": "always",
   "routes": [
-    { "route": "/docs/*", "rewrite": "/404.html" },
-    { "route": "/*.md", "rewrite": "/404.html" },
+    { "route": "/docs/*", "redirect": "/", "statusCode": 301 },
 
     { "route": "/cyber-essentials-iso/", "redirect": "/cyber-essentials-iso-27001/", "statusCode": 301 },
     { "route": "/copilot-readiness/", "redirect": "/microsoft-copilot-readiness/", "statusCode": 301 },
@@ -28,17 +27,5 @@
       "rewrite": "/404.html",
       "statusCode": 404
     }
-  },
-  "navigationFallback": {
-    "rewrite": "/404.html",
-    "exclude": [
-      "/images/*",
-      "/css/*",
-      "/js/*",
-      "/robots.txt",
-      "/sitemap.xml",
-      "/llms.txt",
-      "/.well-known/*"
-    ]
   }
 }
