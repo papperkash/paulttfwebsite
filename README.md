@@ -2,21 +2,27 @@
 
 Static marketing site for [thetechnologyframework.com](https://thetechnologyframework.com/).
 
-Hosted on Azure Static Web Apps (`ttf-2026`). There is no build step: HTML, `css/`, `js/`, and `images/` are served as-is. `staticwebapp.config.json` keeps trailing slashes and a custom 404.
+Hosted on Azure Static Web Apps (`ttf-2026`). There is no build step: HTML, `css/`, `js/`, and `images/` are served as-is.
 
-The homepage is the magazine landing page. Key slabs link through to dedicated pages:
+`staticwebapp.config.json` uses `"trailingSlash": "never"`, 301s old first-pass and WordPress leftover URLs, and a custom 404. Canonical host is `https://thetechnologyframework.com` (never the Azure preview host).
 
-- `/offers/`
-- `/fractional-head-of-it/`
-- `/cyber-essentials-iso/`
-- `/copilot-readiness/`
-- `/azure-finops/`
-- `/it-agents/`
-- `/how-we-work/`
-- `/proof/`
-- `/who-we-work-with/`
-- `/contact/`
+The homepage is the magazine landing page. The sitemap is the 14 URLs in `docs/ttf-seo-geo-pack.md`:
 
-The Technology Framework Ltd (England 13918137) is a standalone UK IT firm. Named Head of IT for mid-market companies that cannot justify a full-time IT director.
+- `/`
+- `/fractional-head-of-it`
+- `/cyber-essentials-iso-27001`
+- `/microsoft-copilot-readiness`
+- `/azure-finops`
+- `/production-it-agent`
+- `/how-we-work`
+- `/who-we-work-with`
+- `/south-west-wealth-ifa`
+- `/pe-carve-out-it`
+- `/professional-services-it`
+- `/proof`
+- `/contact`
+- `/privacy`
 
-Canonical production URL in page metadata: `https://thetechnologyframework.com/`.
+`/docs/*` is not a public page. Offers is a header disclosure menu, not a sixth page.
+
+The Technology Framework Ltd (England 13918137) is a standalone UK practice. Named Head of IT for firms that have outgrown tickets.
