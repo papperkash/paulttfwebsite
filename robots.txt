@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /docs/
 
-Sitemap: https://thetechnologyframework.com/sitemap.xml
+Sitemap: https://www.thetechnologyframework.com/sitemap.xml
