@@ -37,6 +37,7 @@
       "/js/*",
       "/robots.txt",
       "/sitemap.xml",
+      "/llms.txt",
       "/.well-known/*"
     ]
   }
