@@ -26,5 +26,8 @@
       "rewrite": "/404.html",
       "statusCode": 404
     }
+  },
+  "globalHeaders": {
+    "Access-Control-Allow-Origin": "*"
   }
 }
