@@ -32,7 +32,7 @@ PE carve-out / Day-1 is a named project, not a sixth offer: https://www.thetechn
 
 ## How we work
 
-Diagnose. Ninety days. Then a retainer if the seat still needs filling.
+Diagnose. 90 days. Then a retainer if the seat still needs filling.
 https://www.thetechnologyframework.com/how-we-work/
 
 ## Proof
