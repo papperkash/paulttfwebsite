@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /docs/
+Disallow: /gsc/
 
 # llms: https://www.thetechnologyframework.com/llms.txt
 Sitemap: https://www.thetechnologyframework.com/sitemap.xml

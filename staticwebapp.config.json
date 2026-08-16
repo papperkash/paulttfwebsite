@@ -1,5 +1,14 @@
 {
+  "trailingSlash": "auto",
   "routes": [
+    {
+      "route": "/google521d6f0a2ad2eeae.html",
+      "rewrite": "/gsc/google521d6f0a2ad2eeae",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8"
+      }
+    },
+
     { "route": "/docs/*", "redirect": "/", "statusCode": 301 },
 
     { "route": "/cyber-essentials-iso/", "redirect": "/cyber-essentials-iso-27001/", "statusCode": 301 },
