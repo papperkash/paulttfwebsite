@@ -414,7 +414,7 @@ Same rhythm as [how we work](/how-we-work).
 
 **01 Diagnose.** We sit with the people who actually run the estate. MSP, finance, operations, whoever holds the passwords.
 
-**02 Ninety days.** A sprint with a board-readable outcome. Often the operating model, the vendor map, and the first evidence pack.
+**02 90 days.** A sprint with a board-readable outcome. Often the operating model, the vendor map, and the first evidence pack.
 
 **03 Then a retainer if the seat still needs filling.** One or two days a week after that, or we leave the place stronger.
 
@@ -425,12 +425,12 @@ Same rhythm as [how we work](/how-we-work).
 - A written view of cyber, Copilot, and cost. What is safe to do next.
 - The MSP still in place, if it works, with someone above it.
 
-If the next ninety days also need [Cyber Essentials Plus or ISO 27001](/cyber-essentials-iso-27001), that sprint can run in the same window.
+If the next 90 days also need [Cyber Essentials Plus or ISO 27001](/cyber-essentials-iso-27001), that sprint can run in the same window.
 
 #### FAQs
 
 **Do you replace our MSP?**  
-You keep the MSP if it works. We govern it. Operating model, vendors, board paper. If the MSP is the problem, we say so in the first ninety days.
+You keep the MSP if it works. We govern it. Operating model, vendors, board paper. If the MSP is the problem, we say so in the first 90 days.
 
 **Is this a fractional CIO or a fractional IT director?**  
 Boards use all three titles. The seat we fill is Head of IT. One named senior, one or two days a week, on the leadership team.
@@ -927,11 +927,11 @@ Email [hello@thetechnologyframework.com](mailto:hello@thetechnologyframework.com
 ### 5.7 `/how-we-work` - Diagnose / 90 days / retainer
 
 **Page name:** How we work  
-**Primary keyword / intent:** How a named Head of IT engagement runs. Diagnose, ninety days, then a retainer if the seat still needs filling.  
+**Primary keyword / intent:** How a named Head of IT engagement runs. Diagnose, 90 days, then a retainer if the seat still needs filling.  
 **Secondaries:** 90-day sprint, board-readable outcome.  
 **Title tag (49 chars):** How we work: 90-day sprint, then a retainer | TTF  
-**Meta description (147 chars):** Diagnose. Ninety days. Then a retainer if the seat still needs filling. A 90-day sprint with a board-readable outcome, then one or two days a week.  
-**H1:** Diagnose. Ninety days. Then a retainer if the seat still needs filling.  
+**Meta description (147 chars):** Diagnose. 90 days. Then a retainer if the seat still needs filling. A 90-day sprint with a board-readable outcome, then one or two days a week.  
+**H1:** Diagnose. 90 days. Then a retainer if the seat still needs filling.  
 **Kicker:** How we work  
 **Schema:** FAQPage, BreadcrumbList (no extra Service type)  
 **Internal links:** `/fractional-head-of-it`, `/cyber-essentials-iso-27001`, `/microsoft-copilot-readiness`, `/azure-finops`, `/production-it-agent`, `/who-we-work-with`, `/proof`, `/contact`
@@ -956,7 +956,7 @@ We come away with what is true. Vendors, access, the last insurer form, the bill
 
 #### 02 A 90-day sprint with a board-readable outcome
 
-Ninety days is long enough to change something and short enough to keep a board's attention.
+90 days is long enough to change something and short enough to keep a board's attention.
 
 The outcome depends on the offer you opened:
 
@@ -966,7 +966,7 @@ The outcome depends on the offer you opened:
 - [The bill](/azure-finops): a cost pack, only if the Azure or cloud bill is over £10k a month.
 - [The one workflow](/production-it-agent): one agent, one KPI, in production.
 
-In ninety days the board has an operating model, the insurer has evidence, and you stop being the IT department. That line is already on the homepage. It still holds.
+In 90 days the board has an operating model, the insurer has evidence, and you stop being the IT department. That line is already on the homepage. It still holds.
 
 #### 03 One or two days a week after that, or we leave the place stronger
 
@@ -982,10 +982,10 @@ A board paper. Owners. A next step that fits on one page. And a named senior if 
 
 #### FAQs
 
-**Do we have to take a retainer after ninety days?**  
+**Do we have to take a retainer after 90 days?**  
 No. The retainer exists if the seat still needs filling. The third step is also "or we leave the place stronger".
 
-**Can two offers run in the same ninety days?**  
+**Can two offers run in the same 90 days?**  
 Often the seat and the evidence pack. Sometimes the tenant. FinOps only if the bill is over £10k a month. The agent only if you can name the workflow. We will not stack five sprints on a 50-person firm.
 
 **Who do you talk to first?**  
@@ -1056,7 +1056,7 @@ The same five offers. The same method.
 - [Azure FinOps](/azure-finops) (only if the bill is over £10k a month)
 - [One production IT agent](/production-it-agent)
 
-Read [how we work](/how-we-work). Diagnose. Ninety days. Then a retainer if the seat still needs filling.
+Read [how we work](/how-we-work). Diagnose. 90 days. Then a retainer if the seat still needs filling.
 
 #### Who this is not a fit for
 
@@ -1138,9 +1138,9 @@ If you are in Bath, Exeter, or further into the South West, the same seat applie
 
 #### How it runs
 
-[How we work](/how-we-work). Diagnose. Ninety days. Then a retainer if the seat still needs filling.
+[How we work](/how-we-work). Diagnose. 90 days. Then a retainer if the seat still needs filling.
 
-In ninety days the board has an operating model and the insurer has evidence. You stop being the IT department.
+In 90 days the board has an operating model and the insurer has evidence. You stop being the IT department.
 
 #### What you leave with
 
@@ -1217,7 +1217,7 @@ What "stood up" has to mean on the morning you cannot use the seller's estate.
 - [Evidence](/cyber-essentials-iso-27001) a buyer, a lender, or an insurer can read. We implement CE / CE+ / ISO controls. An accredited assessor certifies.
 - A [named Head of IT](/fractional-head-of-it) in the room for the weekly that used to have nobody.
 
-If the cloud bill on the new estate is over £10k a month, [Azure FinOps](/azure-finops) can sit in the same ninety days. If it is not, we leave it.
+If the cloud bill on the new estate is over £10k a month, [Azure FinOps](/azure-finops) can sit in the same 90 days. If it is not, we leave it.
 
 #### How it runs
 
@@ -1225,7 +1225,7 @@ The TSA does not care about our calendar. We still use the method.
 
 **01 Diagnose.** We sit with the people who actually run both estates. Seller IT, the MSP, finance, the deal team.
 
-**02 Ninety days, or the days you have.** Board-readable outcome: a Day-1 pack, owners, and the first controls that will survive a questionnaire.
+**02 90 days, or the days you have.** Board-readable outcome: a Day-1 pack, owners, and the first controls that will survive a questionnaire.
 
 **03 Then a retainer if the seat still needs filling.** Newcos keep needing a Head of IT after Day-1. One or two days a week, or we leave the place stronger.
 
@@ -1447,13 +1447,13 @@ Email [hello@thetechnologyframework.com](mailto:hello@thetechnologyframework.com
 **Title tag (46 chars):** Book a conversation | The Technology Framework  
 **Meta description (149 chars):** Book a conversation with The Technology Framework. Named Head of IT for firms that outgrew tickets. 0117 456 5486 or hello@thetechnologyframework.com  
 **H1:** Book a conversation.  
-**Kicker:** The next ninety days  
+**Kicker:** The next 90 days  
 **Schema:** ContactPage, FAQPage, BreadcrumbList  
 **Internal links:** `/how-we-work`, `/who-we-work-with`, `/privacy`, `/fractional-head-of-it`, five offers as a short list
 
 #### Intro
 
-In ninety days the board has an operating model, the insurer has evidence, and you stop being the IT department.
+In 90 days the board has an operating model, the insurer has evidence, and you stop being the IT department.
 
 Telephone [0117 456 5486](tel:+441174565486).  
 Email [hello@thetechnologyframework.com](mailto:hello@thetechnologyframework.com).  
