@@ -1233,9 +1233,19 @@ elevenlabs-convai {
   "@type": "Service",
   "name": "Production IT agent",
   "url": "https://www.thetechnologyframework.com/production-it-agent/",
-  "description": "One production IT agent. One KPI. Then we stop. A Teams bot, a voice front door, or an automation that already earns its keep.",
+  "description": "One production IT agent. One KPI. Then we stop. A Teams bot, a voice front door, or an automation that already earns its keep. Fixed fee from £7,500.",
   "provider": {
     "@id": "https://www.thetechnologyframework.com/#organization"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "GBP",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "minPrice": 7500,
+      "priceCurrency": "GBP"
+    },
+    "description": "Fixed fee from £7,500 for one workflow to production with one KPI. Scoped at diagnose."
   },
   "areaServed": [
     {
@@ -1309,6 +1319,14 @@ elevenlabs-convai {
         "@type": "Answer",
         "text": "No. You keep the MSP if it works. The bot often sits in front of the same queue."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From £7,500, fixed, for one workflow to production with one KPI. Scoped at diagnose. If the workflow cannot justify that number, we say so and stop before you spend it."
+      }
     }
   ]
 }
@@ -1369,6 +1387,7 @@ elevenlabs-convai {
         <div class="lede">
           <p>A Teams bot, a voice front door, or an automation that already earns its keep.</p>
           <p>We put one agent into production. We agree one KPI. Then we stop. The live stack we already run is a production Teams agent, voice agents, n8n / LangChain. That is on <a href="/proof/">proof</a>. This page is how that work is sold: one workflow, not a programme.</p>
+          <p>Fixed fee, from £7,500. Priced before it starts.</p>
         </div>
         <div class="slab-actions">
           <a class="btn" href="/contact/">Book a conversation</a>
@@ -1469,6 +1488,10 @@ elevenlabs-convai {
                 <h3>Do you need to replace our MSP first?</h3>
                 <p>No. You keep the MSP if it works. The bot often sits in front of the same queue.</p>
               </article>
+              <article class="faq">
+                <h3>What does it cost?</h3>
+                <p>From £7,500, fixed, for one workflow to production with one KPI. Scoped at diagnose. If the workflow cannot justify that number, we say so and stop before you spend it.</p>
+              </article>
             </div>
       </div>
     </section>
@@ -1535,6 +1558,7 @@ elevenlabs-convai {
       <nav class="footer-col" aria-label="Who and how">
         <a href="/who-we-work-with/">Who we work with</a>
         <a href="/south-west-wealth-ifa/">South West wealth / IFA / SIPP</a>
+        <a href="/law-firm-it-security/">Law firms, 30-100 staff</a>
         <a href="/pe-carve-out-it/">PE carve-out / Day-1</a>
         <a href="/professional-services-it/">Professional services, 50-200</a>
         <a href="/how-we-work/">How we work</a>
