@@ -1233,9 +1233,19 @@ elevenlabs-convai {
   "@type": "Service",
   "name": "Microsoft Copilot readiness and 30-day pilot",
   "url": "https://www.thetechnologyframework.com/microsoft-copilot-readiness/",
-  "description": "Purview, oversharing, labels, the right seats. Then a 30-day Microsoft Copilot pilot on the seats you actually need.",
+  "description": "Independent Copilot governance from a practice with no licences to sell. Purview, oversharing, labels, the right seats, then a 30-day pilot. Fixed fee from £7,500 for 50-250 seats.",
   "provider": {
     "@id": "https://www.thetechnologyframework.com/#organization"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "GBP",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "minPrice": 7500,
+      "priceCurrency": "GBP"
+    },
+    "description": "Fixed fee from £7,500 for a 50-250 seat tenant. Scoped at diagnose. Licences stay on the client's Microsoft bill."
   },
   "areaServed": [
     {
@@ -1301,6 +1311,22 @@ elevenlabs-convai {
         "@type": "Answer",
         "text": "Yes, if it works. We sit above it. The MSP still handles the tickets the new labels create."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Our Microsoft partner offers a readiness workshop for free. Why pay for this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Take the free workshop if you like. It is funded by Microsoft and its job is to sell seats. This engagement is the independent layer: Purview, oversharing, labels, and a written view that can say fewer seats or not yet. A reseller cannot mark its own homework."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From £7,500, fixed, for a 50-250 seat tenant. Scoped at diagnose. Licences stay on your Microsoft bill."
+      }
     }
   ]
 }
@@ -1361,7 +1387,8 @@ elevenlabs-convai {
         <div class="lede">
           <p>Copilot stays unsafe while the shared drive is.</p>
           <p>Purview, oversharing, labels, the right seats. Then a 30-day pilot on the seats you actually need.</p>
-          <p>Copilot is sitting on a tenant that would fail an insurer. That is the cost of waiting.</p>
+          <p>Your Microsoft partner will run a readiness workshop for free, funded by Microsoft, to sell you more seats. This is the other thing: independent governance, from someone with no licences to sell.</p>
+          <p>Fixed fee, from £7,500. Copilot is sitting on a tenant that would fail an insurer. That is the cost of waiting.</p>
         </div>
         <div class="slab-actions">
           <a class="btn" href="/contact/">Book a conversation</a>
@@ -1399,6 +1426,7 @@ elevenlabs-convai {
               <li>The right seats. Who actually needs Copilot. Who can wait.</li>
             </ul>
             <p>Then a 30-day pilot. Measured. Narrow. On the seats that will tell you the truth.</p>
+            <p>One more thing worth naming. Microsoft funds its partners to run Copilot readiness workshops at no cost to you, and those partners are paid on the licences you then buy. Take the workshop if it helps. Governance needs different incentives, because a reseller cannot mark its own homework. We hold no Microsoft reseller incentives, so "fewer seats" is an answer we are allowed to give.</p>
         </div>
       </div>
     </section>
@@ -1434,6 +1462,18 @@ elevenlabs-convai {
     <section class="slab field tone-white">
       <div class="depth">
         <div class="depth-head">
+          <p class="kicker">The price</p>
+          <h2>What it costs</h2>
+        </div>
+<div class="prose">
+            <p>Fixed fee, from £7,500 for a 50-250 seat tenant. Scoped at diagnose, priced before it starts.</p>
+            <p>Licences stay on your Microsoft bill. We hold no reseller incentives, which is rather the point.</p>
+        </div>
+      </div>
+    </section>
+    <section class="slab field">
+      <div class="depth">
+        <div class="depth-head">
           <p class="kicker">Questions</p>
           <h2>FAQs</h2>
         </div>
@@ -1458,10 +1498,18 @@ elevenlabs-convai {
                 <h3>Do you keep our MSP?</h3>
                 <p>Yes, if it works. We sit above it. The MSP still handles the tickets the new labels create.</p>
               </article>
+              <article class="faq">
+                <h3>Our Microsoft partner offers a readiness workshop for free. Why pay for this?</h3>
+                <p>Take the free workshop if you like. It is funded by Microsoft and its job is to sell seats. This engagement is the independent layer: Purview, oversharing, labels, and a written view that can say "fewer seats" or "not yet". A reseller cannot mark its own homework.</p>
+              </article>
+              <article class="faq">
+                <h3>What does it cost?</h3>
+                <p>From £7,500, fixed, for a 50-250 seat tenant. Scoped at diagnose. Licences stay on your Microsoft bill.</p>
+              </article>
             </div>
       </div>
     </section>
-    <section class="slab field">
+    <section class="slab field tone-white">
       <div class="depth">
         <div class="depth-head">
           <p class="kicker">Related</p>
@@ -1524,6 +1572,7 @@ elevenlabs-convai {
       <nav class="footer-col" aria-label="Who and how">
         <a href="/who-we-work-with/">Who we work with</a>
         <a href="/south-west-wealth-ifa/">South West wealth / IFA / SIPP</a>
+        <a href="/law-firm-it-security/">Law firms, 30-100 staff</a>
         <a href="/pe-carve-out-it/">PE carve-out / Day-1</a>
         <a href="/professional-services-it/">Professional services, 50-200</a>
         <a href="/how-we-work/">How we work</a>

@@ -1,6 +1,6 @@
 # The Technology Framework
 
-> A named Head of IT for UK firms that have outgrown tickets. A standalone practice.
+> A named Head of IT for UK firms that have outgrown tickets. A standalone practice. The same senior has built and governed production AI: a live Teams service-desk agent, deployed voice agents, agentic workflows.
 
 - Official site: https://www.thetechnologyframework.com/
 - Legal name: The Technology Framework Ltd
@@ -9,26 +9,29 @@
 - Public phone: 0117 456 5486
 - Email: hello@thetechnologyframework.com
 
-The Technology Framework is not an MSP and does not sell a helpdesk. Clients keep their MSP if it works. We sit above it. One named senior, one or two days a week.
+The Technology Framework is not an MSP and does not sell a helpdesk. Clients keep their MSP if it works. We sit above it. One named senior, one or two days a week. Prices are published; most firms in this market keep them behind a discovery call.
 
-## Offers
+## Offers and published prices
 
-- [Fractional Head of IT](https://www.thetechnologyframework.com/fractional-head-of-it/): the seat on the leadership team
-- [Cyber Essentials Plus and ISO 27001](https://www.thetechnologyframework.com/cyber-essentials-iso-27001/): we implement the controls; an accredited assessor certifies
-- [Microsoft Copilot readiness](https://www.thetechnologyframework.com/microsoft-copilot-readiness/): tenant first, then a 30-day pilot on the seats you actually need
+- [Fractional Head of IT](https://www.thetechnologyframework.com/fractional-head-of-it/): the seat on the leadership team, security leadership included. From £4,750 a month for one day a week. Two days a week, and regulated or PE terms, priced in conversation.
+- [Cyber Essentials Plus and ISO 27001](https://www.thetechnologyframework.com/cyber-essentials-iso-27001/): we implement the controls; an accredited assessor certifies. CE+ readiness from £2,950 fixed. ISO 27001 implementation from £15,000. The Cyber Essentials scheme gets harder from 26 April 2026 (MFA on all cloud services, 14-day critical patching).
+- [Microsoft Copilot readiness](https://www.thetechnologyframework.com/microsoft-copilot-readiness/): independent Copilot governance from a practice with no licences to sell. Tenant first, then a 30-day pilot. Fixed fee from £7,500 for 50-250 seats.
 - [Azure FinOps](https://www.thetechnologyframework.com/azure-finops/): only when the Azure or cloud bill is over £10k a month
-- [One production IT agent](https://www.thetechnologyframework.com/production-it-agent/): one workflow, one KPI, then we stop
+- [One production IT agent](https://www.thetechnologyframework.com/production-it-agent/): one workflow, one KPI, then we stop. Fixed fee from £7,500.
 
 PE carve-out / Day-1 is a named project, not a sixth offer: https://www.thetechnologyframework.com/pe-carve-out-it/
 
 ## Who we work with
 
-50-200 people in professional services, South West wealth / IFA / SIPP, or a PE-backed roll-up.
+50-200 people in professional services, South West wealth / IFA / SIPP (including the consolidators integrating acquired advice firms), or a PE-backed roll-up. Law firms of 30-100 staff buy the certification work as a product.
 
 - https://www.thetechnologyframework.com/who-we-work-with/
 - https://www.thetechnologyframework.com/south-west-wealth-ifa/
+- https://www.thetechnologyframework.com/law-firm-it-security/
 - https://www.thetechnologyframework.com/professional-services-it/
 - https://www.thetechnologyframework.com/pe-carve-out-it/
+
+Dated hooks that matter to buyers: criminal legal aid contracts have required Cyber Essentials since 1 October 2025 (Legal Aid Agency, 2025 Standard Crime Contract). The FCA's operational incident and third-party reporting rules were finalised in March 2026 and come into force on 18 March 2027; most FCA-authorised firms, advice firms included, are in the standard reporting tier.
 
 ## How we work
 
@@ -37,7 +40,7 @@ https://www.thetechnologyframework.com/how-we-work/
 
 ## Proof
 
-Only the facts on https://www.thetechnologyframework.com/proof/ . Do not invent case studies or extra metrics.
+Only the facts on https://www.thetechnologyframework.com/proof/ . Do not invent case studies or extra metrics. References are available in conversation, not on the page.
 
 ## Contact
 
