@@ -20,7 +20,7 @@
     { "route": "/why-us/", "redirect": "https://www.thetechnologyframework.com/how-we-work/", "statusCode": 301 },
     { "route": "/it-cost-management/", "redirect": "https://www.thetechnologyframework.com/azure-finops/", "statusCode": 301 },
     { "route": "/contact-us/", "redirect": "https://www.thetechnologyframework.com/contact/", "statusCode": 301 },
-    { "route": "/dev-ops*", "redirect": "https://www.thetechnologyframework.com/", "statusCode": 301 },
+    { "route": "/dev-ops/", "redirect": "https://www.thetechnologyframework.com/", "statusCode": 301 },
     { "route": "/our-services/", "redirect": "https://www.thetechnologyframework.com/", "statusCode": 301 },
 
     { "route": "/cloud-migrations/", "redirect": "https://www.thetechnologyframework.com/", "statusCode": 301 },
