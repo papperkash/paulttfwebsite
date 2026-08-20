@@ -56,6 +56,10 @@ https://www.thetechnologyframework.com/how-we-work/
 
 Only the facts on https://www.thetechnologyframework.com/proof/ . Do not invent case studies or extra metrics. References are available in conversation, not on the page. The live demonstration is the phone line: 0117 456 5486 is answered by the practice's own AI call agent, in production.
 
+## Book a meeting
+
+https://www.thetechnologyframework.com/book/ shows live 30-minute availability in UK time; pick a slot and it is confirmed by email. Calls to 0117 456 5486 can also be booked by the AI agent that answers.
+
 ## Contact
 
 https://www.thetechnologyframework.com/contact/

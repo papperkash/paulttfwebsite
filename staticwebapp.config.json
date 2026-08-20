@@ -32,9 +32,9 @@
     { "route": "/privacy-policy/", "redirect": "/privacy/", "statusCode": 301 },
     { "route": "/category/*", "redirect": "/", "statusCode": 301 },
 
-    { "route": "/book-a-meeting/", "redirect": "/contact/", "statusCode": 301 },
-    { "route": "/book-meeting/", "redirect": "/contact/", "statusCode": 301 },
-    { "route": "/meeting/", "redirect": "/contact/", "statusCode": 301 },
+    { "route": "/book-a-meeting/", "redirect": "/book/", "statusCode": 301 },
+    { "route": "/book-meeting/", "redirect": "/book/", "statusCode": 301 },
+    { "route": "/meeting/", "redirect": "/book/", "statusCode": 301 },
     { "route": "/about/", "redirect": "/", "statusCode": 301 },
     { "route": "/about-us/", "redirect": "/", "statusCode": 301 },
     { "route": "/services/", "redirect": "/", "statusCode": 301 },

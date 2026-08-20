@@ -1,0 +1,13 @@
+{
+  "name": "ttf-booking-api",
+  "version": "1.0.0",
+  "description": "Azure Functions backend for the TTF booking flow (Microsoft Bookings via Graph)",
+  "main": "src/functions/*.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.5.0",
+    "@azure/communication-email": "^1.0.0"
+  }
+}

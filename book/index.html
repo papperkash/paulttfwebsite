@@ -11,14 +11,14 @@
     gtag('js', new Date());
     gtag('config', 'G-F8V3D28VFJ');
   </script>
-<title>Privacy | The Technology Framework</title>
-<meta name="description" content="How The Technology Framework Ltd handles enquiry details: what we collect, why, the analytics we run, and how to ask for a copy, a correction or a deletion. Company 13918137.">
-<link rel="canonical" href="https://www.thetechnologyframework.com/privacy/">
-<meta property="og:title" content="Privacy | The Technology Framework">
-<meta property="og:description" content="How The Technology Framework Ltd handles enquiry details: what we collect, why, the analytics we run, and how to ask for a copy, a correction or a deletion. Company 13918137.">
+<title>Book a meeting | The Technology Framework</title>
+<meta name="description" content="Book a 30-minute meeting with The Technology Framework. Live availability, UK times, no cost. Pick a slot and we confirm it by email.">
+<link rel="canonical" href="https://www.thetechnologyframework.com/book/">
+<meta property="og:title" content="Book a meeting | The Technology Framework">
+<meta property="og:description" content="Book a 30-minute meeting with The Technology Framework. Live availability, UK times, no cost. Pick a slot and we confirm it by email.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_GB">
-<meta property="og:url" content="https://www.thetechnologyframework.com/privacy/">
+<meta property="og:url" content="https://www.thetechnologyframework.com/book/">
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,25 +29,15 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.thetechnologyframework.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Privacy",
-      "item": "https://www.thetechnologyframework.com/privacy/"
-    }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.thetechnologyframework.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Book a meeting", "item": "https://www.thetechnologyframework.com/book/" }
   ]
 }
 </script>
 
 <style>
 /* ==================================================================
-   THE TECHNOLOGY FRAMEWORK · UTILITY PAGE · PRIVACY
+   THE TECHNOLOGY FRAMEWORK · SERVICE PAGE · TECHNOLOGY COST REDUCTION (THE BILL)
    Daylight Bento design language, extracted from 21-bento-vivid.
    ================================================================== */
 
@@ -441,6 +431,89 @@ svg text{ font-family:var(--font-d); }
 .inview .draw{ stroke-dashoffset:0; }
 .draw.d2{ transition-delay:.55s; }
 
+/* finops line diagram */
+.fin-axis{ stroke:rgba(38,28,64,.2); stroke-width:1; fill:none; }
+.fin-line{ stroke:var(--cyan); stroke-width:2; fill:none; }
+.fin-area{ fill:url(#finGrad); opacity:.85; }
+.fin-mark{ stroke:rgba(0,149,168,.5); stroke-width:1; stroke-dasharray:3 5; }
+
+/* how-it-runs steps */
+.tile-step{ min-height:250px; }
+.tile-step .stepglyph{ height:70px; margin-bottom:14px; }
+.tile-step .stepglyph svg{ height:66px; width:auto; overflow:visible; }
+.step-n{
+  font-family:var(--font-d); font-weight:700; font-size:.85rem;
+  color:var(--cyan); letter-spacing:.16em; margin-bottom:8px; display:block;
+}
+.s-stroke{ stroke:var(--cyan); stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+.s-faint{ stroke:rgba(38,28,64,.28); stroke-width:1.6; fill:none; stroke-linecap:round; }
+.s-node{ fill:rgba(0,149,168,.14); stroke:var(--cyan); stroke-width:1.4; }
+
+/* what you leave with */
+.leave-grid{
+  display:grid; grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:12px; margin-top:18px;
+}
+.leave-cell{
+  display:flex; flex-direction:column; gap:6px;
+  padding:16px; border-radius:14px;
+  background:rgba(38,28,64,.05);
+  border:1px solid rgba(38,28,64,.12);
+  transition:border-color .3s ease, background .3s ease, transform .3s var(--ease);
+}
+.leave-cell:hover{
+  border-color:rgba(0,149,168,.4); background:rgba(0,149,168,.05);
+  transform:translateY(-3px);
+}
+.leave-cell strong{
+  font-family:var(--font-d); font-weight:600; font-size:.96rem;
+  color:var(--ink); letter-spacing:-.01em; line-height:1.3;
+}
+.leave-cell p{ font-size:.86rem; line-height:1.55; }
+
+/* price tile */
+.tile-price{
+  background:linear-gradient(160deg, #FFFFFF, rgba(124,92,246,.06));
+  border-color:rgba(0,149,168,.3);
+}
+.price-display{
+  font-family:var(--font-d); font-weight:700;
+  font-size:clamp(1.5rem, 2.6vw, 2.1rem);
+  letter-spacing:-.02em; color:var(--cyan);
+  margin:4px 0 14px; line-height:1.15;
+}
+.tile-price p{ max-width:56rem; font-size:.98rem; }
+.tile-price p + p{ margin-top:10px; }
+.tile-price a{ color:var(--cyan); font-weight:500; }
+.tile-price a:hover{ text-decoration:underline; }
+
+/* related services */
+.rel-grid{
+  display:grid; grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:12px; margin-top:18px;
+}
+a.rel-cell{
+  display:flex; flex-direction:column; gap:8px;
+  padding:16px; border-radius:14px;
+  background:rgba(38,28,64,.05);
+  border:1px solid rgba(38,28,64,.12);
+  transition:border-color .3s ease, background .3s ease, transform .3s var(--ease);
+}
+a.rel-cell:hover{
+  border-color:rgba(0,149,168,.45); background:rgba(0,149,168,.05);
+  transform:translateY(-3px);
+}
+a.rel-cell strong{
+  font-family:var(--font-d); font-weight:600; font-size:.96rem;
+  color:var(--ink); letter-spacing:-.01em; line-height:1.3;
+}
+a.rel-cell span{ font-size:.84rem; color:var(--muted); line-height:1.5; flex:1; }
+a.rel-cell .mono-tag{ padding-top:8px; }
+a.rel-cell:hover .mono-tag{ color:var(--cyan); }
+.rel-note{ margin-top:16px; font-size:.85rem; color:var(--faint); }
+.rel-note a{ color:var(--cyan); font-weight:500; }
+.rel-note a:hover{ text-decoration:underline; }
+
 /* FAQs */
 .faq-list{ display:flex; flex-direction:column; }
 .faq{
@@ -533,14 +606,6 @@ footer{
 }
 
 /* ------------------------------------------------------------------
-   Page-specific: privacy (copy-only hero, address block)
-   ------------------------------------------------------------------ */
-
-.hero.hero-solo{ grid-template-columns:minmax(0,1fr); }
-.hero.hero-solo .hero-sub{ max-width:640px; }
-.prose address{ font-style:normal; color:var(--muted); font-size:.98rem; }
-
-/* ------------------------------------------------------------------
    Responsive
    ------------------------------------------------------------------ */
 
@@ -550,12 +615,14 @@ footer{
   .s7, .s8{ grid-column:span 12; }
   .s5{ grid-column:span 12; }
   .s4{ grid-column:span 6; }
+  .leave-grid, .rel-grid{ grid-template-columns:repeat(2, minmax(0,1fr)); }
 }
 @media (max-width:900px){
   nav.primary{ display:none; }
 }
 @media (max-width:640px){
   .s4{ grid-column:span 12; }
+  .leave-grid, .rel-grid{ grid-template-columns:1fr; }
   .marker{ flex-wrap:wrap; }
   .m-note{ display:none; }
   .hero-ctas .btn{ width:100%; }
@@ -564,6 +631,78 @@ footer{
 /* ------------------------------------------------------------------
    Reduced motion: everything lands, nothing moves
    ------------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------------
+   Booking widget
+   ------------------------------------------------------------------ */
+.bk-status{ color:var(--muted); font-size:14.5px; padding:12px 0; }
+.bk-banner{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--font-d); font-size:12px; font-weight:600;
+  color:var(--cyan); background:rgba(0,149,168,.06);
+  border:1px solid rgba(0,149,168,.22);
+  padding:7px 12px; border-radius:99px; margin:14px 0 4px;
+}
+.bk-banner.fb{ color:#92610a; background:rgba(180,131,9,.08); border-color:rgba(180,131,9,.3); }
+.bk-days{
+  display:flex; gap:8px; overflow-x:auto; padding:12px 2px 6px;
+  scrollbar-width:thin;
+}
+.bk-day{
+  flex:0 0 auto; min-width:64px; text-align:center;
+  border:1px solid rgba(94,90,180,.25); border-radius:12px;
+  background:#FFFFFF; padding:9px 10px 7px; cursor:pointer;
+  transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.bk-day:hover{ border-color:var(--cyan); transform:translateY(-1px); }
+.bk-day.sel{ border-color:var(--cyan); box-shadow:0 0 0 1.4px var(--cyan), 0 10px 22px rgba(0,149,168,.14); }
+.bk-day .dw{ display:block; font-family:var(--font-d); font-size:10.5px; font-weight:600; letter-spacing:.09em; color:var(--faint); }
+.bk-day .dm{ display:block; font-family:var(--font-d); font-size:19px; font-weight:700; color:var(--ink); line-height:1.25; }
+.bk-day .ct{ display:block; font-size:10.5px; color:var(--cyan); font-weight:600; }
+.bk-dayhead{ font-family:var(--font-d); font-weight:600; font-size:14.5px; margin:14px 0 8px; }
+.bk-slots{
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(84px, 1fr));
+  gap:8px;
+}
+.bk-slot{
+  font-family:var(--font-d); font-weight:600; font-size:14px;
+  color:var(--ink); background:#FFFFFF;
+  border:1px solid rgba(94,90,180,.25); border-radius:10px;
+  padding:10px 6px; cursor:pointer; text-align:center;
+  transition:border-color .2s ease, background .2s ease, transform .2s ease;
+}
+.bk-slot:hover{ border-color:var(--cyan); background:rgba(0,149,168,.05); transform:translateY(-1px); }
+.bk-form{ margin-top:6px; }
+.bk-picked{
+  display:flex; flex-wrap:wrap; align-items:center; gap:10px;
+  font-family:var(--font-d); font-weight:600; font-size:14.5px; margin:12px 0 4px;
+}
+.bk-picked button{ color:var(--cyan); font-size:13px; font-weight:600; text-decoration:underline; }
+.bk-localhint{ font-size:12.5px; color:var(--faint); margin-bottom:6px; }
+.bk-fields{ display:grid; gap:12px; margin-top:12px; }
+.bk-fields label{ display:grid; gap:5px; font-size:13.5px; color:var(--muted); }
+.bk-fields input, .bk-fields textarea{
+  font:inherit; color:var(--ink); background:#FFFFFF;
+  border:1px solid rgba(94,90,180,.3); border-radius:10px;
+  padding:11px 13px; width:100%;
+}
+.bk-fields input:focus, .bk-fields textarea:focus{ outline:none; border-color:var(--cyan); box-shadow:0 0 0 1.2px var(--cyan); }
+.bk-hp{ display:none; }
+.bk-consent{ display:flex; align-items:flex-start; gap:9px; font-size:13.5px; color:var(--muted); margin-top:2px; }
+.bk-consent input{ margin-top:3px; accent-color:var(--cyan); width:15px; height:15px; flex-shrink:0; }
+.bk-consent a{ color:var(--cyan); text-decoration:underline; }
+.bk-submit{ margin-top:14px; width:100%; }
+.bk-err{ color:#a33a2c; font-size:13.5px; min-height:1.2em; margin-top:9px; }
+.bk-done{ padding:8px 0; }
+.bk-done h3{ font-family:var(--font-d); font-weight:700; font-size:20px; margin:10px 0 8px; }
+.bk-done p{ font-size:14.5px; margin-bottom:8px; }
+.bk-done .tickbig{
+  width:46px; height:46px; border-radius:50%;
+  background:rgba(0,149,168,.1); border:2px solid var(--cyan);
+  display:flex; align-items:center; justify-content:center;
+}
+@media (max-width:640px){ .bk-slots{ grid-template-columns:repeat(auto-fill, minmax(74px, 1fr)); } }
 
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
@@ -600,40 +739,68 @@ footer{
     </a>
     <nav class="primary" aria-label="Primary">
       <a href="/#offers">Our services</a>
-      <a href="/how-we-work/">How we work</a>
+      <a href="/#how">How we work</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn-cta" href="/book/" onclick="if(window.gtag)gtag('event','book_meeting_click')">Book a meeting</a>
+    <a class="btn btn-cta" href="#book">Book a meeting</a>
   </div>
 </header>
 
 <main id="main">
 
+
 <nav class="crumbs" aria-label="Breadcrumb">
   <ol>
     <li><a href="/">Home</a></li>
-    <li><span aria-current="page">Privacy</span></li>
+    <li><span aria-current="page">Book a meeting</span></li>
   </ol>
 </nav>
 
 <!-- ================= HERO ================= -->
-<section class="hero hero-solo" id="top" aria-label="Privacy introduction">
+<section class="hero" id="top" aria-label="Book a meeting introduction">
   <div class="hero-copy">
     <div class="hero-head rise">
       <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 34 34">
-        <path d="M17 4 L27 8 v8 c0 7-4.4 11.6-10 14 C11.4 27.6 7 23 7 16 V8 z" fill="rgba(0,149,168,.08)" stroke="#0095A8" stroke-width="1.6" stroke-linejoin="round"/>
-        <path d="M12.5 16.5 L16 20 L22 12.5" fill="none" stroke="#0095A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="4" y="6" width="26" height="23" rx="4" fill="rgba(0,149,168,.08)" stroke="#0095A8" stroke-width="1.6"/>
+        <path d="M4 13 H30 M11 3.5 V8.5 M23 3.5 V8.5" fill="none" stroke="#0095A8" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M13 20.5 l2.6 2.7 5.4-6" fill="none" stroke="#0095A8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
       </svg></span>
-      <span class="chip">Legal</span>
-      <span class="mono-tag">PRIVACY</span>
+      <span class="chip">30 minutes</span>
+      <span class="mono-tag">NO COST · UK TIMES</span>
     </div>
-    <h1 class="rise"><span class="hl">Privacy</span>: how we handle your details.</h1>
-    <p class="hero-sub rise">The Technology Framework Ltd (company number 13918137), registered in England, registered office 20-22 Wenlock Road, London N1 7GU, is responsible for the details you send us. This page says what we hold, why we hold it, and how to ask about it.</p>
+    <h1 class="rise"><span class="hl">Book a meeting</span>, straight into the diary.</h1>
+    <p class="hero-hook rise">Pick a time. Bring the thing that hurts.</p>
+    <p class="hero-sub rise">Thirty minutes with a person, on Teams or the phone. The times below come from the live diary, shown in UK time. The first conversation costs nothing and changes the next 90 days.</p>
     <div class="rise">
       <div class="hero-ctas">
-        <a class="btn btn-cta" href="#contact">Start the conversation <span class="arr">→</span></a>
-        <a class="btn btn-ghost" href="tel:+441174565486">Call 0117 456 5486</a>
+        <a class="btn btn-cta" href="#book">Pick a time <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="tel:+441174565486">Or call 0117 456 5486</a>
       </div>
+    </div>
+  </div>
+
+  <div class="hero-art rise" id="heroArt">
+    <div class="billcard inview">
+      <svg viewBox="0 0 340 240" role="img" aria-label="A calendar month with one day selected and a time chosen.">
+        <rect x="20" y="18" width="300" height="204" rx="14" fill="#FFFFFF" stroke="rgba(94,90,180,.25)" stroke-width="1.6"/>
+        <path d="M20 58 H320" stroke="rgba(94,90,180,.2)" stroke-width="1.4"/>
+        <path d="M84 8 V28 M256 8 V28" stroke="#0095A8" stroke-width="2.4" stroke-linecap="round"/>
+        <text class="t-tiny" x="36" y="44">THIS WEEK</text>
+        <g fill="rgba(38,28,64,.10)">
+          <rect x="40" y="76" width="34" height="26" rx="7"/><rect x="86" y="76" width="34" height="26" rx="7"/>
+          <rect x="178" y="76" width="34" height="26" rx="7"/><rect x="224" y="76" width="34" height="26" rx="7"/><rect x="270" y="76" width="34" height="26" rx="7"/>
+        </g>
+        <rect x="132" y="72" width="42" height="34" rx="9" fill="rgba(0,149,168,.13)" stroke="#0095A8" stroke-width="2"/>
+        <g fill="rgba(38,28,64,.08)">
+          <rect x="40" y="126" width="80" height="24" rx="7"/><rect x="132" y="126" width="80" height="24" rx="7"/>
+        </g>
+        <rect x="224" y="122" width="80" height="30" rx="8" fill="rgba(0,149,168,.13)" stroke="#0095A8" stroke-width="2"/>
+        <text class="t-cyan" x="264" y="141" text-anchor="middle">10:30</text>
+        <circle cx="288" cy="184" r="15" fill="rgba(0,149,168,.10)" stroke="#0095A8" stroke-width="2"/>
+        <path d="M281 184 l4.6 4.8 9-10.4" fill="none" stroke="#0095A8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="t-tiny" x="40" y="190">PICK A DAY, PICK A TIME, DONE</text>
+      </svg>
+      <p class="billcard-cap mono-tag">LIVE AVAILABILITY, STRAIGHT FROM THE DIARY</p>
     </div>
   </div>
 </section>
@@ -642,139 +809,37 @@ footer{
 <div class="shell">
 <div class="bento">
 
-  <!-- ========== 01 · WHAT WE COLLECT ========== -->
-  <div class="marker" id="collect">
+  <div class="marker" id="book">
     <span class="m-num">01</span>
-    <h2 class="m-label">What we collect</h2>
+    <h2 class="m-label">Pick a time</h2>
     <span class="m-line" aria-hidden="true"></span>
-    <span class="m-note">Only what you send us</span>
+    <span class="m-note">UK time, live from the diary</span>
   </div>
 
-  <section class="tile s7 prose" aria-label="What we collect">
-    <span class="chip">The details</span>
-    <p>The contact form fields: name, business, email, telephone, message. Plus whatever you choose to include in an email or a call.</p>
-    <p>We use those details to reply and to arrange a conversation. Nothing else.</p>
+  <section class="tile s8" aria-label="Choose a day and time">
+    <span class="chip">The diary</span>
+    <div id="bkApp">
+      <p id="bkStatus" class="bk-status">Loading available times…</p>
+    </div>
   </section>
 
-  <section class="tile s5" aria-label="The short version">
-    <span class="chip">The short version</span>
-    <ul class="ticklist">
-      <li><strong>Why we hold them.</strong> To reply and to arrange a conversation.</li>
-      <li><strong>What we do not do.</strong> We do not sell your information.</li>
-      <li><strong>Who holds them.</strong> The Technology Framework Ltd, company number 13918137, registered in England.</li>
+  <section class="tile s4" aria-label="What happens next">
+    <span class="chip">What happens</span>
+    <ul class="ticklist" style="margin-top:14px;">
+      <li><strong>Thirty minutes,</strong> on Teams or the phone. Your choice on the day.</li>
+      <li><strong>We confirm by email</strong> once the slot is held, usually the same working day.</li>
+      <li><strong>Bring the thing that hurts:</strong> the board question, the bill, the stalled pilot, or the workflow eating someone's day.</li>
+      <li><strong>No pitch deck.</strong> The first conversation is diagnosis, and it costs nothing.</li>
     </ul>
-  </section>
-
-  <!-- ========== 02 · ANALYTICS AND COOKIES ========== -->
-  <div class="marker" id="analytics">
-    <span class="m-num">02</span>
-    <h2 class="m-label">Analytics and cookies</h2>
-    <span class="m-line" aria-hidden="true"></span>
-    <span class="m-note">Aggregate reports only</span>
-  </div>
-
-  <section class="tile s12 prose" aria-label="Analytics and cookies">
-    <span class="chip">Google Analytics</span>
-    <p>This site uses Google Analytics (GA4) to understand how it is used: which pages are visited, roughly where visitors come from, and on what kind of device. Google Analytics sets cookies to do this. We read the reports in aggregate. We do not use them to identify you, and we do not sell the data.</p>
-    <p>There is no separate cookie policy page. This page covers it.</p>
-  </section>
-
-  <!-- ========== 03 · YOUR RIGHTS ========== -->
-  <div class="marker" id="rights">
-    <span class="m-num">03</span>
-    <h2 class="m-label">Your rights</h2>
-    <span class="m-line" aria-hidden="true"></span>
-    <span class="m-note">A copy, a correction, a deletion</span>
-  </div>
-
-  <section class="tile s12 prose" aria-label="Your rights">
-    <span class="chip">Your request</span>
-    <p>You can ask for a copy of the details you have sent us, a correction, or a deletion. Use <a href="/contact/">the contact details on our contact page</a>, or write to the registered office:</p>
-    <address>The Technology Framework Ltd, 20-22 Wenlock Road, London N1 7GU.</address>
-  </section>
-
-  <!-- ========== 04 · FAQS ========== -->
-  <div class="marker" id="faqs">
-    <span class="m-num">04</span>
-    <h2 class="m-label">FAQs</h2>
-    <span class="m-line" aria-hidden="true"></span>
-    <span class="m-note">Asked before, answered here</span>
-  </div>
-
-  <section class="tile s12" aria-label="Frequently asked questions">
-    <div class="faq-list">
-      <article class="faq">
-        <h3>Do you sell enquiry details?</h3>
-        <p>No.</p>
-      </article>
-      <article class="faq">
-        <h3>How do I ask for a copy, a correction or a deletion?</h3>
-        <p>Email or call via the <a href="/contact/">contact page</a>, or post a request to 20-22 Wenlock Road, London N1 7GU.</p>
-      </article>
-      <article class="faq">
-        <h3>What is the company number?</h3>
-        <p>13918137. The Technology Framework Ltd. Registered in England.</p>
-      </article>
-      <article class="faq">
-        <h3>Where is the registered office?</h3>
-        <p>20-22 Wenlock Road, London N1 7GU.</p>
-      </article>
-      <article class="faq">
-        <h3>Do you use the details for marketing lists?</h3>
-        <p>Only to answer you and set up a conversation. They are never sold, and never shared for marketing.</p>
-      </article>
-      <article class="faq">
-        <h3>Is there a separate cookie policy?</h3>
-        <p>No. The cookie position is set out above: the site uses Google Analytics to measure how it is used, and nothing more.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ========== 05 · CONTACT ========== -->
-  <div class="marker" id="contact">
-    <span class="m-num">05</span>
-    <h2 class="m-label">Start the conversation</h2>
-    <span class="m-line" aria-hidden="true"></span>
-    <span class="m-note">Questions about your details</span>
-  </div>
-
-  <section class="tile tile-contact s8" aria-labelledby="c-h">
-    <span class="chip">Contact</span>
-    <h3 id="c-h">Start the conversation.</h3>
-    <p class="lead">Questions about your details, or about anything on this page: <a href="/contact/">start the conversation</a>, call the line, or write to the registered office.</p>
-
-    <div class="contact-ctas">
-      <a class="btn btn-cta" href="/contact/">Start the conversation <span class="arr">→</span></a>
-      <a class="btn btn-ghost" href="tel:+441174565486">Call 0117 456 5486</a>
-    </div>
-  </section>
-
-  <section class="tile tile-details s4" aria-label="Contact details">
-    <div class="d-row">
-      <svg viewBox="0 0 34 34" aria-hidden="true">
-        <rect x="4" y="4" width="26" height="26" rx="8" fill="rgba(0,149,168,.07)" stroke="rgba(0,149,168,.3)" stroke-width="1.2"/>
-        <path d="M12 11 c0 6 5 11 11 11 l2.4-3 -3.8-2.4 -1.8 1.6 c-1.8-1-3.2-2.4-4-4 l1.6-1.8 L15 8.6 z" fill="none" stroke="#0095A8" stroke-width="1.5" stroke-linejoin="round"/>
-      </svg>
-      <div>
-        <span class="d-k">Phone</span>
-        <a href="tel:+441174565486">0117 456 5486</a>
-      </div>
-    </div>
-    <div class="d-row">
-      <svg viewBox="0 0 34 34" aria-hidden="true">
-        <rect x="4" y="4" width="26" height="26" rx="8" fill="rgba(0,149,168,.07)" stroke="rgba(0,149,168,.3)" stroke-width="1.2"/>
-        <path d="M17 8 c4.2 0 7 3 7 6.6 c0 4.6-4.6 8.6-7 11.4 c-2.4-2.8-7-6.8-7-11.4 C10 11 12.8 8 17 8 z" fill="none" stroke="#0095A8" stroke-width="1.5" stroke-linejoin="round"/>
-        <circle cx="17" cy="14.6" r="2.4" fill="#0095A8"/>
-      </svg>
-      <div>
-        <span class="d-k">Registered office</span>
-        <span class="d-v">20-22 Wenlock Road,<br>London N1 7GU</span>
-      </div>
+    <div class="dial-proof" style="margin-top:18px;">
+      <span class="mono-tag">Sooner than that?</span>
+      <p>Call <a href="tel:+441174565486">0117 456 5486</a> now. The voice that answers is our own AI call agent, in production, on our own line.</p>
     </div>
   </section>
 
 </div>
 </div>
+
 </main>
 
 <!-- ================= FOOTER ================= -->
@@ -786,7 +851,7 @@ footer{
       </a>
       <nav class="f-links" aria-label="Footer">
         <a href="/#offers">Our services</a>
-        <a href="/how-we-work/">How we work</a>
+        <a href="/#how">How we work</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -848,6 +913,231 @@ footer{
     });
   }
 
+})();
+</script>
+
+
+<script>
+(function(){
+  "use strict";
+  var app = document.getElementById("bkApp");
+  if (!app) return;
+  var HORIZON = 21;
+  var state = { avail: null, date: null, slot: null, submitting: false,
+    ts: Date.now(),
+    sid: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + "-" + Math.random().toString(36).slice(2)) };
+
+  function el(tag, cls, text){ var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function gtagSafe(){ if (window.gtag) { try { window.gtag.apply(null, arguments); } catch(e){} } }
+  function todayKey(){
+    var p = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(new Date());
+    var m = {}; p.forEach(function(x){ if (x.type !== "literal") m[x.type] = x.value; });
+    return m.year + "-" + m.month + "-" + m.day;
+  }
+  function dayLabels(key){
+    var d = new Date(key + "T12:00:00Z");
+    var p = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", weekday: "short", day: "numeric" }).formatToParts(d);
+    var m = {}; p.forEach(function(x){ if (x.type !== "literal") m[x.type] = x.value; });
+    return { dow: (m.weekday || "").toUpperCase(), dom: m.day || "" };
+  }
+  function localHint(iso){
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (!tz || tz === "Europe/London") return null;
+      return new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date(iso));
+    } catch(e){ return null; }
+  }
+
+  function load(){
+    app.innerHTML = "";
+    app.appendChild(el("p", "bk-status", "Loading available times…"));
+    fetch("/api/booking/availability?from=" + todayKey() + "&days=" + HORIZON)
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(data){
+        state.avail = data;
+        state.date = data.days.length ? data.days[0].date : null;
+        state.slot = null;
+        render();
+      })
+      .catch(function(){
+        app.innerHTML = "";
+        var p = el("p", "bk-status", "The diary could not be loaded. Refresh to try again, or call 0117 456 5486 and our agent will take the booking.");
+        app.appendChild(p);
+      });
+  }
+
+  function render(){
+    var a = state.avail;
+    app.innerHTML = "";
+    if (!a || !a.days.length){
+      app.appendChild(el("p", "bk-status", "No open times in the next three weeks. Call 0117 456 5486 and we will find one."));
+      return;
+    }
+    var banner = el("span", "bk-banner" + (a.mode === "fallback" ? " fb" : ""),
+      a.mode === "fallback" ? (a.notice || "Indicative weekday times. We confirm your exact slot by email.")
+        : (a.confirm === "instant" ? "Live availability · books instantly" : "Live availability · we confirm by email"));
+    app.appendChild(banner);
+
+    var days = el("div", "bk-days");
+    days.setAttribute("role", "listbox");
+    a.days.forEach(function(d){
+      var b = el("button", "bk-day" + (d.date === state.date ? " sel" : ""));
+      b.type = "button";
+      var L = dayLabels(d.date);
+      b.appendChild(el("span", "dw", L.dow));
+      b.appendChild(el("span", "dm", L.dom));
+      b.appendChild(el("span", "ct", d.slots.length + (d.slots.length === 1 ? " time" : " times")));
+      b.addEventListener("click", function(){ state.date = d.date; state.slot = null; render(); });
+      days.appendChild(b);
+    });
+    app.appendChild(days);
+
+    var day = a.days.filter(function(d){ return d.date === state.date; })[0] || a.days[0];
+
+    if (!state.slot){
+      app.appendChild(el("p", "bk-dayhead", day.label + " · UK time"));
+      var grid = el("div", "bk-slots");
+      day.slots.forEach(function(s){
+        var b = el("button", "bk-slot", s.label);
+        b.type = "button";
+        b.addEventListener("click", function(){ state.slot = s; render(); });
+        grid.appendChild(b);
+      });
+      app.appendChild(grid);
+      return;
+    }
+
+    // Details form
+    var slot = state.slot;
+    var form = el("form", "bk-form");
+    form.noValidate = true;
+    var picked = el("div", "bk-picked");
+    picked.appendChild(el("span", null, day.label + " · " + slot.label + " (UK time)"));
+    var change = el("button", null, "change");
+    change.type = "button";
+    change.addEventListener("click", function(){ state.slot = null; render(); });
+    picked.appendChild(change);
+    form.appendChild(picked);
+    var hint = localHint(slot.startUtc);
+    if (hint) form.appendChild(el("p", "bk-localhint", "That's " + hint + " your time."));
+
+    var fields = el("div", "bk-fields");
+    function field(label, type, name, ph, req, hint2){
+      var lab = el("label", null, null);
+      lab.appendChild(el("span", null, label));
+      var input = type === "textarea" ? document.createElement("textarea") : document.createElement("input");
+      if (type !== "textarea") input.type = type;
+      else input.rows = 4;
+      input.name = name; input.placeholder = ph || "";
+      if (req) input.required = true;
+      lab.appendChild(input);
+      if (hint2) lab.appendChild(el("span", null, hint2));
+      fields.appendChild(lab);
+      return input;
+    }
+    var fName = field("Your name", "text", "name", "Jane Smith", true);
+    fName.autocomplete = "name";
+    var fEmail = field("Work email", "email", "email", "jane@company.co.uk", true);
+    fEmail.autocomplete = "email";
+    var fPhone = field("Phone (optional)", "tel", "phone", "07…", false, "Only if you'd like a reminder by text.");
+    fPhone.autocomplete = "tel";
+    var fCompany = field("Company (optional)", "text", "company", "Company Ltd", false);
+    fCompany.autocomplete = "organization";
+    var fNote = field("Anything you'd like to cover? (optional)", "textarea", "note", "A sentence on what's slowing you down helps us prepare. Please don't include sensitive personal or payment details.", false);
+    form.appendChild(fields);
+
+    var hp = document.createElement("input");
+    hp.type = "text"; hp.name = "website"; hp.tabIndex = -1; hp.autocomplete = "off";
+    hp.className = "bk-hp"; hp.setAttribute("aria-hidden", "true");
+    form.appendChild(hp);
+
+    var consentRow = el("label", "bk-consent");
+    var consent = document.createElement("input");
+    consent.type = "checkbox";
+    consentRow.appendChild(consent);
+    var ctext = el("span");
+    ctext.innerHTML = 'I agree to my details being used to arrange this call, per the <a href="/privacy/">privacy page</a>.';
+    consentRow.appendChild(ctext);
+    form.appendChild(consentRow);
+
+    var instant = state.avail.confirm === "instant";
+    var submit = el("button", "btn btn-cta bk-submit", instant ? "Confirm booking" : "Request this time");
+    submit.type = "submit";
+    form.appendChild(submit);
+    var err = el("p", "bk-err", "");
+    err.setAttribute("role", "status");
+    form.appendChild(err);
+
+    form.addEventListener("submit", function(ev){
+      ev.preventDefault();
+      if (state.submitting) return;
+      var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!fName.value.trim()) { err.textContent = "Please enter your name."; return; }
+      if (!EMAIL_RE.test(fEmail.value.trim())) { err.textContent = "That email address doesn't look right."; return; }
+      if (!consent.checked) { err.textContent = "Please tick the privacy box to continue."; return; }
+      err.textContent = "";
+      state.submitting = true;
+      submit.textContent = instant ? "Booking…" : "Sending…";
+      submit.disabled = true;
+
+      fetch("/api/booking/create", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          name: fName.value.trim(), email: fEmail.value.trim(), phone: fPhone.value.trim(),
+          company: fCompany.value.trim(), note: fNote.value.trim(),
+          consent: true, website: hp.value,
+          startUtc: slot.startUtc, ts: state.ts, submissionId: state.sid
+        })
+      }).then(function(res){
+        return res.json().catch(function(){ return {}; }).then(function(data){ return { res: res, data: data }; });
+      }).then(function(r){
+        state.submitting = false;
+        if (r.res.status === 201 && r.data.status === "confirmed"){
+          gtagSafe("event", "booking_confirmed", { currency: "GBP", value: 40 });
+          done(true, r.data.whenUk || "", r.data.email || fEmail.value.trim());
+          return;
+        }
+        if (r.res.status === 202 && r.data.status === "lead"){
+          gtagSafe("event", "booking_requested", { currency: "GBP", value: 40 });
+          done(false, r.data.whenUk || "", r.data.email || fEmail.value.trim());
+          return;
+        }
+        submit.disabled = false;
+        submit.textContent = instant ? "Confirm booking" : "Request this time";
+        if (r.res.status === 409){
+          state.slot = null;
+          state.sid = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + "-" + Math.random().toString(36).slice(2));
+          load();
+          return;
+        }
+        err.textContent = r.data.error || "That didn't go through. Try again, or call 0117 456 5486.";
+      }).catch(function(){
+        state.submitting = false;
+        submit.disabled = false;
+        submit.textContent = instant ? "Confirm booking" : "Request this time";
+        err.textContent = "That didn't go through. Try again, or call 0117 456 5486.";
+      });
+    });
+
+    app.appendChild(form);
+  }
+
+  function done(confirmed, whenUk, email){
+    app.innerHTML = "";
+    var box = el("div", "bk-done");
+    var tick = el("div", "tickbig");
+    tick.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12.5 l4.6 4.8 9-10.6" fill="none" stroke="#0095A8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    box.appendChild(tick);
+    box.appendChild(el("h3", null, confirmed ? "Booked." : "Request sent."));
+    box.appendChild(el("p", null, confirmed
+      ? (whenUk + " (UK time). A calendar invite is on its way to " + email + ".")
+      : (whenUk + " (UK time) is requested. We hold the slot and confirm by email to " + email + ", usually the same working day.")));
+    box.appendChild(el("p", null, "Need it sooner? Call 0117 456 5486 and our agent will pass it straight on."));
+    app.appendChild(box);
+  }
+
+  load();
 })();
 </script>
 

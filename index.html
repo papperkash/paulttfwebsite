@@ -401,6 +401,7 @@ h1 .hl::after{
 .iso-plane{
   display:grid; grid-template-columns:repeat(3, 108px); gap:12px;
   transform:rotateX(56deg) rotateZ(45deg);
+  transform-style:preserve-3d;
 }
 .iso-cell{
   position:relative;
@@ -428,6 +429,21 @@ h1 .hl::after{
   line-height:1.25; padding:0 4px; white-space:nowrap;
   transform:rotateZ(-45deg) scale(0.525, 0.875); backface-visibility:hidden;
 }
+/* Hover: the tile leaves the wave, lifts out of the plane, and holds the
+   glowing edge. Each tile is a link into its part of the framework. */
+.iso-cell{ cursor:pointer; transition:transform .35s cubic-bezier(.22,.9,.28,1), box-shadow .35s ease; }
+.iso-cell:hover, .iso-cell:focus-visible{
+  animation:none;
+  transform:translateZ(14px);
+  box-shadow:0 12px 26px rgba(94,90,180,.22);
+  z-index:5;
+}
+.iso-cell:hover::after, .iso-cell:focus-visible::after{
+  animation:none;
+  opacity:1;
+}
+.iso-cell:focus-visible{ outline:2px solid #0095A8; outline-offset:3px; }
+
 @keyframes tickfloat{
   0%{ transform:translateZ(6px); }
   12%{ transform:translateZ(22px); }
@@ -1220,7 +1236,7 @@ footer{
       <a href="#how">How we work</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn-cta" href="https://outlook.office365.com/book/TheTechnologyFramework@thetechnologyframework.com/" target="_blank" rel="noopener" onclick="if(window.gtag)gtag('event','book_meeting_click')">Book a meeting</a>
+    <a class="btn btn-cta" href="/book/" onclick="if(window.gtag)gtag('event','book_meeting_click')">Book a meeting</a>
   </div>
 </header>
 
@@ -1239,7 +1255,7 @@ footer{
     <div class="hero-cue rise"><span class="bar"></span><span>Your next 90 days, laid out below</span></div>
   </div>
 
-  <div class="hero-art rise" id="heroArt" aria-hidden="true">
+  <div class="hero-art rise" id="heroArt" aria-label="The framework as nine tiles. Each tile opens that part of the framework." role="navigation">
     <div class="iso-stage">
       <div class="iso-plane" id="isoPlane"></div>
     </div>
@@ -2151,9 +2167,22 @@ footer{
       ["Data Analytics", '<path d="M5.5 19.5 V12.5 M12 19.5 V6.5 M18.5 19.5 V10" ' + S + '/><path d="M4 20 h16" ' + S + '/>'],
       ["AI", '<path d="M12 3.5 L13.8 10.2 L20.5 12 L13.8 13.8 L12 20.5 L10.2 13.8 L3.5 12 L10.2 10.2 z" ' + S + '/>'],
     ];
+    var LINKS = {
+      "Cost": "/framework/cost/",
+      "Compliance": "/framework/compliance/",
+      "Vendors": "/framework/vendor-management/",
+      "Cyber": "/framework/cyber-security/",
+      "IT Management": "/fractional-head-of-it/",
+      "Operations": "/framework/operations/",
+      "Infrastructure": "/framework/infrastructure/",
+      "Data Analytics": "/framework/data/",
+      "AI": "/framework/ai/"
+    };
     for (var i = 0; i < 9; i++) {
-      var c = document.createElement("span");
+      var c = document.createElement("a");
       c.className = "iso-cell";
+      c.href = LINKS[domains[i][0]] || "/#offers";
+      c.setAttribute("aria-label", domains[i][0] + ": read this part of the framework");
       c.style.setProperty("--d", ((Math.floor(i / 3) + (i % 3)) * 0.35).toFixed(2) + "s");
       var b = document.createElement("b");
       b.innerHTML = '<span class="ti"><svg viewBox="0 0 24 24" aria-hidden="true">' + domains[i][1] + '</svg></span><span>' + domains[i][0] + '</span>';
