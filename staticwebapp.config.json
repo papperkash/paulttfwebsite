@@ -18,7 +18,9 @@
 
     { "route": "/outsourced-management/", "redirect": "/fractional-head-of-it/", "statusCode": 301 },
     { "route": "/why-us/", "redirect": "/how-we-work/", "statusCode": 301 },
-    { "route": "/it-cost-management/", "redirect": "/azure-finops/", "statusCode": 301 },
+    { "route": "/azure-finops/", "redirect": "/technology-cost-reduction/", "statusCode": 301 },
+    { "route": "/pe-carve-out-it/", "redirect": "/who-we-work-with/", "statusCode": 301 },
+    { "route": "/it-cost-management/", "redirect": "/technology-cost-reduction/", "statusCode": 301 },
     { "route": "/contact-us/", "redirect": "/contact/", "statusCode": 301 },
     { "route": "/dev-ops/", "redirect": "/", "statusCode": 301 },
     { "route": "/our-services/", "redirect": "/", "statusCode": 301 },
@@ -30,9 +32,9 @@
     { "route": "/privacy-policy/", "redirect": "/privacy/", "statusCode": 301 },
     { "route": "/category/*", "redirect": "/", "statusCode": 301 },
 
-    { "route": "/book-a-meeting/", "redirect": "/contact/", "statusCode": 301 },
-    { "route": "/book-meeting/", "redirect": "/contact/", "statusCode": 301 },
-    { "route": "/meeting/", "redirect": "/contact/", "statusCode": 301 },
+    { "route": "/book-a-meeting/", "redirect": "/book/", "statusCode": 301 },
+    { "route": "/book-meeting/", "redirect": "/book/", "statusCode": 301 },
+    { "route": "/meeting/", "redirect": "/book/", "statusCode": 301 },
     { "route": "/about/", "redirect": "/", "statusCode": 301 },
     { "route": "/about-us/", "redirect": "/", "statusCode": 301 },
     { "route": "/services/", "redirect": "/", "statusCode": 301 },
