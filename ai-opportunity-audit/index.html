@@ -744,6 +744,227 @@ footer{
 }
 
 /* ------------------------------------------------------------------
+   Audit hero: the living scoreboard (.aox-)
+   Five candidate use-cases held against fixed rank slots. A thin
+   electric beam sweeps the list, the mid-field re-ranks with a
+   transform-only shuffle, the winner wears a chased ring and a tick,
+   the loser dims and takes a strike. 9s loop, compositor-only.
+   ------------------------------------------------------------------ */
+
+.aox-legend{
+  display:flex; align-items:baseline; justify-content:space-between;
+  gap:10px 14px; flex-wrap:wrap; margin-bottom:14px;
+}
+.aox-cap{
+  font-family:ui-monospace, "Cascadia Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size:9px; font-weight:600; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--faint); white-space:nowrap;
+}
+.aox-cols{
+  display:grid; grid-template-columns:48px 48px 48px 20px; gap:8px;
+  margin-right:12px;
+}
+.aox-cols i{
+  font-style:normal; text-align:center; overflow:hidden;
+  font-family:ui-monospace, "Cascadia Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size:7.5px; font-weight:600; letter-spacing:.04em;
+  text-transform:uppercase; color:var(--faint);
+}
+
+/* board: a fixed rank rail, a shuffling list, one scanning beam */
+.aox-board{ position:relative; display:flex; gap:10px; }
+.aox-rail{ width:20px; flex-shrink:0; display:flex; flex-direction:column; gap:12px; }
+.aox-rail b{
+  display:block; height:44px; line-height:44px; text-align:center;
+  font-family:ui-monospace, "Cascadia Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size:9px; font-weight:600; letter-spacing:.04em; color:var(--faint);
+}
+.aox-list{ position:relative; flex:1; min-width:0; display:flex; flex-direction:column; gap:12px; }
+
+.aox-row{
+  position:relative; height:44px; padding:0 12px;
+  display:grid; grid-template-columns:108px minmax(0,1fr) 48px 48px 48px 20px;
+  gap:8px; align-items:center;
+  background:linear-gradient(160deg, rgba(255,255,255,.9), rgba(255,255,255,.55));
+  border:1px solid rgba(0,149,168,.22);
+  border-radius:10px;
+  box-shadow:0 6px 16px rgba(38,28,64,.06);  /* static, never animated */
+}
+.aox-name{
+  font-family:ui-monospace, "Cascadia Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size:9px; font-weight:600; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--ink);
+  white-space:nowrap; overflow:hidden;
+}
+.aox-track{
+  position:relative; display:block; height:6px; border-radius:99px;
+  background:rgba(38,28,64,.08); overflow:hidden;
+}
+.aox-fill{
+  position:absolute; inset:0; border-radius:99px;
+  background:linear-gradient(90deg, #0095A8, #00C3DC);
+  transform:scaleX(var(--w,.5)); transform-origin:left center;
+}
+.aox-pip{ display:flex; justify-content:center; }
+.aox-pip i{ display:block; width:7px; height:7px; border-radius:99px; }
+.aox-p3{ background:#00C3DC; box-shadow:0 0 6px rgba(0,195,220,.5); }  /* static glow */
+.aox-p2{ background:rgba(0,149,168,.55); }
+.aox-p1{ background:rgba(0,149,168,.22); }
+.aox-p0{ background:transparent; border:1px solid rgba(38,28,64,.25); }
+.aox-st{ display:flex; justify-content:center; }
+.aox-st svg{ display:block; width:18px; height:18px; }
+
+/* the scanning beam: a thin cyan-to-violet line, glow by gradient */
+.aox-beam{
+  position:absolute; left:-6px; right:-6px; top:0; height:2px;
+  border-radius:99px; pointer-events:none; z-index:4;
+  background:linear-gradient(90deg,
+    rgba(0,149,168,0), rgba(0,149,168,.75) 16%, #00C3DC 42%,
+    #EAFCFF 55%, #00C3DC 68%, rgba(124,92,246,.85) 88%, rgba(124,92,246,0));
+  opacity:0; transform:translateY(-6px);
+  animation:aoxScan 9s cubic-bezier(.45,0,.55,1) infinite;
+  will-change:transform, opacity;
+}
+.aox-beam::before{
+  content:""; position:absolute; left:0; right:0; top:-5px; height:12px;
+  border-radius:99px;
+  background:linear-gradient(180deg,
+    rgba(0,195,220,0), rgba(0,195,220,.28) 45%,
+    rgba(124,92,246,.18) 60%, rgba(124,92,246,0));
+}
+@keyframes aoxScan{
+  0%   { transform:translateY(-6px);  opacity:0; }
+  4%   { opacity:.95; }
+  22%  { opacity:.95; }
+  26%  { transform:translateY(266px); opacity:0; }
+  50%  { transform:translateY(-6px);  opacity:0; }
+  54%  { opacity:.95; }
+  72%  { opacity:.95; }
+  76%  { transform:translateY(266px); opacity:0; }
+  100% { transform:translateY(266px); opacity:0; }
+}
+
+/* the re-rank: after each sweep the mid-field trades places.
+   Row step is 56px (44px row + 12px gap). Transform only. */
+.aox-r2, .aox-r3, .aox-r4{ will-change:transform; }
+.aox-r2{ z-index:3; animation:aoxSwapB 9s cubic-bezier(.55,0,.2,1) infinite; }
+.aox-r3{ z-index:2; animation:aoxSwapC 9s cubic-bezier(.55,0,.2,1) infinite; }
+.aox-r4{ z-index:2; animation:aoxSwapD 9s cubic-bezier(.55,0,.2,1) infinite; }
+@keyframes aoxSwapB{
+  0%, 28%   { transform:translateY(0); }
+  40%, 72%  { transform:translateY(112px); }
+  84%, 100% { transform:translateY(0); }
+}
+@keyframes aoxSwapC{
+  0%, 29%   { transform:translateY(0); }
+  41%, 73%  { transform:translateY(-56px); }
+  85%, 100% { transform:translateY(0); }
+}
+@keyframes aoxSwapD{
+  0%, 30%   { transform:translateY(0); }
+  42%, 74%  { transform:translateY(-56px); }
+  86%, 100% { transform:translateY(0); }
+}
+
+/* rank 01: the winner, wearing the chased electric ring and a tick */
+.aox-r1{
+  z-index:1;
+  border-color:rgba(0,149,168,.5);
+  background:linear-gradient(160deg, rgba(255,255,255,.95), rgba(0,195,220,.07));
+}
+.aox-ring{
+  position:absolute; inset:-2px; border-radius:12px; overflow:hidden;
+  padding:1.5px; pointer-events:none;
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite:exclude;
+}
+.aox-ring i{
+  position:absolute; left:50%; top:50%;
+  width:120%; aspect-ratio:1/1;
+  background:conic-gradient(from 0deg,
+    transparent               0deg,
+    rgba(0,149,168,0)        18deg,
+    rgba(0,149,168,.85)      55deg,
+    #00C3DC                  92deg,
+    #EAFCFF                 112deg,
+    #00C3DC                 130deg,
+    rgba(124,92,246,.90)    168deg,
+    rgba(124,92,246,0)      205deg,
+    transparent             228deg,
+    rgba(124,92,246,.42)    262deg,
+    rgba(0,195,220,.48)     292deg,
+    transparent             320deg);
+  transform:translate(-50%,-50%) rotate(0deg);
+  animation:aoxSpin 5.6s linear infinite;
+  will-change:transform;
+}
+@keyframes aoxSpin{
+  from{ transform:translate(-50%,-50%) rotate(0deg); }
+  to  { transform:translate(-50%,-50%) rotate(360deg); }
+}
+
+/* rank 05: the loser, dimming and taking a strike in step with the shuffle */
+.aox-r5{ opacity:.8; animation:aoxDim 9s ease-in-out infinite; will-change:opacity; }
+.aox-r5 .aox-name{ color:var(--faint); }
+.aox-r5 .aox-fill{ background:rgba(38,28,64,.28); }
+.aox-strike{
+  position:absolute; left:10px; right:10px; top:50%; height:1.5px;
+  margin-top:-1px; border-radius:99px; z-index:1;
+  background:linear-gradient(90deg, rgba(38,28,64,.55), rgba(124,92,246,.55));
+  transform:scaleX(0); transform-origin:left center;
+  animation:aoxStrike 9s cubic-bezier(.55,0,.2,1) infinite;
+  will-change:transform;
+}
+@keyframes aoxStrike{
+  0%, 30%   { transform:scaleX(0); }
+  42%, 74%  { transform:scaleX(1); }
+  86%, 100% { transform:scaleX(0); }
+}
+@keyframes aoxDim{
+  0%, 30%   { opacity:.8; }
+  42%, 74%  { opacity:.45; }
+  86%, 100% { opacity:.8; }
+}
+
+/* verdict strip: the point of the exercise */
+.aox-verdict{
+  margin-top:14px; padding:9px 12px;
+  display:flex; align-items:center; gap:6px 12px; flex-wrap:wrap;
+  border:1px dashed rgba(0,149,168,.35); border-radius:10px;
+  background:rgba(0,149,168,.05);
+}
+.aox-verdict b{
+  font-family:ui-monospace, "Cascadia Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size:8.5px; font-weight:600; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--cyan);
+}
+.aox-verdict span{
+  font-family:ui-monospace, "Cascadia Mono", "SF Mono", Consolas, Menlo, monospace;
+  font-size:8.5px; font-weight:600; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--faint);
+}
+
+@media (max-width:600px){
+  .aox-cols{ display:none; }
+  .aox-pip{ display:none; }
+  .aox-row{ grid-template-columns:100px minmax(0,1fr) 20px; }
+  .aox-name{ font-size:8.5px; }
+}
+
+/* reduced motion: the scoreboard lands settled, nothing moves */
+@media (prefers-reduced-motion: reduce){
+  .aox-beam, .aox-ring i, .aox-r2, .aox-r3, .aox-r4, .aox-r5, .aox-strike{
+    animation:none !important;
+  }
+  .aox-beam{ opacity:0; }
+  .aox-ring{ opacity:.85; }
+  .aox-r5{ opacity:.55; }
+  .aox-strike{ transform:scaleX(1); }
+}
+
+/* ------------------------------------------------------------------
    Reduced motion: everything lands, nothing moves
    ------------------------------------------------------------------ */
 
@@ -825,22 +1046,68 @@ footer{
   </div>
 
   <div class="hero-art rise" id="heroArt">
-    <div class="billcard inview">
-      <div class="duo">
-        <img src="/images/offer-copilot.jpg" alt="A team working through a scored shortlist on a meeting-room screen" loading="lazy">
+    <div class="billcard inview" role="img" aria-label="A live scoreboard of five candidate AI use-cases scored on return, risk and readiness. A scanning beam re-ranks the mid-field, the top use-case earns a tick, the bottom one is struck out.">
+      <div class="aox-legend">
+        <span class="aox-cap">USE-CASES, SCORED AND RANKED</span>
+        <span class="aox-cols"><i>RETURN</i><i>RISK</i><i>READINESS</i><i></i></span>
       </div>
-      <svg viewBox="0 0 340 190" role="img" aria-label="Four candidate AI use-cases ranked as horizontal bars. The top one carries a tick, the bottom one is struck out.">
-        <path class="fin-axis" d="M30 16 V158 H322"/>
-        <text class="t-tiny" x="30" y="32">USE-CASES, SCORED AND RANKED</text>
-        <rect x="30" y="44" width="228" height="16" rx="6" fill="rgba(0,149,168,.30)"/>
-        <circle cx="272" cy="52" r="9" fill="none" stroke="#0095A8" stroke-width="1.8"/>
-        <path class="draw" pathLength="1" d="M267.5 52.5 L270.5 55.5 L276.5 48.5" stroke="#0095A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <rect x="30" y="72" width="176" height="16" rx="6" fill="rgba(0,149,168,.20)"/>
-        <rect x="30" y="100" width="122" height="16" rx="6" fill="rgba(0,149,168,.13)"/>
-        <rect x="30" y="128" width="74" height="16" rx="6" fill="rgba(38,28,64,.10)"/>
-        <path d="M110 136 h18" stroke="rgba(38,28,64,.45)" stroke-width="1.6" stroke-linecap="round"/>
-        <text class="t-tiny" x="30" y="180">RETURN · RISK · READINESS, THE ONES THAT LOSE ARE WRITTEN DOWN TOO</text>
-      </svg>
+      <div class="aox-board">
+        <div class="aox-rail">
+          <b>01</b><b>02</b><b>03</b><b>04</b><b>05</b>
+        </div>
+        <div class="aox-list">
+          <div class="aox-row aox-r1">
+            <span class="aox-name">Client intake</span>
+            <span class="aox-track"><i class="aox-fill" style="--w:.92"></i></span>
+            <span class="aox-pip"><i class="aox-p3"></i></span>
+            <span class="aox-pip"><i class="aox-p3"></i></span>
+            <span class="aox-pip"><i class="aox-p2"></i></span>
+            <span class="aox-st"><svg viewBox="0 0 18 18">
+              <circle cx="9" cy="9" r="7.5" fill="rgba(0,195,220,.1)" stroke="#0095A8" stroke-width="1.5"/>
+              <path d="M5.6 9.3 L8 11.7 L12.4 6.6" fill="none" stroke="#0095A8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg></span>
+            <span class="aox-ring" aria-hidden="true"><i></i></span>
+          </div>
+          <div class="aox-row aox-r2">
+            <span class="aox-name">Report drafting</span>
+            <span class="aox-track"><i class="aox-fill" style="--w:.72; opacity:.75"></i></span>
+            <span class="aox-pip"><i class="aox-p2"></i></span>
+            <span class="aox-pip"><i class="aox-p2"></i></span>
+            <span class="aox-pip"><i class="aox-p1"></i></span>
+            <span class="aox-st"></span>
+          </div>
+          <div class="aox-row aox-r3">
+            <span class="aox-name">Invoice matching</span>
+            <span class="aox-track"><i class="aox-fill" style="--w:.66; opacity:.6"></i></span>
+            <span class="aox-pip"><i class="aox-p2"></i></span>
+            <span class="aox-pip"><i class="aox-p3"></i></span>
+            <span class="aox-pip"><i class="aox-p2"></i></span>
+            <span class="aox-st"></span>
+          </div>
+          <div class="aox-row aox-r4">
+            <span class="aox-name">Meeting notes</span>
+            <span class="aox-track"><i class="aox-fill" style="--w:.44; opacity:.5"></i></span>
+            <span class="aox-pip"><i class="aox-p1"></i></span>
+            <span class="aox-pip"><i class="aox-p2"></i></span>
+            <span class="aox-pip"><i class="aox-p1"></i></span>
+            <span class="aox-st"></span>
+          </div>
+          <div class="aox-row aox-r5">
+            <span class="aox-name">Website chatbot</span>
+            <span class="aox-track"><i class="aox-fill" style="--w:.18"></i></span>
+            <span class="aox-pip"><i class="aox-p1"></i></span>
+            <span class="aox-pip"><i class="aox-p0"></i></span>
+            <span class="aox-pip"><i class="aox-p0"></i></span>
+            <span class="aox-st"></span>
+            <span class="aox-strike" aria-hidden="true"></span>
+          </div>
+        </div>
+        <span class="aox-beam" aria-hidden="true"></span>
+      </div>
+      <div class="aox-verdict">
+        <b>Verdict</b>
+        <span>Build 01 first · the rest can wait</span>
+      </div>
       <p class="billcard-cap mono-tag">A SHORTLIST THE BOARD CAN READ, WITH THE FIRST BUILD COSTED</p>
     </div>
   </div>

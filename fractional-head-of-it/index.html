@@ -774,6 +774,165 @@ footer{
    Reduced motion
    ------------------------------------------------------------------ */
 
+/* ------------------------------------------------------------------
+   FHX hero visual: the electrified accountability diagram.
+   One named Head of IT at the centre with a live electric rim (a
+   conic-gradient current spun by transform, masked to a 2px band),
+   clean traced lines up to the board and down to MSP / Contracts /
+   Tenant. A slow pulse of light travels along each lower line toward
+   the centre; a brighter return pulse rises to the board (the board
+   paper). Compositor-only motion: transform and opacity; the bloom's
+   blur and every shadow are static. Geometry lives in percentages of
+   a fixed-aspect scene (design canvas 340x248), so angles and joins
+   hold at any card width.
+   ------------------------------------------------------------------ */
+
+.fhx-scene{ position:relative; width:100%; aspect-ratio:340/248; font-family:var(--font-d); }
+
+/* nodes: glassy white cards, auto-sized so text always fits */
+.fhx-node{
+  position:absolute; transform:translateX(-50%);
+  white-space:nowrap; text-align:center;
+  font-size:11px; font-weight:600; color:var(--muted);
+  background:linear-gradient(160deg, rgba(255,255,255,.92), rgba(255,255,255,.6));
+  border:1px solid rgba(38,28,64,.2); border-radius:10px;
+  padding:6px 14px;
+  box-shadow:0 6px 14px rgba(38,28,64,.06);  /* static, never animated */
+}
+.fhx-board{ left:50%; top:1.6%; }
+.fhx-s-msp{ left:18.24%; top:73.39%; }
+.fhx-s-con{ left:50%;    top:73.39%; }
+.fhx-s-ten{ left:81.76%; top:73.39%; }
+
+/* the seat: the one named senior, carrying the live rim */
+.fhx-seat{
+  left:50%; top:31.45%; z-index:2;
+  border-radius:12px; border:1px solid rgba(0,149,168,.55);
+  background:linear-gradient(160deg, rgba(255,255,255,.96), rgba(0,149,168,.08));
+  padding:8px 22px 7px;
+  box-shadow:0 10px 24px rgba(38,28,64,.10), 0 0 16px rgba(0,195,220,.12);  /* static */
+}
+.fhx-nm{ display:block; font-size:13px; font-weight:700; color:var(--cyan); letter-spacing:-.01em; line-height:1.25; }
+.fhx-rl{ display:block; font-size:8.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); margin-top:2px; }
+
+/* the chased current on the seat's rim: conic gradient spun by
+   transform, masked to the border band; the bloom is a blurred
+   duplicate that only breathes by opacity */
+.fhx-ring, .fhx-bloom{
+  position:absolute; overflow:hidden; pointer-events:none;
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite:exclude;
+}
+.fhx-ring{
+  inset:-2px; border-radius:14px; padding:2px;
+  animation:fhxRingWave 7s ease-in-out infinite;
+  will-change:opacity;
+}
+.fhx-bloom{
+  inset:-5px; border-radius:16px; padding:5px;
+  filter:blur(3px);  /* static blur */
+  animation:fhxBloomWave 7s ease-in-out infinite;
+  will-change:opacity;
+}
+.fhx-ring i, .fhx-bloom i{
+  position:absolute; left:50%; top:50%; width:175%; height:350%;
+  background:conic-gradient(from 0deg,
+    transparent               0deg,
+    rgba(0,149,168,0)        18deg,
+    rgba(0,149,168,.85)      55deg,
+    #00C3DC                  92deg,
+    #EAFCFF                 112deg,
+    #00C3DC                 130deg,
+    rgba(124,92,246,.90)    168deg,
+    rgba(124,92,246,0)      205deg,
+    transparent             228deg,
+    rgba(124,92,246,.42)    262deg,
+    rgba(0,195,220,.48)     292deg,
+    transparent             320deg);
+  transform:translate(-50%,-50%) rotate(0deg);
+  animation:fhxSpin 5.6s linear infinite;
+  will-change:transform;
+}
+@keyframes fhxSpin{
+  from{ transform:translate(-50%,-50%) rotate(0deg); }
+  to  { transform:translate(-50%,-50%) rotate(360deg); }
+}
+@keyframes fhxRingWave{  0%, 100%{ opacity:.55; } 48%{ opacity:1; } }
+@keyframes fhxBloomWave{ 0%, 100%{ opacity:.14; } 48%{ opacity:.4; } }
+
+/* traced lines: thin, calm; ends tuck behind the nodes they join */
+.fhx-line{
+  position:absolute; width:1.5px; margin-left:-0.75px; border-radius:1px;
+  background:linear-gradient(to bottom, rgba(0,149,168,.5), rgba(0,149,168,.28));
+  transform-origin:50% 0;
+}
+.fhx-l-board{ left:50%;    top:11.29%; height:22.58%; }
+.fhx-l-mid{   left:50%;    top:47.58%; height:29.03%; }
+.fhx-l-msp{   left:40.59%; top:47.58%; height:43.31%; transform:rotate(49.9deg); }
+.fhx-l-ten{   left:59.41%; top:47.58%; height:43.31%; transform:rotate(-49.9deg); }
+
+/* travelling pulses: a full-height wrapper slides by its own 100%,
+   so the dot rides the line at any rendered size; opacity fades it
+   in and out at the ends. Bright head leads, violet tail follows. */
+.fhx-pulse{
+  position:absolute; inset:0; opacity:0; pointer-events:none;
+  animation:fhxPulseUp 7s linear infinite;
+  will-change:transform, opacity;
+}
+.fhx-pulse::after{
+  content:""; position:absolute; left:50%; top:-8px;
+  width:3px; height:16px; margin-left:-1.5px; border-radius:3px;
+  background:linear-gradient(to bottom,
+    rgba(234,252,255,0), #EAFCFF 18%, #00C3DC 45%,
+    rgba(124,92,246,.8) 78%, rgba(124,92,246,0));
+  box-shadow:0 0 7px rgba(0,195,220,.55);  /* static; only opacity moves */
+}
+.fhx-d2{ animation-delay:.45s; }
+.fhx-d3{ animation-delay:.9s; }
+@keyframes fhxPulseUp{
+  0%       { transform:translateY(100%); opacity:0; }
+  5%       { opacity:.9; }
+  30%      { opacity:.9; }
+  38%, 100%{ transform:translateY(0);    opacity:0; }
+}
+
+/* the brighter return pulse: seat up to the board, the board paper */
+.fhx-p-board{ animation-name:fhxPulseBoard; }
+.fhx-p-board::after{
+  width:3.5px; height:20px; top:-10px; margin-left:-1.75px;
+  background:linear-gradient(to bottom,
+    rgba(234,252,255,0), #EAFCFF 15%, #00C3DC 42%,
+    rgba(124,92,246,.75) 80%, rgba(124,92,246,0));
+  box-shadow:0 0 9px rgba(0,195,220,.7), 0 0 18px rgba(124,92,246,.3);  /* static */
+}
+@keyframes fhxPulseBoard{
+  0%, 52%  { transform:translateY(100%); opacity:0; }
+  56%      { opacity:1; }
+  70%      { opacity:1; }
+  76%, 100%{ transform:translateY(0);    opacity:0; }
+}
+
+/* tiny letterspaced labels */
+.fhx-tag{
+  position:absolute; left:54%; top:18.5%; white-space:nowrap;
+  font-size:8.5px; font-weight:600; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--faint);
+}
+.fhx-cap{
+  position:absolute; left:50%; bottom:0; transform:translateX(-50%); white-space:nowrap;
+  font-size:8.5px; font-weight:600; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--faint);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .fhx-pulse, .fhx-ring, .fhx-bloom, .fhx-ring i, .fhx-bloom i{ animation:none !important; }
+  .fhx-ring{ opacity:.8; }
+  .fhx-bloom{ opacity:.25; }
+  .fhx-pulse{ opacity:0; }
+}
+
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *, *::before, *::after{
@@ -855,31 +1014,25 @@ footer{
 
   <div class="hero-art rise">
     <div class="glowpad" aria-hidden="true"></div>
-    <figure class="orgcard">
-      <svg viewBox="0 0 340 236" role="img" aria-label="Reporting line: the board, then a named Head of IT, then the MSP, the contracts and the tenant">
-        <defs>
-          <marker id="ocArr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
-            <path d="M0 0 L8 4 L0 8 z" fill="#0095A8"/>
-          </marker>
-        </defs>
-        <rect class="oc-node" x="110" y="10" width="120" height="36" rx="10"/>
-        <text class="t-mut" x="170" y="32" text-anchor="middle">The board</text>
-        <path class="draw oc-line" pathLength="1" d="M170 46 V78"/>
-        <text class="t-tiny" x="182" y="66">BOARD PAPER</text>
-        <rect class="oc-node oc-node-hot" x="98" y="78" width="144" height="46" rx="12"/>
-        <text class="t-cyan" x="170" y="98" text-anchor="middle">Head of IT</text>
-        <text class="t-tiny" x="170" y="113" text-anchor="middle">A NAMED SENIOR</text>
-        <path class="draw d2 oc-line" pathLength="1" d="M170 124 C170 152 62 148 62 176"/>
-        <path class="draw d2 oc-line" pathLength="1" d="M170 124 V176"/>
-        <path class="draw d2 oc-line" pathLength="1" d="M170 124 C170 152 278 148 278 176"/>
-        <rect class="oc-node" x="18" y="176" width="88" height="36" rx="10"/>
-        <text class="t-mut" x="62" y="198" text-anchor="middle">MSP</text>
-        <rect class="oc-node" x="122" y="176" width="96" height="36" rx="10"/>
-        <text class="t-mut" x="170" y="198" text-anchor="middle">Contracts</text>
-        <rect class="oc-node" x="234" y="176" width="88" height="36" rx="10"/>
-        <text class="t-mut" x="278" y="198" text-anchor="middle">Tenant</text>
-        <text class="t-tiny" x="170" y="230" text-anchor="middle">WE GOVERN WHAT YOU ALREADY PAY FOR</text>
-      </svg>
+    <figure class="orgcard" role="img" aria-label="Accountability diagram: one named Head of IT at the centre, reporting up to the board and governing the MSP, the contracts and the tenant below">
+      <div class="fhx-scene">
+        <span class="fhx-line fhx-l-board"><i class="fhx-pulse fhx-p-board"></i></span>
+        <span class="fhx-line fhx-l-msp"><i class="fhx-pulse fhx-d2"></i></span>
+        <span class="fhx-line fhx-l-mid"><i class="fhx-pulse"></i></span>
+        <span class="fhx-line fhx-l-ten"><i class="fhx-pulse fhx-d3"></i></span>
+        <span class="fhx-tag">Board paper</span>
+        <div class="fhx-node fhx-board">The board</div>
+        <div class="fhx-node fhx-seat">
+          <span class="fhx-bloom"><i></i></span>
+          <span class="fhx-ring"><i></i></span>
+          <span class="fhx-nm">Head of IT</span>
+          <span class="fhx-rl">A named senior</span>
+        </div>
+        <div class="fhx-node fhx-s-msp">MSP</div>
+        <div class="fhx-node fhx-s-con">Contracts</div>
+        <div class="fhx-node fhx-s-ten">Tenant</div>
+        <span class="fhx-cap">One name. Everything connected.</span>
+      </div>
     </figure>
   </div>
 </section>
@@ -1052,7 +1205,7 @@ footer{
 
   <section class="tile tile-close s12" aria-label="The outcome">
     <span class="chip">The outcome</span>
-    <h3>Before long the board has an operating model, the insurer has evidence, and you stop being the IT department.</h3>
+    <h3>The board has an operating model, the insurer has evidence, and you stop being the IT department.</h3>
     <p>First we listen. Then visible progress, scoped at diagnose. Then it's your call. The same rhythm as <a class="inline" href="/#how">how we work</a> across the practice.</p>
   </section>
 

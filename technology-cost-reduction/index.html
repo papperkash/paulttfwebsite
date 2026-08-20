@@ -752,6 +752,167 @@ footer{
 }
 
 /* ------------------------------------------------------------------
+   TCX hero visual: the bill read line by line, then falling.
+   Base styles are the completed end state, so reduced motion and
+   animation:none show the finished story. Keyframes run one 9s loop:
+   draw the rise, hit diagnose, bend down, strike the line items,
+   hold, then crossfade back. Compositor-friendly: transform and
+   opacity everywhere except the two dash-draw strokes.
+   ------------------------------------------------------------------ */
+
+.tcx-axis{ stroke:rgba(38,28,64,.2); stroke-width:1; fill:none; }
+.tcx-mark{ stroke:rgba(0,149,168,.45); stroke-width:1; stroke-dasharray:3 5; fill:none; }
+.tcx-lead{ stroke:rgba(38,28,64,.18); stroke-width:1; stroke-dasharray:1 4; stroke-linecap:round; }
+.tcx-track{ fill:none; stroke:rgba(38,28,64,.16); stroke-width:1; }
+
+.tcx-run{ animation:tcxRun 9s linear infinite; }
+
+.tcx-rise{
+  stroke:rgba(38,28,64,.5); stroke-width:2; fill:none;
+  stroke-linecap:round; stroke-linejoin:round;
+  stroke-dasharray:1; stroke-dashoffset:0;
+  animation:tcxRise 9s linear infinite;
+}
+.tcx-fall{
+  stroke:url(#tcxFallGrad); stroke-width:2; fill:none;
+  stroke-linecap:round; stroke-linejoin:round;
+  stroke-dasharray:1; stroke-dashoffset:0;
+  animation:tcxFall 9s linear infinite;
+}
+.tcx-fallglow{
+  stroke:url(#tcxFallGrad); stroke-width:5.5; fill:none; opacity:.16;
+  stroke-linecap:round; stroke-linejoin:round;
+  stroke-dasharray:1; stroke-dashoffset:0;
+  animation:tcxFall 9s linear infinite;
+}
+.tcx-proj{
+  stroke:rgba(38,28,64,.4); stroke-width:1; fill:none;
+  stroke-dasharray:2 5; stroke-linecap:round; opacity:.55;
+  animation:tcxProj 9s linear infinite;
+}
+.tcx-wedge{ fill:url(#tcxWedgeGrad); animation:tcxReveal 9s linear infinite; }
+.tcx-rec{
+  font-family:var(--font-d); font-weight:600; font-size:9.5px;
+  letter-spacing:.12em; fill:#7C5CF6;
+  animation:tcxReveal 9s linear infinite;
+}
+.tcx-peak, .tcx-endnode{
+  transform-box:fill-box; transform-origin:center;
+}
+.tcx-peak{ animation:tcxPeak 9s linear infinite; }
+.tcx-endnode{ animation:tcxEnd 9s linear infinite; }
+
+.tcx-strike{
+  stroke:rgba(124,92,246,.95); stroke-width:1.5; stroke-linecap:round;
+  transform-box:fill-box; transform-origin:left center;
+}
+.tcx-strike.a{ animation:tcxStrikeA 9s linear infinite; }
+.tcx-strike.b{ animation:tcxStrikeB 9s linear infinite; }
+.tcx-strike.c{ animation:tcxStrikeC 9s linear infinite; }
+.tcx-bar{
+  fill:url(#tcxBarGrad); opacity:.55;
+  transform-box:fill-box; transform-origin:left center; transform:scaleX(.18);
+}
+.tcx-bar.a{ animation:tcxBarA 9s linear infinite; }
+.tcx-bar.b{ animation:tcxBarB 9s linear infinite; }
+.tcx-bar.c{ animation:tcxBarC 9s linear infinite; }
+
+/* the electric current: a cyan-to-violet pulse travelling down the diagnose marker */
+.tcx-pulse{ opacity:0; animation:tcxPulse 3s cubic-bezier(.4,.08,.6,.92) infinite; will-change:transform; }
+.tcx-pulse-core{ stroke:url(#tcxPulseGrad); stroke-width:2; stroke-linecap:round; fill:none; }
+.tcx-pulse-glow{ stroke:url(#tcxPulseGrad); stroke-width:5; stroke-linecap:round; fill:none; opacity:.3; }
+
+@keyframes tcxRun{
+  0%, 90%{ opacity:1; }
+  94%, 98%{ opacity:0; }
+  100%{ opacity:1; }
+}
+@keyframes tcxRise{
+  0%{ stroke-dashoffset:1; }
+  3%{ stroke-dashoffset:1; animation-timing-function:cubic-bezier(.55,.06,.35,.96); }
+  20%, 94%{ stroke-dashoffset:0; }
+  97%, 100%{ stroke-dashoffset:1; }
+}
+@keyframes tcxFall{
+  0%{ stroke-dashoffset:1; }
+  22%{ stroke-dashoffset:1; animation-timing-function:cubic-bezier(.55,.04,.14,1); }
+  46%, 94%{ stroke-dashoffset:0; }
+  97%, 100%{ stroke-dashoffset:1; }
+}
+@keyframes tcxPeak{
+  0%{ opacity:0; transform:scale(.3); }
+  18%{ opacity:0; transform:scale(.3); animation-timing-function:cubic-bezier(.2,1.35,.4,1); }
+  23%, 94%{ opacity:1; transform:scale(1); }
+  97%, 100%{ opacity:0; transform:scale(.3); }
+}
+@keyframes tcxEnd{
+  0%{ opacity:0; transform:scale(.3); }
+  45%{ opacity:0; transform:scale(.3); animation-timing-function:cubic-bezier(.2,1.35,.4,1); }
+  50%, 94%{ opacity:1; transform:scale(1); }
+  97%, 100%{ opacity:0; transform:scale(.3); }
+}
+@keyframes tcxProj{
+  0%, 30%{ opacity:0; }
+  42%, 94%{ opacity:.55; }
+  97%, 100%{ opacity:0; }
+}
+@keyframes tcxReveal{
+  0%, 47%{ opacity:0; }
+  60%, 94%{ opacity:1; }
+  97%, 100%{ opacity:0; }
+}
+@keyframes tcxStrikeA{
+  0%{ transform:scaleX(0); }
+  50%{ transform:scaleX(0); animation-timing-function:cubic-bezier(.55,.05,.25,1); }
+  56%, 94%{ transform:scaleX(1); }
+  97%, 100%{ transform:scaleX(0); }
+}
+@keyframes tcxStrikeB{
+  0%{ transform:scaleX(0); }
+  58%{ transform:scaleX(0); animation-timing-function:cubic-bezier(.55,.05,.25,1); }
+  64%, 94%{ transform:scaleX(1); }
+  97%, 100%{ transform:scaleX(0); }
+}
+@keyframes tcxStrikeC{
+  0%{ transform:scaleX(0); }
+  66%{ transform:scaleX(0); animation-timing-function:cubic-bezier(.55,.05,.25,1); }
+  72%, 94%{ transform:scaleX(1); }
+  97%, 100%{ transform:scaleX(0); }
+}
+@keyframes tcxBarA{
+  0%{ transform:scaleX(1); }
+  51%{ transform:scaleX(1); animation-timing-function:cubic-bezier(.5,.03,.2,1); }
+  58%, 94%{ transform:scaleX(.18); }
+  97%, 100%{ transform:scaleX(1); }
+}
+@keyframes tcxBarB{
+  0%{ transform:scaleX(1); }
+  59%{ transform:scaleX(1); animation-timing-function:cubic-bezier(.5,.03,.2,1); }
+  66%, 94%{ transform:scaleX(.18); }
+  97%, 100%{ transform:scaleX(1); }
+}
+@keyframes tcxBarC{
+  0%{ transform:scaleX(1); }
+  67%{ transform:scaleX(1); animation-timing-function:cubic-bezier(.5,.03,.2,1); }
+  74%, 94%{ transform:scaleX(.18); }
+  97%, 100%{ transform:scaleX(1); }
+}
+@keyframes tcxPulse{
+  0%{ transform:translateY(0); opacity:0; }
+  10%{ opacity:.9; }
+  78%{ opacity:.9; }
+  92%, 100%{ transform:translateY(118px); opacity:0; }
+}
+
+/* reduced motion: freeze on the finished story (base styles above) */
+@media (prefers-reduced-motion: reduce){
+  .tcx-run, .tcx-rise, .tcx-fall, .tcx-fallglow, .tcx-proj, .tcx-wedge,
+  .tcx-rec, .tcx-peak, .tcx-endnode, .tcx-strike, .tcx-bar, .tcx-pulse{
+    animation:none !important;
+  }
+}
+
+/* ------------------------------------------------------------------
    Reduced motion: everything lands, nothing moves
    ------------------------------------------------------------------ */
 
@@ -834,24 +995,73 @@ footer{
 
   <div class="hero-art rise" id="heroArt">
     <div class="billcard inview">
-      <div class="duo">
-        <img src="/images/offer-finops.jpg" alt="Leadership team reviewing a falling cloud-cost chart around a table" loading="lazy">
-      </div>
-      <svg viewBox="0 0 340 190" role="img" aria-label="A cloud bill line rising, then falling after diagnose. Axes carry no figures.">
+      <svg class="tcx-chart" viewBox="0 0 340 296" role="img" aria-label="Animated bill chart: the technology cost line rises, meets the diagnose marker, then falls away, while licences, contracts and telephony line items are struck through one by one. Axes carry no figures.">
         <defs>
-          <linearGradient id="finGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="rgba(0,149,168,.28)"/>
-            <stop offset="1" stop-color="rgba(0,149,168,0)"/>
+          <linearGradient id="tcxFallGrad" gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="316" y2="0">
+            <stop offset="0" stop-color="#00C3DC"/>
+            <stop offset="1" stop-color="#7C5CF6"/>
+          </linearGradient>
+          <linearGradient id="tcxPulseGrad" gradientUnits="userSpaceOnUse" x1="150" y1="24" x2="150" y2="50">
+            <stop offset="0" stop-color="#00C3DC" stop-opacity="0"/>
+            <stop offset=".3" stop-color="#00C3DC"/>
+            <stop offset=".55" stop-color="#EAFCFF"/>
+            <stop offset=".8" stop-color="#7C5CF6"/>
+            <stop offset="1" stop-color="#7C5CF6" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="tcxWedgeGrad" gradientUnits="userSpaceOnUse" x1="0" y1="30" x2="0" y2="131">
+            <stop offset="0" stop-color="#00C3DC" stop-opacity=".16"/>
+            <stop offset="1" stop-color="#7C5CF6" stop-opacity=".08"/>
+          </linearGradient>
+          <linearGradient id="tcxBarGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#00C3DC"/>
+            <stop offset="1" stop-color="#7C5CF6"/>
           </linearGradient>
         </defs>
-        <path class="fin-axis" d="M30 16 V158 H322"/>
-        <path class="fin-mark" d="M128 24 V158"/>
-        <text class="t-tiny" x="136" y="32">DIAGNOSE</text>
-        <path class="fin-area" d="M30 96 L74 84 L110 62 L128 52 L168 76 L206 92 L248 116 L290 126 L322 134 L322 158 L30 158 Z"/>
-        <path class="draw fin-line" pathLength="1" d="M30 96 L74 84 L110 62 L128 52 L168 76 L206 92 L248 116 L290 126 L322 134"/>
-        <circle cx="128" cy="52" r="4.5" fill="#FFFFFF" stroke="#0095A8" stroke-width="2"/>
-        <circle cx="322" cy="134" r="4" fill="#0095A8"/>
-        <text class="t-tiny" x="30" y="180">THE BILL, READ THE WAY A FINANCE DIRECTOR READS IT</text>
+
+        <!-- static frame: axes, diagnose marker, line-item rows -->
+        <path class="tcx-axis" d="M30 16 V168 H322"/>
+        <path class="tcx-mark" d="M150 22 V168"/>
+        <text class="t-tiny" x="157" y="31">DIAGNOSE</text>
+        <text class="t-tiny" x="34" y="190">LINE ITEMS</text>
+        <text class="t-tiny" x="34" y="212">LICENCES</text>
+        <line class="tcx-lead" x1="100" y1="208.5" x2="250" y2="208.5"/>
+        <rect class="tcx-track" x="258" y="205" width="52" height="7" rx="3.5"/>
+        <text class="t-tiny" x="34" y="240">CONTRACTS</text>
+        <line class="tcx-lead" x1="100" y1="236.5" x2="250" y2="236.5"/>
+        <rect class="tcx-track" x="258" y="233" width="52" height="7" rx="3.5"/>
+        <text class="t-tiny" x="34" y="268">TELEPHONY</text>
+        <line class="tcx-lead" x1="100" y1="264.5" x2="250" y2="264.5"/>
+        <rect class="tcx-track" x="258" y="261" width="52" height="7" rx="3.5"/>
+
+        <!-- electric pulse travelling down the diagnose marker -->
+        <g class="tcx-pulse">
+          <line class="tcx-pulse-glow" x1="150" y1="24" x2="150" y2="50"/>
+          <line class="tcx-pulse-core" x1="150" y1="24" x2="150" y2="50"/>
+        </g>
+
+        <!-- looped progress layer: draws, strikes, holds, crossfades back -->
+        <g class="tcx-run">
+          <path class="tcx-proj" d="M150 58 L316 30"/>
+          <path class="tcx-wedge" d="M150 58 L316 30 L316 131 C272 127 232 114 212 94 C192 74 176 53 150 58 Z"/>
+          <text class="tcx-rec" x="226" y="88">RECOVERED</text>
+          <path class="tcx-rise" pathLength="1" d="M30 118 L64 104 L96 90 L122 74 L150 58"/>
+          <path class="tcx-fallglow" pathLength="1" d="M150 58 C176 53 192 74 212 94 C232 114 272 127 316 131"/>
+          <path class="tcx-fall" pathLength="1" d="M150 58 C176 53 192 74 212 94 C232 114 272 127 316 131"/>
+          <g class="tcx-peak">
+            <circle cx="150" cy="58" r="8" fill="#00C3DC" opacity=".16"/>
+            <circle cx="150" cy="58" r="4.5" fill="#FFFFFF" stroke="#00C3DC" stroke-width="2"/>
+          </g>
+          <g class="tcx-endnode">
+            <circle cx="316" cy="131" r="7" fill="#7C5CF6" opacity=".16"/>
+            <circle cx="316" cy="131" r="4" fill="#7C5CF6" stroke="#FFFFFF" stroke-width="1.4"/>
+          </g>
+          <rect class="tcx-bar a" x="259.5" y="206.5" width="49" height="4" rx="2"/>
+          <rect class="tcx-bar b" x="259.5" y="234.5" width="49" height="4" rx="2"/>
+          <rect class="tcx-bar c" x="259.5" y="262.5" width="49" height="4" rx="2"/>
+          <line class="tcx-strike a" x1="31" y1="208.5" x2="87" y2="208.5"/>
+          <line class="tcx-strike b" x1="31" y1="236.5" x2="92" y2="236.5"/>
+          <line class="tcx-strike c" x1="31" y1="264.5" x2="92" y2="264.5"/>
+        </g>
       </svg>
       <p class="billcard-cap mono-tag">A FIXED PIECE OF WORK A FINANCE DIRECTOR CAN READ</p>
     </div>

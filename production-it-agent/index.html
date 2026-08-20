@@ -779,6 +779,119 @@ footer{
 }
 
 /* ------------------------------------------------------------------
+   THE WORKFLOW hero visual (.pax- scope): live message flow.
+   One 6.8s master cycle: packets travel the input lines at uneven
+   offsets, the agent hexagon flashes as each one lands, an output
+   pulse runs the measured line, the counter ticks. The hexagon edge
+   carries a chased electric current: two gradient sparks orbiting
+   inside a clipped hexagonal band over a static cyan-violet edge.
+   Compositor-only: transform and opacity, nothing else animates.
+   ------------------------------------------------------------------ */
+
+.pax-orbit{
+  transform-box:fill-box; transform-origin:50% 50%;
+  animation:paxSpin 7.2s linear infinite;
+  will-change:transform;
+}
+@keyframes paxSpin{
+  from{ transform:rotate(0deg); }
+  to  { transform:rotate(360deg); }
+}
+
+.pax-pkt{
+  opacity:0;
+  animation:paxTravel 6.8s ease-in-out infinite;
+}
+.pax-c1, .pax-c2{ --pax-tx:49px; --pax-ty:29.5px; }
+.pax-v1, .pax-v2{ --pax-tx:72px; --pax-ty:-34px; }
+.pax-o1, .pax-o2, .pax-o3, .pax-o4{ --pax-tx:54px; --pax-ty:0px; }
+.pax-c1{ animation-delay:-6.528s; }
+.pax-v1{ animation-delay:-5.032s; }
+.pax-c2{ animation-delay:-3.74s; }
+.pax-v2{ animation-delay:-1.904s; }
+.pax-o1{ animation-delay:-5.508s; }
+.pax-o2{ animation-delay:-4.012s; }
+.pax-o3{ animation-delay:-2.72s; }
+.pax-o4{ animation-delay:-1.02s; }
+@keyframes paxTravel{
+  0%   { transform:translate(0,0); opacity:0; }
+  2%   { opacity:.95; }
+  9.5% { opacity:.95; }
+  12%  { transform:translate(var(--pax-tx,0px), var(--pax-ty,0px)); opacity:0; }
+  100% { transform:translate(var(--pax-tx,0px), var(--pax-ty,0px)); opacity:0; }
+}
+
+/* soft interior flash as each packet lands (peaks at 17/39/58/85%) */
+.pax-flash{
+  opacity:0;
+  animation:paxFlash 6.8s linear infinite;
+  will-change:opacity;
+}
+@keyframes paxFlash{
+  0%, 13%  { opacity:0; }
+  17%      { opacity:.9; }
+  22%      { opacity:0; }
+  35%      { opacity:0; }
+  39%      { opacity:.9; }
+  44%      { opacity:0; }
+  54%      { opacity:0; }
+  58%      { opacity:.9; }
+  63%      { opacity:0; }
+  81%      { opacity:0; }
+  85%      { opacity:.9; }
+  91%, 100%{ opacity:0; }
+}
+
+/* counter tick pulse as each output pulse arrives (32/54/73/97%) */
+.pax-tickpulse{
+  opacity:0;
+  animation:paxTick 6.8s linear infinite;
+}
+@keyframes paxTick{
+  0%, 29% { opacity:0; }
+  32%     { opacity:.85; }
+  37%     { opacity:0; }
+  51%     { opacity:0; }
+  54%     { opacity:.85; }
+  59%     { opacity:0; }
+  70%     { opacity:0; }
+  73%     { opacity:.85; }
+  78%     { opacity:0; }
+  94%     { opacity:0; }
+  97%     { opacity:.85; }
+  100%    { opacity:0; }
+}
+
+/* voice waveform: scaleY only, bottom-anchored */
+.pax-wb{
+  transform-origin:center bottom; transform-box:fill-box;
+  animation:paxWave 1.9s ease-in-out infinite;
+}
+.pax-wb.pax-w2{ animation-delay:.28s; }
+.pax-wb.pax-w3{ animation-delay:.5s; }
+.pax-wb.pax-w4{ animation-delay:.76s; }
+@keyframes paxWave{
+  0%, 100%{ transform:scaleY(.5); }
+  50%     { transform:scaleY(1); }
+}
+
+.pax-livedot{ animation:paxBreathe 3.4s ease-in-out infinite; }
+@keyframes paxBreathe{
+  0%, 100%{ opacity:.35; }
+  50%     { opacity:1; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .pax-orbit, .pax-pkt, .pax-flash, .pax-tickpulse, .pax-wb, .pax-livedot{
+    animation:none !important;
+  }
+  .pax-orbit{ opacity:0; }                             /* static gradient edge remains */
+  .pax-pkt, .pax-flash, .pax-tickpulse{ opacity:0 !important; }
+  .pax-livedot{ opacity:.9; }
+  .pax-wb{ transform:none; }
+}
+
+/* ------------------------------------------------------------------
    Reduced motion: everything lands, nothing moves
    ------------------------------------------------------------------ */
 
@@ -861,31 +974,100 @@ footer{
   <div class="hero-art rise">
     <div class="glowpad" aria-hidden="true"></div>
     <div class="diagcard">
-      <svg viewBox="0 0 340 196" role="img" aria-label="Message flow diagram: Teams messages and voice calls feed one live agent, and the result is measured against one KPI">
+      <svg viewBox="0 0 340 196" role="img" aria-label="Live workflow diagram: Teams messages and voice calls stream into one production agent, and the result is measured against a single KPI">
         <defs>
-          <marker id="mfArr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
-            <path d="M0 0 L8 4 L0 8 z" fill="#0095A8"/>
-          </marker>
+          <linearGradient id="paxEdge" x1="150" y1="70" x2="202" y2="122" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#0095A8"/>
+            <stop offset=".5" stop-color="#00C3DC"/>
+            <stop offset="1" stop-color="#7C5CF6"/>
+          </linearGradient>
+          <radialGradient id="paxLead">
+            <stop offset="0" stop-color="#EAFCFF"/>
+            <stop offset=".35" stop-color="#00C3DC"/>
+            <stop offset=".65" stop-color="rgba(0,195,220,.3)"/>
+            <stop offset="1" stop-color="rgba(0,195,220,0)"/>
+          </radialGradient>
+          <radialGradient id="paxTail">
+            <stop offset="0" stop-color="rgba(124,92,246,.85)"/>
+            <stop offset=".55" stop-color="rgba(124,92,246,.25)"/>
+            <stop offset="1" stop-color="rgba(124,92,246,0)"/>
+          </radialGradient>
+          <radialGradient id="paxPkC">
+            <stop offset="0" stop-color="#EAFCFF"/>
+            <stop offset=".4" stop-color="#00C3DC"/>
+            <stop offset="1" stop-color="rgba(0,195,220,0)"/>
+          </radialGradient>
+          <radialGradient id="paxPkV">
+            <stop offset="0" stop-color="#F1EDFF"/>
+            <stop offset=".45" stop-color="#7C5CF6"/>
+            <stop offset="1" stop-color="rgba(124,92,246,0)"/>
+          </radialGradient>
+          <clipPath id="paxBand">
+            <path clip-rule="evenodd" d="M176 63 L204.6 79.5 L204.6 112.5 L176 129 L147.4 112.5 L147.4 79.5 Z
+                     M176 69 L199.4 82.5 L199.4 109.5 L176 123 L152.6 109.5 L152.6 82.5 Z"/>
+          </clipPath>
         </defs>
+
+        <!-- live badge -->
+        <circle class="pax-livedot" cx="313" cy="20" r="2.6" fill="#00C3DC"/>
+        <text class="t-tiny" x="307" y="23" text-anchor="end">LIVE</text>
+
+        <!-- Teams chat node -->
         <rect class="mf-node" x="16" y="26" width="82" height="46" rx="12"/>
         <path d="M34 72 L30 84 L48 72" fill="rgba(38,28,64,.05)" stroke="rgba(38,28,64,.25)" stroke-width="1.2" stroke-linejoin="round"/>
-        <text class="t-mut" x="57" y="53" text-anchor="middle">Teams</text>
+        <path d="M28 40 h42" fill="none" stroke="rgba(38,28,64,.18)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M28 48 h28" fill="none" stroke="rgba(0,149,168,.5)" stroke-width="2" stroke-linecap="round"/>
+        <text class="t-mut" x="57" y="64" text-anchor="middle">Teams</text>
+
+        <!-- voice node -->
         <circle class="mf-node" cx="52" cy="146" r="24"/>
         <g stroke="#0095A8" stroke-width="2" stroke-linecap="round">
-          <path class="wavebar" d="M42 140 v12"/>
-          <path class="wavebar w2" d="M49 134 v24"/>
-          <path class="wavebar w3" d="M56 138 v16"/>
-          <path class="wavebar w4" d="M63 142 v8"/>
+          <path class="pax-wb" d="M42 140 v12"/>
+          <path class="pax-wb pax-w2" d="M49 134 v24"/>
+          <path class="pax-wb pax-w3" d="M56 138 v16"/>
+          <path class="pax-wb pax-w4" d="M63 142 v8"/>
         </g>
         <text class="t-tiny" x="52" y="186" text-anchor="middle">VOICE</text>
-        <path class="flowline" d="M98 52 C 130 56, 142 74, 156 88" marker-end="url(#mfArr)"/>
-        <path class="flowline" d="M76 142 C 110 134, 132 118, 152 104" marker-end="url(#mfArr)"/>
-        <path class="mf-hot" d="M176 66 L202 81 L202 111 L176 126 L150 111 L150 81 Z"/>
-        <text class="t-cyan" x="176" y="101" text-anchor="middle">Agent</text>
-        <path class="flowline" d="M204 96 H 258" marker-end="url(#mfArr)"/>
+
+        <!-- input lines -->
+        <line x1="100" y1="52" x2="149" y2="81.5" stroke="rgba(0,149,168,.4)" stroke-width="1.3"/>
+        <line x1="74" y1="136" x2="146" y2="102" stroke="rgba(0,149,168,.4)" stroke-width="1.3"/>
+
+        <!-- measured output line with counter node -->
+        <line x1="206" y1="96" x2="262" y2="96" stroke="rgba(0,149,168,.4)" stroke-width="1.3"/>
+        <g stroke="rgba(0,149,168,.28)" stroke-width="1">
+          <path d="M216 92.5 v7"/>
+          <path d="M227 92.5 v7"/>
+          <path d="M238 92.5 v7"/>
+          <path d="M249 92.5 v7"/>
+        </g>
         <circle class="mf-hot" cx="288" cy="96" r="24"/>
-        <path class="draw d2" pathLength="1" d="M278 96 L285 103 L299 88" stroke="#0095A8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle class="pax-tickpulse" cx="288" cy="96" r="24" fill="none" stroke="#00C3DC" stroke-width="1.4"/>
+        <path d="M278 96 L285 103 L299 88" fill="none" stroke="#0095A8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
         <text class="t-tiny" x="288" y="138" text-anchor="middle">MEASURED</text>
+
+        <!-- agent hexagon: soft body, landing flash, chased electric edge -->
+        <path d="M176 66 L202 81 L202 111 L176 126 L150 111 L150 81 Z" fill="rgba(0,149,168,.06)"/>
+        <path class="pax-flash" d="M176 70 L198.5 83 L198.5 109 L176 122 L153.5 109 L153.5 83 Z" fill="rgba(0,195,220,.15)" stroke="rgba(0,195,220,.45)" stroke-width="1"/>
+        <g clip-path="url(#paxBand)">
+          <path d="M176 66 L202 81 L202 111 L176 126 L150 111 L150 81 Z" fill="none" stroke="url(#paxEdge)" stroke-width="1.7" opacity=".8"/>
+          <g class="pax-orbit">
+            <rect x="128" y="48" width="96" height="96" fill="none"/>
+            <circle cx="176" cy="66" r="15" fill="url(#paxLead)"/>
+            <circle cx="153" cy="77" r="12" fill="url(#paxTail)"/>
+          </g>
+        </g>
+        <text class="t-cyan" x="176" y="101" text-anchor="middle">Agent</text>
+
+        <!-- light packets: Teams (cyan), voice (violet), output (cyan) -->
+        <circle class="pax-pkt pax-c1" cx="100" cy="52" r="5" fill="url(#paxPkC)"/>
+        <circle class="pax-pkt pax-c2" cx="100" cy="52" r="5" fill="url(#paxPkC)"/>
+        <circle class="pax-pkt pax-v1" cx="74" cy="136" r="5" fill="url(#paxPkV)"/>
+        <circle class="pax-pkt pax-v2" cx="74" cy="136" r="5" fill="url(#paxPkV)"/>
+        <circle class="pax-pkt pax-o1" cx="206" cy="96" r="5" fill="url(#paxPkC)"/>
+        <circle class="pax-pkt pax-o2" cx="206" cy="96" r="5" fill="url(#paxPkC)"/>
+        <circle class="pax-pkt pax-o3" cx="206" cy="96" r="5" fill="url(#paxPkC)"/>
+        <circle class="pax-pkt pax-o4" cx="206" cy="96" r="5" fill="url(#paxPkC)"/>
       </svg>
       <span class="mono-tag">ONE WORKFLOW · ONE KPI · IN PRODUCTION</span>
     </div>

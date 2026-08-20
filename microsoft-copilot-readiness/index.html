@@ -765,6 +765,221 @@ footer{
 }
 
 /* ------------------------------------------------------------------
+   Copilot hero · the tenant made safe (.cpx-)
+   One looping 9s scene: files receive their labels one by one, the
+   leaking link is cut with a spark, the padlock clicks shut, the
+   boundary edge lights with the chased current, and the Copilot
+   spark breathes inside the safe room. Compositor-only motion:
+   transform and opacity; the single blur is static.
+   ------------------------------------------------------------------ */
+
+.cpx-scene{ position:relative; width:100%; }
+
+/* the room */
+.cpx-bd{ fill:rgba(255,255,255,.55); stroke:rgba(0,149,168,.30); stroke-width:1.2; }
+
+/* files and their label chips */
+.cpx-doc{ fill:rgba(38,28,64,.04); stroke:rgba(38,28,64,.26); stroke-width:1.2; }
+.cpx-dlines{ fill:none; stroke:rgba(38,28,64,.30); stroke-width:1.3; stroke-linecap:round; }
+.cpx-lit{
+  fill:rgba(0,149,168,.10); stroke:#0095A8; stroke-width:1.3; opacity:1;
+  animation:cpxDocLit 9s ease-in-out infinite backwards;
+  animation-delay:var(--d, 0s);
+}
+.cpx-chip{
+  transform-box:fill-box; transform-origin:center;
+  animation:cpxChip 9s ease-in-out infinite backwards;
+  animation-delay:var(--d, 0s);
+}
+.cpx-chip rect{ fill:#0095A8; }
+.cpx-chip path{ fill:none; stroke:#FFFFFF; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+
+/* the leak, the outsider, the cut */
+.cpx-leak-in, .cpx-leak-out path{
+  fill:none; stroke:rgba(38,28,64,.38); stroke-width:1.3; stroke-dasharray:4 5;
+}
+.cpx-leak-in{ opacity:0; animation:cpxLeakIn 9s ease-in-out infinite; }
+.cpx-leak-out{
+  opacity:0; transform-box:fill-box; transform-origin:center;
+  animation:cpxLeakOut 9s ease-in-out infinite;
+}
+.cpx-node{ opacity:.22; animation:cpxNode 9s ease-in-out infinite; }
+.cpx-node circle, .cpx-node path{ fill:none; stroke:rgba(38,28,64,.42); stroke-width:1.3; }
+.cpx-spark{
+  opacity:0; transform-box:fill-box; transform-origin:center;
+  animation:cpxSparkFlash 9s ease-in-out infinite;
+}
+.cpx-spark-x{ fill:none; stroke:#00C3DC; stroke-width:2; stroke-linecap:round; }
+.cpx-spark-r{ fill:none; stroke:#7C5CF6; stroke-width:1.5; stroke-linecap:round; }
+.cpx-spark-c{ fill:#EAFCFF; }
+
+/* the padlock click */
+.cpx-shackle{ animation:cpxShackle 9s ease-in-out infinite; }
+.cpx-shackle path{ fill:none; stroke:#0095A8; stroke-width:1.5; stroke-linecap:round; }
+.cpx-lockbump{ transform-box:fill-box; transform-origin:center; animation:cpxLockBump 9s ease-in-out infinite; }
+.cpx-lockbody{ fill:#FFFFFF; stroke:#0095A8; stroke-width:1.5; }
+.cpx-keyhole{ fill:#0095A8; }
+.cpx-keyslot{ fill:none; stroke:#0095A8; stroke-width:1.6; stroke-linecap:round; }
+.cpx-lockflash{ fill:none; stroke:#00C3DC; stroke-width:1.4; opacity:0; animation:cpxLockFlash 9s ease-in-out infinite; }
+
+/* the Copilot spark, once the room is safe */
+.cpx-ai{ opacity:.95; transform-box:fill-box; transform-origin:center; animation:cpxAIBreathe 9s ease-in-out infinite; }
+.cpx-star{ fill:url(#cpxgStar); }
+.cpx-aiglow{ opacity:.55; animation:cpxAIGlow 9s ease-in-out infinite; }
+
+/* Electric boundary edge: the home-page chased current fitted to the
+   tenant rect. An HTML band aligned over the SVG rect, a conic
+   gradient spun by transform, masked to a thin border band; the
+   bloom is a blurred duplicate that only breathes by opacity. */
+.cpx-bound{
+  position:absolute; left:4.706%; top:8.654%; width:70.588%; height:76.923%;
+  pointer-events:none;
+}
+.cpx-ring{
+  position:absolute; inset:-2px; border-radius:7.8% / 11.7%; overflow:hidden;
+  padding:2px; pointer-events:none; opacity:.75;
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  animation:cpxRingBreathe 9s ease-in-out infinite;
+  will-change:opacity;
+}
+.cpx-bloom{
+  position:absolute; inset:-4px; border-radius:8.4% / 12.6%; overflow:hidden;
+  padding:4px; pointer-events:none; opacity:.15;
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  filter:blur(3px);  /* static, never animated */
+  animation:cpxBloomBreathe 9s ease-in-out infinite;
+  will-change:opacity;
+}
+.cpx-ring i, .cpx-bloom i{
+  position:absolute; left:50%; top:50%; width:220%; height:330%;
+  background:conic-gradient(from 0deg,
+    transparent               0deg,
+    rgba(0,149,168,0)        26deg,
+    rgba(0,149,168,.85)      62deg,
+    #00C3DC                  96deg,
+    #EAFCFF                 114deg,
+    #00C3DC                 132deg,
+    rgba(124,92,246,.90)    168deg,
+    rgba(124,92,246,0)      202deg,
+    transparent             226deg,
+    rgba(124,92,246,.40)    262deg,
+    rgba(0,195,220,.45)     290deg,
+    transparent             318deg);
+  transform:translate(-50%,-50%) rotate(0deg);
+  animation:cpxRingSpin 7.2s linear infinite;
+  will-change:transform;
+}
+
+/* the 9s story */
+@keyframes cpxChip{
+  0%       { opacity:0; transform:scale(0); }
+  3%       { opacity:1; transform:scale(1.18); }
+  5.5%     { transform:scale(1); }
+  88%      { opacity:1; transform:scale(1); }
+  95%,100% { opacity:0; transform:scale(.5); }
+}
+@keyframes cpxDocLit{
+  0%       { opacity:0; }
+  3.5%     { opacity:1; }
+  88%      { opacity:1; }
+  95%,100% { opacity:0; }
+}
+@keyframes cpxLeakIn{
+  0%       { opacity:0; }
+  5%       { opacity:.85; }
+  45%      { opacity:.85; }
+  51%,100% { opacity:0; }
+}
+@keyframes cpxLeakOut{
+  0%       { opacity:0;   transform:none; }
+  5%       { opacity:.85; }
+  43.5%    { opacity:.85; transform:none; }
+  49%,100% { opacity:0;   transform:translateY(8px); }
+}
+@keyframes cpxNode{
+  0%       { opacity:0; }
+  5%       { opacity:.9; }
+  44%      { opacity:.9; }
+  51%      { opacity:.22; }
+  88%      { opacity:.22; }
+  95%,100% { opacity:0; }
+}
+@keyframes cpxSparkFlash{
+  0%,42.5% { opacity:0;   transform:scale(.4); }
+  44.5%    { opacity:1;   transform:scale(1.12); }
+  46%      { opacity:.55; transform:scale(1.04); }
+  47.5%    { opacity:.95; transform:scale(1); }
+  51.5%,100%{ opacity:0;  transform:scale(.55); }
+}
+@keyframes cpxShackle{
+  0%,55%   { transform:translateY(-3.5px); }
+  58%      { transform:translateY(.7px); }
+  60.5%,100%{ transform:translateY(0); }
+}
+@keyframes cpxLockBump{
+  0%,57%   { transform:scale(1); }
+  59.5%    { transform:scale(1.06); }
+  62.5%,100%{ transform:scale(1); }
+}
+@keyframes cpxLockFlash{
+  0%,56.5% { opacity:0; }
+  59.5%    { opacity:.9; }
+  67%,100% { opacity:0; }
+}
+@keyframes cpxAIBreathe{
+  0%,63%   { opacity:0; transform:scale(.55); }
+  69%      { opacity:1; transform:scale(1); }
+  77%      { transform:scale(1.06); }
+  84%      { transform:scale(.98); }
+  91%      { transform:scale(1.04); }
+  97%      { opacity:1; transform:scale(1); }
+  100%     { opacity:0; transform:scale(.75); }
+}
+@keyframes cpxAIGlow{
+  0%,63%   { opacity:0; }
+  70%      { opacity:.85; }
+  80%      { opacity:.55; }
+  90%      { opacity:.85; }
+  100%     { opacity:0; }
+}
+@keyframes cpxRingSpin{
+  from{ transform:translate(-50%,-50%) rotate(0deg); }
+  to  { transform:translate(-50%,-50%) rotate(360deg); }
+}
+@keyframes cpxRingBreathe{
+  0%,55%   { opacity:.38; }
+  66%      { opacity:1; }
+  93%      { opacity:1; }
+  100%     { opacity:.38; }
+}
+@keyframes cpxBloomBreathe{
+  0%,55%   { opacity:.1; }
+  66%      { opacity:.3; }
+  93%      { opacity:.3; }
+  100%     { opacity:.1; }
+}
+
+@media (max-width: 640px){
+  .cpx-bloom{ display:none; }  /* spare weak mobile GPUs the blurred layer */
+}
+
+/* Reduced motion: the scene rests in its finished, safe state:
+   labels on, leak gone, lock closed, Copilot lit, edge static. */
+@media (prefers-reduced-motion: reduce){
+  .cpx-lit, .cpx-chip, .cpx-leak-in, .cpx-leak-out, .cpx-node, .cpx-spark,
+  .cpx-shackle, .cpx-lockbump, .cpx-lockflash, .cpx-ai, .cpx-aiglow,
+  .cpx-ring, .cpx-bloom, .cpx-ring i, .cpx-bloom i{ animation:none !important; }
+  .cpx-ring{ opacity:.75; }
+  .cpx-bloom{ opacity:.15; }
+}
+
+/* ------------------------------------------------------------------
    Reduced motion: everything lands, nothing moves
    ------------------------------------------------------------------ */
 
@@ -847,44 +1062,119 @@ footer{
 
   <div class="hero-art rise">
     <div class="diagram-card">
-      <svg viewBox="0 0 340 208" role="img" aria-label="Tenant diagram: labelled files inside the boundary, an oversharing link cut at the edge">
-        <rect class="tn-bound" x="14" y="20" width="238" height="156" rx="16"/>
-        <text class="t-tiny" x="28" y="40">THE TENANT</text>
-        <g>
-          <rect class="tn-doc-hot" x="34" y="54" width="34" height="44" rx="5"/>
-          <path d="M41 66 H61 M41 74 H61 M41 82 H55" stroke="rgba(0,149,168,.6)" stroke-width="1.4" stroke-linecap="round"/>
-          <rect class="tn-tag" x="56" y="48" width="18" height="11" rx="4"/>
-        </g>
-        <g>
-          <rect class="tn-doc-hot" x="94" y="54" width="34" height="44" rx="5"/>
-          <path d="M101 66 H121 M101 74 H121 M101 82 H115" stroke="rgba(0,149,168,.6)" stroke-width="1.4" stroke-linecap="round"/>
-          <rect class="tn-tag" x="116" y="48" width="18" height="11" rx="4"/>
-        </g>
-        <g>
-          <rect class="tn-doc" x="154" y="54" width="34" height="44" rx="5"/>
-          <path d="M161 66 H181 M161 74 H181 M161 82 H175" stroke="rgba(38,28,64,.3)" stroke-width="1.4" stroke-linecap="round"/>
-        </g>
-        <g>
-          <rect class="tn-doc-hot" x="34" y="118" width="34" height="44" rx="5"/>
-          <path d="M41 130 H61 M41 138 H61 M41 146 H55" stroke="rgba(0,149,168,.6)" stroke-width="1.4" stroke-linecap="round"/>
-          <rect class="tn-tag" x="56" y="112" width="18" height="11" rx="4"/>
-        </g>
-        <g>
-          <rect class="tn-doc" x="94" y="118" width="34" height="44" rx="5"/>
-          <path d="M101 130 H121 M101 138 H121 M101 146 H115" stroke="rgba(38,28,64,.3)" stroke-width="1.4" stroke-linecap="round"/>
-        </g>
-        <g>
-          <rect class="tn-doc" x="154" y="118" width="34" height="44" rx="5"/>
-          <path d="M161 130 H181 M161 138 H181 M161 146 H175" stroke="rgba(38,28,64,.3)" stroke-width="1.4" stroke-linecap="round"/>
-        </g>
-        <path class="tn-leak" d="M188 76 C 232 66, 268 74, 304 84"/>
-        <circle cx="308" cy="85" r="12" fill="none" stroke="rgba(38,28,64,.25)" stroke-width="1.2"/>
-        <path class="draw d2 tn-cut" pathLength="1" d="M246 64 L262 82 M262 64 L246 82"/>
-        <rect x="222" y="160" width="22" height="17" rx="4" fill="#FFFFFF" stroke="#0095A8" stroke-width="1.4"/>
-        <path d="M226 160 v-4 a7 7 0 0 1 14 0 v4" fill="none" stroke="#0095A8" stroke-width="1.4"/>
-        <text class="t-tiny" x="14" y="200">LABELS ON · OVERSHARING CUT · THE RIGHT SEATS</text>
-      </svg>
-      <p class="diagram-cap">The work in one picture: labels on, oversharing cut, the right seats.</p>
+      <div class="cpx-scene">
+        <svg viewBox="0 0 340 208" role="img" aria-label="Tenant boundary scene: files receive labels one by one, an oversharing link crossing the boundary is cut, a padlock clicks closed and a Copilot spark lights inside">
+          <defs>
+            <linearGradient id="cpxgStar" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00C3DC"/>
+              <stop offset=".55" stop-color="#0095A8"/>
+              <stop offset="1" stop-color="#7C5CF6"/>
+            </linearGradient>
+            <radialGradient id="cpxgGlow">
+              <stop offset="0" stop-color="#00C3DC" stop-opacity=".38"/>
+              <stop offset=".6" stop-color="#7C5CF6" stop-opacity=".14"/>
+              <stop offset="1" stop-color="#7C5CF6" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <rect class="cpx-bd" x="16" y="18" width="240" height="160" rx="18"/>
+          <text class="t-tiny" x="30" y="35">THE TENANT</text>
+
+          <path class="cpx-leak-in" d="M142 58 C 192 48, 228 56, 256 70"/>
+          <g class="cpx-leak-out"><path d="M256 70 C 272 75, 286 80, 297 83"/></g>
+          <g class="cpx-node">
+            <circle cx="306" cy="84" r="9"/>
+            <circle cx="306" cy="81.4" r="2.3"/>
+            <path d="M300.8 89.6 a5.2 5.2 0 0 1 10.4 0"/>
+          </g>
+
+          <g class="cpx-docset" style="--d:.25s">
+            <rect class="cpx-doc" x="32" y="46" width="30" height="40" rx="5"/>
+            <path class="cpx-dlines" d="M38 57 h18 M38 65 h18 M38 73 h12"/>
+            <rect class="cpx-lit" x="32" y="46" width="30" height="40" rx="5"/>
+            <g class="cpx-chip">
+              <rect x="54" y="41" width="16" height="10" rx="3"/>
+              <path d="M58 46 l3 3 l5.5 -5.5"/>
+            </g>
+          </g>
+          <g class="cpx-docset" style="--d:.7s">
+            <rect class="cpx-doc" x="72" y="46" width="30" height="40" rx="5"/>
+            <path class="cpx-dlines" d="M78 57 h18 M78 65 h18 M78 73 h12"/>
+            <rect class="cpx-lit" x="72" y="46" width="30" height="40" rx="5"/>
+            <g class="cpx-chip">
+              <rect x="94" y="41" width="16" height="10" rx="3"/>
+              <path d="M98 46 l3 3 l5.5 -5.5"/>
+            </g>
+          </g>
+          <g class="cpx-docset" style="--d:1.15s">
+            <rect class="cpx-doc" x="112" y="46" width="30" height="40" rx="5"/>
+            <path class="cpx-dlines" d="M118 57 h18 M118 65 h18 M118 73 h12"/>
+            <rect class="cpx-lit" x="112" y="46" width="30" height="40" rx="5"/>
+            <g class="cpx-chip">
+              <rect x="134" y="41" width="16" height="10" rx="3"/>
+              <path d="M138 46 l3 3 l5.5 -5.5"/>
+            </g>
+          </g>
+          <g class="cpx-docset" style="--d:1.6s">
+            <rect class="cpx-doc" x="32" y="100" width="30" height="40" rx="5"/>
+            <path class="cpx-dlines" d="M38 111 h18 M38 119 h18 M38 127 h12"/>
+            <rect class="cpx-lit" x="32" y="100" width="30" height="40" rx="5"/>
+            <g class="cpx-chip">
+              <rect x="54" y="95" width="16" height="10" rx="3"/>
+              <path d="M58 100 l3 3 l5.5 -5.5"/>
+            </g>
+          </g>
+          <g class="cpx-docset" style="--d:2.05s">
+            <rect class="cpx-doc" x="72" y="100" width="30" height="40" rx="5"/>
+            <path class="cpx-dlines" d="M78 111 h18 M78 119 h18 M78 127 h12"/>
+            <rect class="cpx-lit" x="72" y="100" width="30" height="40" rx="5"/>
+            <g class="cpx-chip">
+              <rect x="94" y="95" width="16" height="10" rx="3"/>
+              <path d="M98 100 l3 3 l5.5 -5.5"/>
+            </g>
+          </g>
+          <g class="cpx-docset" style="--d:2.5s">
+            <rect class="cpx-doc" x="112" y="100" width="30" height="40" rx="5"/>
+            <path class="cpx-dlines" d="M118 111 h18 M118 119 h18 M118 127 h12"/>
+            <rect class="cpx-lit" x="112" y="100" width="30" height="40" rx="5"/>
+            <g class="cpx-chip">
+              <rect x="134" y="95" width="16" height="10" rx="3"/>
+              <path d="M138 100 l3 3 l5.5 -5.5"/>
+            </g>
+          </g>
+
+          <g transform="translate(198 84)">
+            <circle class="cpx-aiglow" r="26" fill="url(#cpxgGlow)"/>
+            <g class="cpx-ai">
+              <path class="cpx-star" d="M0 -15 C 1.8 -4.5, 4.5 -1.8, 15 0 C 4.5 1.8, 1.8 4.5, 0 15 C -1.8 4.5, -4.5 1.8, -15 0 C -4.5 -1.8, -1.8 -4.5, 0 -15 Z"/>
+              <path class="cpx-star" d="M0 -6 C .8 -1.8, 1.8 -.8, 6 0 C 1.8 .8, .8 1.8, 0 6 C -.8 1.8, -1.8 .8, -6 0 C -1.8 -.8, -.8 -1.8, 0 -6 Z" transform="translate(24 22)"/>
+            </g>
+          </g>
+
+          <g class="cpx-lockset">
+            <rect class="cpx-lockflash" x="197" y="149" width="38" height="34" rx="9"/>
+            <g class="cpx-lockbump">
+              <g class="cpx-shackle"><path d="M209 160 v-5 a7 7 0 0 1 14 0 v5"/></g>
+              <rect class="cpx-lockbody" x="204" y="160" width="24" height="18" rx="4"/>
+              <circle class="cpx-keyhole" cx="216" cy="167.5" r="2.2"/>
+              <path class="cpx-keyslot" d="M216 169.5 v3.5"/>
+            </g>
+          </g>
+
+          <g class="cpx-spark">
+            <path class="cpx-spark-x" d="M250.5 63.5 L261.5 76.5 M261.5 63.5 L250.5 76.5"/>
+            <path class="cpx-spark-r" d="M256 56.5 v-4 M256 83.5 v4 M243.5 70 h-4 M268.5 70 h4"/>
+            <circle class="cpx-spark-c" cx="256" cy="70" r="2"/>
+          </g>
+
+          <text class="t-tiny" x="14" y="200">LABELLED · CUT · LOCKED · COPILOT ON</text>
+        </svg>
+        <div class="cpx-bound" aria-hidden="true">
+          <span class="cpx-bloom"><i></i></span>
+          <span class="cpx-ring"><i></i></span>
+        </div>
+      </div>
+      <p class="diagram-cap">Labels on, the leak cut, the lock closed: then Copilot switches on.</p>
     </div>
   </div>
 </section>
