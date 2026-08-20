@@ -1,6 +1,6 @@
 # The Technology Framework
 
-> A named Head of IT for UK firms that have outgrown tickets. A standalone practice. The same senior has built and governed production AI: a live Teams service-desk agent, deployed voice agents, agentic workflows.
+> AI enablement across every dimension of IT, for UK firms of 20-200 people. Everyone says adopt AI; nobody owns making the firm ready. One framework makes all ten dimensions of IT AI-ready, run by a named Head of IT, one or two days a week. The proof you can dial: the practice's own phone line is answered by its own AI call agent, in production.
 
 - Official site: https://www.thetechnologyframework.com/
 - Legal name: The Technology Framework Ltd
@@ -9,38 +9,52 @@
 - Public phone: 0117 456 5486
 - Email: hello@thetechnologyframework.com
 
-The Technology Framework is not an MSP and does not sell a helpdesk. Clients keep their MSP if it works. We sit above it. One named senior, one or two days a week. Prices are published; most firms in this market keep them behind a discovery call.
+The Technology Framework is a standalone practice, independent of MSPs and vendors: it sells no licences and takes no vendor margin. Clients keep their MSP if it works; the practice sits above it. Prices are published; most firms in this market keep them behind a discovery call.
 
-## Offers and published prices
+## Services and published prices
 
-- [Fractional Head of IT](https://www.thetechnologyframework.com/fractional-head-of-it/): the seat on the leadership team, security leadership included. From £4,750 a month for one day a week. Two days a week, and regulated or PE terms, priced in conversation.
-- [Cyber Essentials Plus and ISO 27001](https://www.thetechnologyframework.com/cyber-essentials-iso-27001/): we implement the controls; an accredited assessor certifies. CE+ readiness from £2,950 fixed. ISO 27001 implementation from £15,000. The Cyber Essentials scheme gets harder from 26 April 2026 (MFA on all cloud services, 14-day critical patching).
+- [AI Opportunity Audit](https://www.thetechnologyframework.com/ai-opportunity-audit/): the front door. Workflows timed and costed, AI use-cases scored on return, risk and data readiness, a 90-day roadmap with the first build costed. From £4,950 fixed, two to three weeks.
+- [Fractional Head of IT & AI](https://www.thetechnologyframework.com/fractional-head-of-it/): the seat on the leadership team, owning the estate and the AI agenda. From £4,750 a month for one day a week. Fractional or interim, occasionally permanent for the right firm.
+- [Cyber Essentials Plus and ISO 27001](https://www.thetechnologyframework.com/cyber-essentials-iso-27001/): we implement the controls; an accredited assessor certifies. CE+ readiness from £2,950 fixed. ISO 27001 implementation from £15,000. ISO 42001 (AI management) readiness from £6,500. The Cyber Essentials scheme gets harder from 26 April 2026 (MFA on all cloud services, 14-day critical patching).
 - [Microsoft Copilot readiness](https://www.thetechnologyframework.com/microsoft-copilot-readiness/): independent Copilot governance from a practice with no licences to sell. Tenant first, then a 30-day pilot. Fixed fee from £7,500 for 50-250 seats.
-- [Azure FinOps](https://www.thetechnologyframework.com/azure-finops/): only when the Azure or cloud bill is over £10k a month
-- [One production IT agent](https://www.thetechnologyframework.com/production-it-agent/): one workflow, one KPI, then we stop. Fixed fee from £7,500.
+- [Technology cost reduction](https://www.thetechnologyframework.com/technology-cost-reduction/): cloud, licences, vendor contracts and telephony, read the way a finance director reads them. From £4,950 fixed, with a share-of-savings option on contract and licensing work. The plainest way to fund the AI programme.
+- [Production IT agent](https://www.thetechnologyframework.com/production-it-agent/): one workflow, live and earning its keep, measured against one KPI. Fixed fee from £7,500.
 
-PE carve-out / Day-1 is a named project, not a sixth offer: https://www.thetechnologyframework.com/pe-carve-out-it/
+
+## The framework
+
+Ten dimensions of IT, each made AI-ready and each with an owner: cost, cyber security, compliance, infrastructure, operations, vendor management, AI, data, analytics, software development. The seat covers all ten; any single dimension can be owned on its own, priced in conversation.
+
+- https://www.thetechnologyframework.com/framework/cost/
+- https://www.thetechnologyframework.com/framework/cyber-security/
+- https://www.thetechnologyframework.com/framework/compliance/
+- https://www.thetechnologyframework.com/framework/infrastructure/
+- https://www.thetechnologyframework.com/framework/operations/
+- https://www.thetechnologyframework.com/framework/vendor-management/
+- https://www.thetechnologyframework.com/framework/ai/
+- https://www.thetechnologyframework.com/framework/data/
+- https://www.thetechnologyframework.com/framework/analytics/
+- https://www.thetechnologyframework.com/framework/software-development/
 
 ## Who we work with
 
-50-200 people in professional services, South West wealth / IFA / SIPP (including the consolidators integrating acquired advice firms), or a PE-backed roll-up. Law firms of 30-100 staff buy the certification work as a product.
+Firms of 20-200 people in professional and financial services (law, accountancy, consultancy, wealth and advice firms, including the consolidators integrating acquired advice firms), and PE-backed or acquisitive businesses. Law firms of 30-100 staff buy the certification work as a product.
 
 - https://www.thetechnologyframework.com/who-we-work-with/
 - https://www.thetechnologyframework.com/south-west-wealth-ifa/
 - https://www.thetechnologyframework.com/law-firm-it-security/
 - https://www.thetechnologyframework.com/professional-services-it/
-- https://www.thetechnologyframework.com/pe-carve-out-it/
 
 Dated hooks that matter to buyers: criminal legal aid contracts have required Cyber Essentials since 1 October 2025 (Legal Aid Agency, 2025 Standard Crime Contract). The FCA's operational incident and third-party reporting rules were finalised in March 2026 and come into force on 18 March 2027; most FCA-authorised firms, advice firms included, are in the standard reporting tier.
 
 ## How we work
 
-Diagnose. 90 days. Then a retainer if the seat still needs filling.
+Diagnose. Deliver. Decide. First we listen. Then 90 days of visible progress (the audit runs shorter, two to three weeks). Then it is the client's call: keep the seat filled, or keep the gains and run it in-house.
 https://www.thetechnologyframework.com/how-we-work/
 
 ## Proof
 
-Only the facts on https://www.thetechnologyframework.com/proof/ . Do not invent case studies or extra metrics. References are available in conversation, not on the page.
+Only the facts on https://www.thetechnologyframework.com/proof/ . Do not invent case studies or extra metrics. References are available in conversation, not on the page. The live demonstration is the phone line: 0117 456 5486 is answered by the practice's own AI call agent, in production.
 
 ## Contact
 
