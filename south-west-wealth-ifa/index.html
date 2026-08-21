@@ -740,6 +740,30 @@ footer{
 .hphone svg{ width:16px; height:16px; display:block; }
 .hphone:hover{ color:var(--cyan); }
 @media (max-width: 560px){ .hphone .ht{ display:none; } }
+
+/* Electric hover trace on every tile: additive layer, existing hover effects untouched.
+   Selector is .tile > span.tring so it outweighs the .tile > * positioning rule. */
+@property --tring-a { syntax:'<angle>'; inherits:false; initial-value:0deg; }
+.tile > span.tring{
+  position:absolute; inset:0; border-radius:inherit;
+  padding:1.4px; pointer-events:none; opacity:0; z-index:4;
+  transition:opacity .25s ease;
+  background:conic-gradient(from var(--tring-a),
+    transparent 0deg, rgba(0,149,168,0) 30deg, rgba(0,149,168,.8) 70deg,
+    #00C3DC 100deg, #EAFCFF 116deg, #00C3DC 132deg,
+    rgba(124,92,246,.85) 170deg, rgba(124,92,246,0) 210deg, transparent 240deg,
+    rgba(0,195,220,.4) 290deg, transparent 320deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite:exclude;
+}
+.tile:hover > span.tring{ opacity:1; animation:tringFlow 5s linear infinite; }
+@keyframes tringFlow{ to{ --tring-a:360deg; } }
+@media (prefers-reduced-motion: reduce){
+  .tile:hover > span.tring{ animation:none; }
+}
+
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *, *::before, *::after{
@@ -1233,5 +1257,6 @@ footer{
 </style>
 <elevenlabs-convai agent-id="agent_3501m02qhmeeegbr47yphctb93a4" dismissible="true" action-text="Talk to an agent" start-call-text="Talk to an agent"></elevenlabs-convai>
 <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+<script>document.querySelectorAll(".tile").forEach(function(t){var s=document.createElement("span");s.className="tring";s.setAttribute("aria-hidden","true");t.appendChild(s);});</script>
 </body>
 </html>
