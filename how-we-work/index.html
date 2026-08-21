@@ -702,6 +702,19 @@ footer{
    Reduced motion: everything lands, nothing moves
    ------------------------------------------------------------------ */
 
+
+/* Contact tile: copy left, action rail right, matching the home page. */
+.tile-contact .c-grid{
+  display:grid; grid-template-columns:minmax(0,1fr) 252px;
+  gap:26px 40px; align-items:center;
+}
+.tile-contact .c-actions{ display:flex; flex-direction:column; gap:12px; }
+.tile-contact .c-actions .btn{ width:100%; justify-content:center; }
+@media (max-width: 780px){
+  .tile-contact .c-grid{ grid-template-columns:minmax(0,1fr); }
+  .tile-contact .c-actions{ flex-direction:row; flex-wrap:wrap; }
+  .tile-contact .c-actions .btn{ width:auto; flex:1 1 160px; }
+}
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *, *::before, *::after{
@@ -799,9 +812,6 @@ footer{
 
   <div class="hero-art rise" id="heroArt">
     <div class="billcard inview">
-      <div class="duo">
-        <img src="/images/hero-leadership.jpg" alt="Leadership team in discussion around a boardroom table" loading="lazy">
-      </div>
       <svg viewBox="0 0 340 190" role="img" aria-label="A timeline: diagnose, then deliver, then decide. The decision forks: keep the seat, or keep the gains.">
         <path class="s-faint" d="M16 95 H56"/>
         <path class="draw" pathLength="1" d="M56 95 H252" stroke="#0095A8" stroke-width="2"/>
@@ -1002,7 +1012,9 @@ footer{
     <span class="m-note">Bring the thing that hurts</span>
   </div>
 
-  <section class="tile tile-contact s8" aria-labelledby="c-h">
+  <section class="tile tile-contact s12" aria-labelledby="c-h">
+    <div class="c-grid">
+    <div class="c-main">
     <span class="chip">Contact</span>
     <h3 id="c-h">Start the conversation.</h3>
     <p class="lead">The first conversation costs nothing and changes what happens next. Bring the thing that hurts, or the thing you want to build.</p>
@@ -1011,35 +1023,12 @@ footer{
       <span class="mono-tag">Proof you can dial</span>
       <p>Call <a href="tel:+441174565486">0117 456 5486</a>. The voice that answers is our own AI call agent, in production, on our own line. We run our practice on what we sell. Hear it running.</p>
     </div>
-
-    <div class="contact-ctas">
-      <a class="btn btn-cta" href="/contact/">Start the conversation <span class="arr">→</span></a>
+    <p class="contact-note">The call button dials the line above.</p>
+  </div>
+    <div class="c-actions" role="group" aria-label="Ways to start">
+      <a class="btn btn-cta" href="/book/" onclick="if(window.gtag)gtag('event','book_meeting_click')">Book a meeting <span class="arr">→</span></a>
       <a class="btn btn-ghost" href="tel:+441174565486">Call 0117 456 5486</a>
     </div>
-    <p class="contact-note">The call button dials the line above.</p>
-  </section>
-
-  <section class="tile tile-details s4" aria-label="Contact details">
-    <div class="d-row">
-      <svg viewBox="0 0 34 34" aria-hidden="true">
-        <rect x="4" y="4" width="26" height="26" rx="8" fill="rgba(0,149,168,.07)" stroke="rgba(0,149,168,.3)" stroke-width="1.2"/>
-        <path d="M12 11 c0 6 5 11 11 11 l2.4-3 -3.8-2.4 -1.8 1.6 c-1.8-1-3.2-2.4-4-4 l1.6-1.8 L15 8.6 z" fill="none" stroke="#0095A8" stroke-width="1.5" stroke-linejoin="round"/>
-      </svg>
-      <div>
-        <span class="d-k">Phone</span>
-        <a href="tel:+441174565486">0117 456 5486</a>
-      </div>
-    </div>
-    <div class="d-row">
-      <svg viewBox="0 0 34 34" aria-hidden="true">
-        <rect x="4" y="4" width="26" height="26" rx="8" fill="rgba(0,149,168,.07)" stroke="rgba(0,149,168,.3)" stroke-width="1.2"/>
-        <path d="M17 8 c4.2 0 7 3 7 6.6 c0 4.6-4.6 8.6-7 11.4 c-2.4-2.8-7-6.8-7-11.4 C10 11 12.8 8 17 8 z" fill="none" stroke="#0095A8" stroke-width="1.5" stroke-linejoin="round"/>
-        <circle cx="17" cy="14.6" r="2.4" fill="#0095A8"/>
-      </svg>
-      <div>
-        <span class="d-k">Registered office</span>
-        <span class="d-v">20-22 Wenlock Road,<br>London N1 7GU</span>
-      </div>
     </div>
   </section>
 

@@ -666,6 +666,19 @@ footer{
    Reduced motion: everything lands, nothing moves
    ------------------------------------------------------------------ */
 
+
+/* Contact tile: copy left, action rail right, matching the home page. */
+.tile-contact .c-grid{
+  display:grid; grid-template-columns:minmax(0,1fr) 252px;
+  gap:26px 40px; align-items:center;
+}
+.tile-contact .c-actions{ display:flex; flex-direction:column; gap:12px; }
+.tile-contact .c-actions .btn{ width:100%; justify-content:center; }
+@media (max-width: 780px){
+  .tile-contact .c-grid{ grid-template-columns:minmax(0,1fr); }
+  .tile-contact .c-actions{ flex-direction:row; flex-wrap:wrap; }
+  .tile-contact .c-actions .btn{ width:auto; flex:1 1 160px; }
+}
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *, *::before, *::after{
@@ -801,7 +814,9 @@ footer{
     <span class="m-note">Pick one and your mail app opens</span>
   </div>
 
-  <section class="tile tile-contact s8" aria-labelledby="c-h">
+  <section class="tile tile-contact s12" aria-labelledby="c-h">
+    <div class="c-grid">
+    <div class="c-main">
     <span class="chip">Contact</span>
     <h3 id="c-h">Start the conversation.</h3>
     <p class="lead">Pick the thing that hurts and your mail app opens with the subject filled in. Or talk to the agent right here on the page.</p>
@@ -842,37 +857,13 @@ footer{
         The workflow eating someone's day
       </button>
     </div>
-
-    <div class="contact-ctas">
-      <button class="btn btn-cta talk-agent" type="button">Talk to an agent <span class="arr">→</span></button>
+    <p class="contact-note">Nothing sends from this page without you.</p>
+  </div>
+    <div class="c-actions" role="group" aria-label="Ways to start">
+      <a class="btn btn-cta" href="/book/" onclick="if(window.gtag)gtag('event','book_meeting_click')">Book a meeting <span class="arr">→</span></a>
       <a class="btn btn-ghost" href="tel:+441174565486">Call 0117 456 5486</a>
     </div>
-    <p class="contact-note">Nothing sends from this page without you.</p>
-  </section>
-
-  <section class="tile tile-details s4" aria-label="Contact details">
-    <div class="d-row">
-      <svg viewBox="0 0 34 34" aria-hidden="true">
-        <rect x="4" y="4" width="26" height="26" rx="8" fill="rgba(0,149,168,.07)" stroke="rgba(0,149,168,.3)" stroke-width="1.2"/>
-        <path d="M12 11 c0 6 5 11 11 11 l2.4-3 -3.8-2.4 -1.8 1.6 c-1.8-1-3.2-2.4-4-4 l1.6-1.8 L15 8.6 z" fill="none" stroke="#0095A8" stroke-width="1.5" stroke-linejoin="round"/>
-      </svg>
-      <div>
-        <span class="d-k">Phone</span>
-        <a href="tel:+441174565486">0117 456 5486</a>
-      </div>
     </div>
-    <div class="d-row">
-      <svg viewBox="0 0 34 34" aria-hidden="true">
-        <rect x="4" y="4" width="26" height="26" rx="8" fill="rgba(0,149,168,.07)" stroke="rgba(0,149,168,.3)" stroke-width="1.2"/>
-        <path d="M17 8 c4.2 0 7 3 7 6.6 c0 4.6-4.6 8.6-7 11.4 c-2.4-2.8-7-6.8-7-11.4 C10 11 12.8 8 17 8 z" fill="none" stroke="#0095A8" stroke-width="1.5" stroke-linejoin="round"/>
-        <circle cx="17" cy="14.6" r="2.4" fill="#0095A8"/>
-      </svg>
-      <div>
-        <span class="d-k">Registered office</span>
-        <span class="d-v">20-22 Wenlock Road,<br>London N1 7GU</span>
-      </div>
-    </div>
-    <p class="d-foot">The phone number is a Bristol number. The registered office is in London. Much of the work happens in the tenant, the bill and the evidence.</p>
   </section>
 
   <!-- ========== 02 · WHAT HAPPENS NEXT ========== -->
