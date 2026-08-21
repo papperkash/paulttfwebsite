@@ -639,6 +639,22 @@ h1 .hl::after{
 .tile-sign h3{ font-size:clamp(1.15rem, 1.8vw, 1.45rem); text-wrap:balance; }
 .tile-sign p{ margin-top:8px; color:var(--muted); max-width:46rem; }
 @media (max-width: 640px){ .tile-sign{ padding:24px 22px; } .marker{ padding-top:64px; } }
+
+/* Contact tile: copy and mail chips left, the three ways in as a rail on
+   the right, vertically centred, so the wide tile reads balanced. */
+.tile-contact .c-grid{
+  display:grid; grid-template-columns:minmax(0,1fr) 252px;
+  gap:26px 40px; align-items:center;
+}
+.tile-contact .c-actions{
+  display:flex; flex-direction:column; gap:12px;
+}
+.tile-contact .c-actions .btn{ width:100%; justify-content:center; }
+@media (max-width: 780px){
+  .tile-contact .c-grid{ grid-template-columns:minmax(0,1fr); }
+  .tile-contact .c-actions{ flex-direction:row; flex-wrap:wrap; }
+  .tile-contact .c-actions .btn{ width:auto; flex:1 1 160px; }
+}
 .m-num{
   font-family:var(--font-d); font-weight:600;
   font-size:12.5px; color:var(--cyan); letter-spacing:.08em;
@@ -1717,25 +1733,10 @@ footer{
   </section>
 
   <!-- ========== 03 · WHO WE WORK WITH ========== -->
-  <div class="marker" id="rooms">
-    <span class="m-num">02</span>
-    <span class="m-label">Who we work with</span>
-    <span class="m-line" aria-hidden="true"></span>
-    <span class="m-note">The firms we know best, one named senior</span>
-  </div>
-
-  <section class="tile tile-sign s12" aria-label="Who we work with">
-    <div class="sign-copy">
-      <span class="chip">The firms we know best</span>
-      <h3>Professional and financial services. Firms of 50-200 people. Businesses that grow by acquisition.</h3>
-      <p>The sector, the size and the situation, each with its own page and its own pressures.</p>
-    </div>
-    <a class="btn btn-ghost" href="/who-we-work-with/">Who we work with <span class="arr">→</span></a>
-  </section>
 
   <!-- ========== 04 · PROOF ========== -->
   <div class="marker" id="proof">
-    <span class="m-num">03</span>
+    <span class="m-num">02</span>
     <span class="m-label">Proof</span>
     <span class="m-line" aria-hidden="true"></span>
     <span class="m-note">Six facts, on the record</span>
@@ -1823,7 +1824,7 @@ footer{
 
   <!-- ========== 05 · HOW WE WORK ========== -->
   <div class="marker" id="how">
-    <span class="m-num">04</span>
+    <span class="m-num">03</span>
     <span class="m-label">How we work</span>
     <span class="m-line" aria-hidden="true"></span>
     <span class="m-note">Diagnose. Deliver. Decide.</span>
@@ -1840,13 +1841,15 @@ footer{
 
   <!-- ========== 06 · CONTACT ========== -->
   <div class="marker" id="contact">
-    <span class="m-num">05</span>
+    <span class="m-num">04</span>
     <span class="m-label">Start the conversation</span>
     <span class="m-line" aria-hidden="true"></span>
     <span class="m-note">Bring the thing that hurts</span>
   </div>
 
   <section class="tile tile-contact s12" aria-labelledby="c-h">
+    <div class="c-grid">
+    <div class="c-main">
     <span class="chip">Contact</span>
     <h3 id="c-h">Start the conversation.</h3>
     <p class="lead">The first conversation costs nothing and changes what happens next. Bring the thing that hurts, or the thing you want to build.</p>
@@ -1888,11 +1891,15 @@ footer{
       </button>
     </div>
 
-    <div class="contact-ctas">
+    <p class="contact-note">Talk to an agent starts a voice conversation with our own AI agent, right here on the page. Prefer email? Pick the thing that hurts above and your mail app opens with the subject filled in. Nothing sends from this page.</p>
+    </div>
+
+    <div class="c-actions" role="group" aria-label="Ways to start">
+      <a class="btn btn-cta" href="/book/" onclick="if(window.gtag)gtag('event','book_meeting_click')">Book a meeting <span class="arr">→</span></a>
       <button class="btn btn-cta" id="talkAgent" type="button">Talk to an agent <span class="arr">→</span></button>
       <a class="btn btn-ghost" href="tel:+441174565486">Call 0117 456 5486</a>
     </div>
-    <p class="contact-note">Talk to an agent starts a voice conversation with our own AI agent, right here on the page. Prefer email? Pick the thing that hurts above and your mail app opens with the subject filled in. Nothing sends from this page.</p>
+    </div>
   </section>
 
 </div>
@@ -2077,6 +2084,9 @@ footer{
   .agent-dock{ position:fixed; left:max(1.15rem, env(safe-area-inset-left)); bottom:max(1.25rem, env(safe-area-inset-bottom)); z-index:105; }
   .agent-dock elevenlabs-convai{ position:static; display:block; }
   .agent-close{
+    display:none;
+  }
+  .agent-dock.agent-ready .agent-close{
     position:absolute; top:-10px; right:-10px; z-index:2;
     width:26px; height:26px; border-radius:50%; cursor:pointer;
     background:#FFFFFF; color:#261C40;
@@ -2167,6 +2177,13 @@ footer{
   var close = document.getElementById("agentClose");
   if(close && dock){
     close.addEventListener("click", function(){ dock.style.display = "none"; });
+    var widget = dock.querySelector("elevenlabs-convai");
+    var tries = 0;
+    var poll = setInterval(function(){
+      tries++;
+      if (widget && widget.offsetHeight > 10) { dock.classList.add("agent-ready"); clearInterval(poll); }
+      else if (tries > 40) clearInterval(poll);
+    }, 500);
   }
   var talk = document.getElementById("talkAgent");
   if(talk && dock){
