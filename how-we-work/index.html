@@ -715,6 +715,247 @@ footer{
   .tile-contact .c-actions{ flex-direction:row; flex-wrap:wrap; }
   .tile-contact .c-actions .btn{ width:auto; flex:1 1 160px; }
 }
+/* ---------- Card shell ---------- */
+  .ttf-howflow {
+    width: min(420px, 92vw);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(165deg, rgba(255,255,255,.94), rgba(255,255,255,.72));
+    border: 1px solid rgba(94,90,180,.25);
+    border-radius: 18px;
+    box-shadow: 0 24px 48px -24px rgba(38,28,64,.28), 0 2px 10px rgba(38,28,64,.05);
+  }
+
+  /* ---------- Step rectangles ---------- */
+  .ttf-howflow .hf-step {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    background: #FFFFFF;
+    border: 1px solid rgba(94,90,180,.16);
+    border-radius: 13px;
+    animation: hfLift 8s ease-in-out infinite;
+    will-change: transform;
+  }
+  /* soft accent glow, active window only */
+  .ttf-howflow .hf-step::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 13px;
+    box-shadow: 0 10px 26px -10px rgba(0,195,220,.45), 0 2px 10px rgba(124,92,246,.18);
+    opacity: 0;
+    animation: hfRing 8s ease-in-out infinite;
+  }
+  /* electric gradient hairline, active window only */
+  .ttf-howflow .hf-step::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: 14px;
+    padding: 1.5px;
+    background: linear-gradient(120deg, #00C3DC, #7C5CF6 55%, #00C3DC);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    animation: hfRing 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .ttf-howflow .hf-s2, .ttf-howflow .hf-s2::before, .ttf-howflow .hf-s2::after { animation-delay: 2s; }
+  .ttf-howflow .hf-s3, .ttf-howflow .hf-s3::before, .ttf-howflow .hf-s3::after { animation-delay: 4s; }
+
+  .ttf-howflow .hf-num {
+    flex: none;
+    width: 34px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(124,92,246,.10);
+    border: 1px solid rgba(124,92,246,.18);
+    border-radius: 8px;
+    font: 700 11px/1 'Sora', 'Segoe UI', sans-serif;
+    letter-spacing: .04em;
+    color: #261C40;
+  }
+  .ttf-howflow .hf-body { min-width: 0; padding-top: 2px; }
+  .ttf-howflow .hf-name {
+    font: 700 15px/1.25 'Sora', 'Segoe UI', sans-serif;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #261C40;
+    white-space: nowrap;
+  }
+  .ttf-howflow .hf-sub {
+    margin-top: 3px;
+    font: 400 12px/1.35 'Inter', 'Segoe UI', sans-serif;
+    color: rgba(38,28,64,.62);
+    white-space: nowrap;
+  }
+
+  /* ---------- Vertical connectors (dedicated lane, no text) ---------- */
+  .ttf-howflow .hf-conn { position: relative; height: 22px; }
+  .ttf-howflow .hf-conn::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 2px;
+    bottom: 8px;
+    width: 2px;
+    transform: translateX(-50%);
+    background: rgba(38,28,64,.20);
+    border-radius: 1px;
+  }
+  .ttf-howflow .hf-conn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 3px;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid rgba(38,28,64,.28);
+    border-bottom: 2px solid rgba(38,28,64,.28);
+    transform: translateX(-50%) rotate(45deg);
+  }
+  .ttf-howflow .hf-connx {
+    position: absolute;
+    left: 50%;
+    top: 2px;
+    bottom: 8px;
+    width: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, #00C3DC, #7C5CF6);
+    border-radius: 1px;
+    opacity: 0;
+    animation: hfFlow 8s linear infinite;
+  }
+  .ttf-howflow .hf-c2 .hf-connx { animation-delay: 2s; }
+
+  /* ---------- Fork lane (dedicated lane, no text) ---------- */
+  .ttf-howflow .hf-fork { position: relative; height: 46px; margin-top: 2px; }
+  .ttf-howflow .hf-fork svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .ttf-howflow .hf-fx { opacity: 0; animation: hfFork 8s ease-in-out infinite; }
+  .ttf-howflow .hf-fa {
+    position: absolute;
+    bottom: 2px;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid rgba(38,28,64,.28);
+    border-bottom: 2px solid rgba(38,28,64,.28);
+    transform: rotate(45deg);
+  }
+  .ttf-howflow .hf-fa.hf-left  { left: calc(21% - 3.5px); }
+  .ttf-howflow .hf-fa.hf-right { left: calc(79% - 3.5px); }
+
+  /* ---------- Outcome pills ---------- */
+  .ttf-howflow .hf-ends {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    row-gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 2px;
+  }
+  .ttf-howflow .hf-pill {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 14px;
+    background: #FFFFFF;
+    border: 1px solid rgba(94,90,180,.25);
+    border-radius: 999px;
+    font: 600 11px/1 'Inter', 'Segoe UI', sans-serif;
+    color: #261C40;
+    white-space: nowrap;
+    animation: hfPillLift 8s ease-in-out infinite;
+    will-change: transform;
+  }
+  .ttf-howflow .hf-pill::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: 999px;
+    padding: 1.5px;
+    background: linear-gradient(120deg, #00C3DC, #7C5CF6);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    animation: hfPillOn 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .ttf-howflow .hf-dot { flex: none; width: 6px; height: 6px; border-radius: 50%; }
+  .ttf-howflow .hf-keep .hf-dot { background: #0095A8; }
+  .ttf-howflow .hf-run  .hf-dot { background: #7C5CF6; }
+
+  /* ---------- One orchestrated idea: the pulse travels 01 > 02 > 03 > fork ---------- */
+  @keyframes hfRing {
+    0% { opacity: 0; } 4% { opacity: 1; } 25% { opacity: 1; } 31% { opacity: 0; } 100% { opacity: 0; }
+  }
+  @keyframes hfLift {
+    0% { transform: translateY(0); } 4% { transform: translateY(-2px); }
+    25% { transform: translateY(-2px); } 31% { transform: translateY(0); } 100% { transform: translateY(0); }
+  }
+  @keyframes hfFlow {
+    0% { opacity: 0; } 20% { opacity: 0; } 25% { opacity: 1; } 31% { opacity: 1; } 37% { opacity: 0; } 100% { opacity: 0; }
+  }
+  @keyframes hfFork {
+    0% { opacity: 0; } 72% { opacity: 0; } 78% { opacity: 1; } 94% { opacity: 1; } 100% { opacity: 0; }
+  }
+  @keyframes hfPillOn {
+    0% { opacity: 0; } 74% { opacity: 0; } 80% { opacity: 1; } 94% { opacity: 1; } 100% { opacity: 0; }
+  }
+  @keyframes hfPillLift {
+    0% { transform: translateY(0); } 74% { transform: translateY(0); } 80% { transform: translateY(-2px); }
+    94% { transform: translateY(-2px); } 100% { transform: translateY(0); }
+  }
+
+  /* ---------- Reduced motion: rest on the finished state ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    .ttf-howflow .hf-step,
+    .ttf-howflow .hf-step::before,
+    .ttf-howflow .hf-step::after,
+    .ttf-howflow .hf-connx,
+    .ttf-howflow .hf-fx,
+    .ttf-howflow .hf-pill,
+    .ttf-howflow .hf-pill::after { animation: none !important; }
+    .ttf-howflow .hf-s3::after { opacity: 1; }
+    .ttf-howflow .hf-s3::before { opacity: .6; }
+    .ttf-howflow .hf-fx { opacity: 1; }
+    .ttf-howflow .hf-pill::after { opacity: 1; }
+  }
+
+  /* ---------- Narrow-screen safety ---------- */
+  @media (max-width: 400px) {
+    .ttf-howflow { padding: 20px; }
+    .ttf-howflow .hf-name { font-size: 14px; }
+    .ttf-howflow .hf-sub { font-size: 11px; }
+    .ttf-howflow .hf-pill { font-size: 10px; padding: 7px 12px; }
+  }
+  @media (max-width: 380px) {
+    .ttf-howflow .hf-fork { height: 22px; }
+    .ttf-howflow .hf-fork svg, .ttf-howflow .hf-fa { display: none; }
+    .ttf-howflow .hf-fork::before {
+      content: ""; position: absolute; left: 50%; top: 2px; bottom: 8px; width: 2px;
+      transform: translateX(-50%); background: rgba(38,28,64,.20); border-radius: 1px;
+    }
+    .ttf-howflow .hf-fork::after {
+      content: ""; position: absolute; left: 50%; bottom: 3px; width: 7px; height: 7px;
+      border-right: 2px solid rgba(38,28,64,.28); border-bottom: 2px solid rgba(38,28,64,.28);
+      transform: translateX(-50%) rotate(45deg);
+    }
+    .ttf-howflow .hf-ends { justify-content: center; }
+  }
+
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *, *::before, *::after{
@@ -811,24 +1052,58 @@ footer{
   </div>
 
   <div class="hero-art rise" id="heroArt">
-    <div class="billcard inview">
-      <svg viewBox="0 0 340 190" role="img" aria-label="A timeline: diagnose, then deliver, then decide. The decision forks: keep the seat, or keep the gains.">
-        <path class="s-faint" d="M16 95 H56"/>
-        <path class="draw" pathLength="1" d="M56 95 H252" stroke="#0095A8" stroke-width="2"/>
-        <circle class="s-node" cx="56" cy="95" r="6"/>
-        <circle class="s-node" cx="154" cy="95" r="6"/>
-        <circle class="s-node" cx="252" cy="95" r="6"/>
-        <text class="t-tiny" x="56" y="122" text-anchor="middle">DIAGNOSE</text>
-        <text class="t-tiny" x="154" y="122" text-anchor="middle">DELIVER</text>
-        <text class="t-tiny" x="252" y="122" text-anchor="middle">DECIDE</text>
-        <text class="t-cyan" x="154" y="62" text-anchor="middle">VISIBLE PROGRESS, SCOPED AT DIAGNOSE</text>
-        <path class="draw d2" pathLength="1" d="M258 91 C280 82 292 74 314 70" stroke="#0095A8" stroke-width="1.8" stroke-linecap="round"/>
-        <path class="draw d2" pathLength="1" d="M258 99 C280 108 292 116 314 120" stroke="rgba(38,28,64,.45)" stroke-width="1.6" stroke-linecap="round"/>
-        <text class="t-tiny" x="336" y="52" text-anchor="end">KEEP THE SEAT</text>
-        <text class="t-tiny" x="336" y="146" text-anchor="end" fill="rgba(116,108,150,.9)">KEEP THE GAINS</text>
-        <text class="t-tiny" x="170" y="176" text-anchor="middle">LISTEN. DELIVER. THEN THE CALL IS YOURS.</text>
-      </svg>
-      <p class="billcard-cap mono-tag">ONE METHOD BEHIND ALL SIX SERVICES</p>
+    <div class="ttf-howflow" aria-label="Our three step method: diagnose, deliver, then decide between two good outcomes">
+
+      <div class="hf-step hf-s1">
+        <span class="hf-num">01</span>
+        <span class="hf-body">
+          <span class="hf-name">Diagnose</span>
+          <span class="hf-sub">With the people who run it</span>
+        </span>
+      </div>
+
+      <div class="hf-conn hf-c1" aria-hidden="true"><span class="hf-connx"></span></div>
+
+      <div class="hf-step hf-s2">
+        <span class="hf-num">02</span>
+        <span class="hf-body">
+          <span class="hf-name">Deliver</span>
+          <span class="hf-sub">Board-ready progress in weeks</span>
+        </span>
+      </div>
+
+      <div class="hf-conn hf-c2" aria-hidden="true"><span class="hf-connx"></span></div>
+
+      <div class="hf-step hf-s3">
+        <span class="hf-num">03</span>
+        <span class="hf-body">
+          <span class="hf-name">Decide</span>
+          <span class="hf-sub">Your call, two good endings</span>
+        </span>
+      </div>
+
+      <div class="hf-fork" aria-hidden="true">
+        <svg viewBox="0 0 100 46" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="hfgrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#00C3DC"/>
+              <stop offset="1" stop-color="#7C5CF6"/>
+            </linearGradient>
+          </defs>
+          <path d="M50 2 C50 18 21 20 21 37" fill="none" stroke="rgba(38,28,64,.20)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+          <path d="M50 2 C50 18 79 20 79 37" fill="none" stroke="rgba(38,28,64,.20)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+          <path class="hf-fx" d="M50 2 C50 18 21 20 21 37" fill="none" stroke="url(#hfgrad)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+          <path class="hf-fx" d="M50 2 C50 18 79 20 79 37" fill="none" stroke="url(#hfgrad)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <span class="hf-fa hf-left"></span>
+        <span class="hf-fa hf-right"></span>
+      </div>
+
+      <div class="hf-ends">
+        <span class="hf-pill hf-keep"><span class="hf-dot" aria-hidden="true"></span>Keep the seat filled</span>
+        <span class="hf-pill hf-run"><span class="hf-dot" aria-hidden="true"></span>Run it yourselves</span>
+      </div>
+
     </div>
   </div>
 </section>
