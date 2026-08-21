@@ -1,0 +1,14 @@
+/* TEAM */
+
+Practice: The Technology Framework Ltd
+Company number: 13918137
+Registered office: 20-22 Wenlock Road, London N1 7GU
+Contact: hello@thetechnologyframework.com
+Telephone: 0117 456 5486
+
+/* SITE */
+
+Host: https://www.thetechnologyframework.com/
+Language: en-GB
+Last update: 2026-08-17
+Standards: HTML, CSS, JSON-LD
