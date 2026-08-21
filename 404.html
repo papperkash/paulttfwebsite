@@ -285,6 +285,7 @@ footer{
     opacity:1 !important; transform:none !important;
   }
 }
+.hphone{ display:inline-flex; align-items:center; gap:7px; flex-shrink:0; font-family:var(--font-d); font-weight:600; font-size:13.5px; color:var(--ink); white-space:nowrap; padding:8px 0 8px 6px; transition:color .25s ease; } .hphone svg{ width:16px; height:16px; display:block; } .hphone:hover{ color:var(--cyan); } @media (max-width:560px){ .hphone .ht{ display:none; } }
 </style>
 <noscript>
 <style>
@@ -307,7 +308,7 @@ footer{
       <a href="/how-we-work/">How we work</a>
       <a href="/contact/">Contact</a>
     </nav>
-    <a class="btn btn-cta" href="/contact/">Start the conversation</a>
+    <a class="btn btn-cta" href="/book/" onclick="if(window.gtag)gtag('event','book_meeting_click')">Book a meeting</a><a class="hphone" href="tel:+441174565486" aria-label="Call 0117 456 5486"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M12 11 c0 6 5 11 11 11 l2.4-3 -3.8-2.4 -1.8 1.6 c-1.8-1-3.2-2.4-4-4 l1.6-1.8 L15 8.6 z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg><span class="ht">0117 456 5486</span></a>
   </div>
 </header>
 
