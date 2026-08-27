@@ -5,14 +5,14 @@
 
 ---
 
-# The Technology Framework · AI works when IT works
+# The Technology Framework · Fractional Head of IT and AI
 
 URL: https://www.thetechnologyframework.com/
 Last updated: 2026-08-27
 
 Fractional Head of IT and AI enablement for UK professional services firms of 20-200 people. Published prices. Based in Bristol, working UK-wide.
 
-The Technology Framework · AI works when IT works 
+The Technology Framework · Fractional Head of IT and AI 
 
 
 - 
@@ -70,7 +70,7 @@ Book a meeting 0117 456 5486
 
 
 
-AI enablement across every dimension of IT
+AI enablement across every domain of IT
 
 AI works when IT works. 
 Everyone says adopt AI. Nobody owns making the firm ready. One framework makes the whole of IT AI-ready, with a named leader running it one or two days a week.
@@ -8417,9 +8417,9 @@ The framework · AI
 AI strategy, governance and adoption , owned inside one framework. 
 The board asked for an AI strategy. Yours has a named owner.
 
-Everyone says adopt AI. Nobody owns making the firm ready. This is the dimension of The Technology Framework where readiness gets its named owner: strategy in writing, Copilot governed on a tenant you would happily show the insurer, agents in production when a workflow earns one.
+Everyone says adopt AI. Nobody owns making the firm ready. This is the domain of The Technology Framework where readiness gets its named owner: strategy in writing, Copilot governed on a tenant you would happily show the insurer, agents in production when a workflow earns one.
 
-An audit and two fixed sprints cover this dimension. The seat covers all ten. Either way, a named person owns it.
+An audit and two fixed sprints cover this domain. The seat covers all ten. Either way, a named person owns it.
 
 
 Sprints from £7,500, fixed. The seat from £4,750 a month. 
@@ -8445,7 +8445,7 @@ The board's AI question
 ONE PAGE 
 
 AI, owned 
-ONE DIMENSION OF TEN 
+ONE DOMAIN OF TEN 
 
 
 
@@ -8483,7 +8483,7 @@ The practice
 
 ## Copilot governed. Agents in production when they earn their keep.
 
-That is the day-to-day shape of this dimension. In a firm of 50-200 people it means two jobs done properly, both with a named owner, on an estate the other nine dimensions have made ready.
+That is the day-to-day shape of this domain. In a firm of 50-200 people it means two jobs done properly, both with a named owner, on an estate the other nine domains have made ready.
 
 
 
@@ -8528,7 +8528,7 @@ The order of work
 
 ## Governance comes first, and it is short
 
-Copilot stays unsafe while the shared drive is. Oversharing, stale permissions and unlabelled data are the risk; Copilot only accelerates whatever it finds. Owning this dimension means the tenant is fixed first, the pilot runs with the people who need it, and the board reads the result on one page.
+Copilot stays unsafe while the shared drive is. Oversharing, stale permissions and unlabelled data are the risk; Copilot only accelerates whatever it finds. Owning this domain means the tenant is fixed first, the pilot runs with the people who need it, and the board reads the result on one page.
 
 The same discipline applies to agents. A workflow earns automation, or it stays with the person who owns it today. Nothing here is a science project.
 
@@ -8551,7 +8551,7 @@ The enablement work
 
 ## Strategy, governance, pilots, production: AI with a named owner
 
-That is this dimension's whole job, in four moves, each with a deliverable somebody signs.
+That is this domain's whole job, in four moves, each with a deliverable somebody signs.
 
 
 
@@ -8577,9 +8577,9 @@ Why the framework matters
 
 ## AI fails on estates where the rest of IT is ungoverned
 
-An unread bill, an oversharing tenant, unlabelled data, a daily run nobody measures: that is where pilots stall. So this dimension sits inside a ten-dimension framework, and the same named leader makes the other nine AI-ready: cost , cyber security , data and the rest.
+An unread bill, an oversharing tenant, unlabelled data, a daily run nobody measures: that is where pilots stall. So this domain sits inside a ten-domain framework, and the same named leader makes the other nine AI-ready: cost , cyber security , data and the rest.
 
-That is the argument for buying AI as a dimension of IT management rather than as a standalone project.
+That is the argument for buying AI as a domain of IT management rather than as a standalone project.
 
 
 
@@ -8816,7 +8816,7 @@ You need a written position the board can read: what the firm uses, what it does
 
 
 
-## How is the AI dimension bought?
+## How is the AI domain bought?
 
 The front door is the AI Opportunity Audit, from £4,950 fixed. Two fixed sprints then deliver: Microsoft Copilot readiness from £7,500 and a production IT agent from £7,500. The fractional Head of IT seat, from £4,750 a month, covers AI alongside the other nine domains. Any single domain can be owned on its own, priced in conversation.
 
@@ -8843,8 +8843,8 @@ A written answer to the questions that are already arriving: what data the tools
 
 
 
-AI is one dimension of ten. 
-The framework brings every part of IT under one named leader. See the map, or read the neighbouring dimensions. 
+AI is one domain of ten. 
+The framework brings every part of IT under one named leader. See the map, or read the neighbouring domains. 
 
 
 
@@ -9128,7 +9128,7 @@ In most firms of this size, the board pack is built by hand. Someone exports fro
 
 Where it sits 
 
-## One dimension of one framework
+## One domain of one framework
 
 Analytics leans on its neighbours. Data settles who owns each record and who sees it. Cost keeps the cloud bill and the licences honest. Operations produces the service numbers worth reporting.
 
@@ -9181,7 +9181,7 @@ Why the order matters
 
 Everyone tells firms to adopt AI. Nobody owns making the firm ready for it. In reporting, readiness is specific: named owners, named sources, definitions that hold still. Skip that and AI automates the argument about whose figure is right.
 
-The framework makes each dimension AI-ready, then puts AI to work inside it, run by a named leader. Strategy, governance, pilots and production across the estate belong to the neighbouring domain, AI .
+The framework makes each domain AI-ready, then puts AI to work inside it, run by a named leader. Strategy, governance, pilots and production across the estate belong to the neighbouring domain, AI .
 
 READY FIRST · THEN IN THE LOOP 
 
@@ -9205,7 +9205,7 @@ The route in
 
 ## Two ways to own this domain
 
-Analytics is a dimension of the framework. It never appears as a priced menu item, and it is owned in one of two ways.
+Analytics is a domain of the framework. It never appears as a priced menu item, and it is owned in one of two ways.
 
 
 
@@ -9760,7 +9760,7 @@ Why it stalls
 
 Everyone tells firms to adopt AI. Nobody owns making the firm ready for it. So the pilot arrives before the policy, runs on data nobody cleared, and the first written answer about AI is drafted in a hurry, for an insurer.
 
-Governed compliance turns that around: the firm can say yes to AI safely, and show it said yes properly. That work has a named owner here. See how it connects on the AI dimension .
+Governed compliance turns that around: the firm can say yes to AI safely, and show it said yes properly. That work has a named owner here. See how it connects on the AI domain .
 
 
 
@@ -9815,7 +9815,7 @@ From £4,750 a month for one day a week
 
 The framework 
 
-## Compliance is a dimension of the framework, priced through the sprint or the seat.
+## Compliance is a domain of the framework, priced through the sprint or the seat.
 
 The sprint and the seat carry the published prices above. Any single domain can be owned on its own, priced in conversation. See where compliance sits on the framework map .
 
@@ -9876,7 +9876,7 @@ IN WEEKS
 
 ## Deliver
 
-Visible progress in weeks, with a board-readable outcome. For this dimension, often the control set mapped, the first policies signed off, and the first evidence pack.
+Visible progress in weeks, with a board-readable outcome. For this domain, often the control set mapped, the first policies signed off, and the first evidence pack.
 
 
 
@@ -10183,13 +10183,13 @@ Book a meeting 0117 456 5486
 
 
 The framework · Cost 
-One of ten dimensions 
+One of ten domains 
 
 
 AI-ready IT cost management , owned under one framework. 
 Fund AI from the waste in the bill.
 
-Cost is one of the ten dimensions of The Technology Framework: the cloud bill, licences, contracts and renewals, owned. It is also where AI readiness starts: AI fails on estates where the spend is ungoverned. A named Head of IT holds the dimension alongside the other nine, or it is entered on its own through a fixed piece of work.
+Cost is one of the ten domains of The Technology Framework: the cloud bill, licences, contracts and renewals, owned. It is also where AI readiness starts: AI fails on estates where the spend is ungoverned. A named Head of IT holds the domain alongside the other nine, or it is entered on its own through a fixed piece of work.
 
 This becomes the new norm: contracts renew because you chose to renew them, every AI licence, pilot and token budget has an owner, and the board reads a cost line it can trust.
 
@@ -10227,7 +10227,7 @@ Renewals
 DECIDED 
 
 EVERY LINE HAS AN OWNER 
-ONE DIMENSION OF THE FRAMEWORK 
+ONE DOMAIN OF THE FRAMEWORK 
 
 
 
@@ -10255,7 +10255,7 @@ The practice
 
 ## The cloud bill, licences, contracts and renewals, owned.
 
-That is the one-line version on the framework map. Made concrete, ownership of the cost dimension looks like this.
+That is the one-line version on the framework map. Made concrete, ownership of the cost domain looks like this.
 
 
 
@@ -10284,13 +10284,13 @@ None of this is exotic. It is the ordinary discipline most firms of 50-200 never
 
 On the record 
 
-## The proof fact behind this dimension
+## The proof fact behind this domain
 
 80% off a live cloud bill
 
 One estate moved, one bill brought down. We publish the number because it happened. We do not promise it, because your estate is different.
 
-What the dimension does promise is ownership: the bill read, the licences counted, the renewals decided by someone whose name is on them.
+What the domain does promise is ownership: the bill read, the licences counted, the renewals decided by someone whose name is on them.
 
 One live bill. No promise attached.
 
@@ -10302,11 +10302,11 @@ One live bill. No promise attached.
 
 The borders 
 
-## Where cost meets the other dimensions
+## Where cost meets the other domains
 
 Cost never sits alone. The contracts and the MSP relationship sit with vendor management . The estate the bill pays for sits with infrastructure . The daily run that quietly creates spend sits with operations .
 
-One framework holds them together, so a saving in one dimension is checked against the others before anyone calls it a saving. The full map is on the homepage .
+One framework holds them together, so a saving in one domain is checked against the others before anyone calls it a saving. The full map is on the homepage .
 
 
 
@@ -10327,7 +10327,7 @@ The enablement
 
 ## AI spend owned before it sprawls.
 
-Licences, tokens, copilots and cloud on one bill somebody reads. That is the cost dimension's job in an AI-ready estate, and the work is specific.
+Licences, tokens, copilots and cloud on one bill somebody reads. That is the cost domain's job in an AI-ready estate, and the work is specific.
 
 
 
@@ -10420,7 +10420,7 @@ The seat
 
 ## When cost is one gap among several
 
-Most firms buy this dimension through the fractional Head of IT seat . A named senior, one or two days a week, holding the renewal calendar, the licence count and the bill alongside the other nine dimensions.
+Most firms buy this domain through the fractional Head of IT seat . A named senior, one or two days a week, holding the renewal calendar, the licence count and the bill alongside the other nine domains.
 
 From £4,750 a month
 
@@ -10433,9 +10433,9 @@ Read the seat offer →
 
 The discipline 
 
-## Cost is a dimension, never a menu item.
+## Cost is a domain, never a menu item.
 
-There is no priced cost-management package here. The seat covers all ten dimensions. Any single dimension can be owned on its own, priced in conversation. The sprint exists for the one case where a fixed fee is honest: a cloud bill large enough to fund the work.
+There is no priced cost-management package here. The seat covers all ten domains. Any single domain can be owned on its own, priced in conversation. The sprint exists for the one case where a fixed fee is honest: a cloud bill large enough to fund the work.
 
 
 
@@ -10552,14 +10552,14 @@ Questions
 
 ## Is IT cost management just cost cutting?
 
-No. Sometimes the right move is spending more in one place and less in three others. The dimension is about ownership: every pound has an owner, a reason and a renewal date someone chose. Cuts follow where the numbers justify them.
+No. Sometimes the right move is spending more in one place and less in three others. The domain is about ownership: every pound has an owner, a reason and a renewal date someone chose. Cuts follow where the numbers justify them.
 
 
 
 
 ## Should we start with the cost sprint or the seat?
 
-If the bill itself is the pain, start with the sprint. If cost is one of several dimensions nobody owns, the seat covers all ten. The first conversation settles this quickly.
+If the bill itself is the pain, start with the sprint. If cost is one of several domains nobody owns, the seat covers all ten. The first conversation settles this quickly.
 
 
 
@@ -10573,7 +10573,7 @@ That number comes from one live bill. We publish it because it happened. We do n
 
 ## Our cloud spend is under £10k a month. Is cost still worth owning?
 
-Yes. At that size the sprint may not pay for itself; if it will not, we say so at diagnose and stop. Cost is then owned through the seat, or as a single dimension priced in conversation.
+Yes. At that size the sprint may not pay for itself; if it will not, we say so at diagnose and stop. Cost is then owned through the seat, or as a single domain priced in conversation.
 
 
 
@@ -10598,7 +10598,7 @@ No. The FD keeps the budget. This gives the FD a technology counterpart: someone
 
 
 
-Cost is one of ten dimensions. 
+Cost is one of ten domains. 
 The framework holds them together. Start anywhere. 
 
 
@@ -10883,7 +10883,7 @@ DOMAIN · CYBER SECURITY
 
 ## What owning cyber security looks like
 
-Cyber security is one dimension of The Technology Framework. Owned, the domain reads as a short list of questions with current answers, and one name against each of them.
+Cyber security is one domain of The Technology Framework. Owned, the domain reads as a short list of questions with current answers, and one name against each of them.
 
 
 
@@ -10947,7 +10947,7 @@ AI × CYBER SECURITY
 
 Controls that let the firm say yes safely.
 
-Everyone tells firms to adopt AI. An assistant inherits whatever the estate already grants: the identities, the access, the shared drive. Security is the dimension that decides what an AI tool may see before anyone switches one on.
+Everyone tells firms to adopt AI. An assistant inherits whatever the estate already grants: the identities, the access, the shared drive. Security is the domain that decides what an AI tool may see before anyone switches one on.
 
 
 
@@ -11115,7 +11115,7 @@ IN WEEKS
 
 ## Deliver
 
-Visible progress in weeks, with a board-readable outcome. On this dimension, often the control set switched on and the first evidence pack.
+Visible progress in weeks, with a board-readable outcome. On this domain, often the control set switched on and the first evidence pack.
 
 
 
@@ -11444,7 +11444,7 @@ Every data set has an owner. When Copilot arrives, it reads a governed estate.
 
 A firm of 50-200 people holds information that mostly belongs to other people: client files, payroll, the pipeline, the archive. AI reads through the same permissions your people do, so ungoverned data is where adoption fails first.
 
-Data is one of the ten domains of The Technology Framework . One dimension of one framework, made AI-ready and owned by a named Head of IT.
+Data is one of the ten domains of The Technology Framework . One domain of one framework, made AI-ready and owned by a named Head of IT.
 
 
 Start the conversation → 
@@ -11503,7 +11503,7 @@ The practice
 
 ## Ownership, retention, labels: written down and applied
 
-Data governance is unglamorous and specific. When this dimension of the framework is owned, four things are true and stay true.
+Data governance is unglamorous and specific. When this domain of the framework is owned, four things are true and stay true.
 
 
 
@@ -12048,7 +12048,7 @@ The estate behaves. The cloud makes sense. AI has somewhere to run.
 
 The estate, the cloud, the network: architected and governed. One named Head of IT owns the map, writes the standards, and governs the people who run it day to day.
 
-AI fails on estates where this dimension is ungoverned. Identity, access, tenancy and capacity decide whether Copilot and agents run safely, or at all. Decisions get made once, in writing.
+AI fails on estates where this domain is ungoverned. Identity, access, tenancy and capacity decide whether Copilot and agents run safely, or at all. Decisions get made once, in writing.
 
 
 250+ servers migrated to Azure. 
@@ -12194,7 +12194,7 @@ Why it sits here
 
 ## AI fails on ungoverned estates. This is the ground it stands on.
 
-The framework treats AI readiness as an infrastructure question first: identity, access, tenancy and capacity, governed. The AI dimension owns strategy, pilots and production. This dimension makes sure there is somewhere sound to put them.
+The framework treats AI readiness as an infrastructure question first: identity, access, tenancy and capacity, governed. The AI domain owns strategy, pilots and production. This domain makes sure there is somewhere sound to put them.
 
 We run our practice on what we sell. The voice that answers 0117 456 5486 is our own AI call agent, in production, on our own line.
 
@@ -12232,7 +12232,7 @@ Through the seat. A named Fractional Head of IT , one or two days a week, owns i
 
 On its own. Any single domain can be owned on its own, priced in conversation. Fixed pieces of infrastructure work are scoped at the diagnose stage.
 
-This page describes a dimension of the framework, so it carries no menu price. The published prices live on the service pages.
+This page describes a domain of the framework, so it carries no menu price. The published prices live on the service pages.
 
 
 
@@ -12330,7 +12330,7 @@ The rhythm
 
 ## First we listen. Then visible progress, scoped at diagnose. Then it's your call.
 
-The same rhythm as how we work across the whole framework, whichever dimension the work starts in.
+The same rhythm as how we work across the whole framework, whichever domain the work starts in.
 
 
 
@@ -12381,7 +12381,7 @@ It depends on cost, risk and the work your firm actually does. Cloud-first suits
 
 ## What does IT infrastructure management cost here?
 
-Infrastructure is a dimension of the framework, so it carries no menu price. Most firms own it through the Fractional Head of IT seat, from £4,750 a month for one day a week. A single domain can be owned on its own, priced in conversation, and fixed pieces of work are scoped at diagnose.
+Infrastructure is a domain of the framework, so it carries no menu price. Most firms own it through the Fractional Head of IT seat, from £4,750 a month for one day a week. A single domain can be owned on its own, priced in conversation, and fixed pieces of work are scoped at diagnose.
 
 
 
@@ -12688,13 +12688,13 @@ Most firms of 50-200 people have never seen their IT operations written down. Th
 
 On the record 
 
-## The record behind this dimension
+## The record behind this domain
 
 90% fewer incidents
 
 Service levels from 45% to 98%
 
-Incidents counted, service levels measured, month by month. That is the standard this dimension is run to, and the movement is reported without decoration.
+Incidents counted, service levels measured, month by month. That is the standard this domain is run to, and the movement is reported without decoration.
 
 Operations leans on infrastructure and vendor management . The framework keeps the three in one pair of hands.
 
@@ -12735,7 +12735,7 @@ Operations is where AI stops being a strategy slide and joins the shift pattern.
 
 
 
-Strategy, governance and pilots across the whole estate sit with the AI dimension . This page is about AI inside the run itself.
+Strategy, governance and pilots across the whole estate sit with the AI domain . This page is about AI inside the run itself.
 
 
 
@@ -12764,7 +12764,7 @@ Call 0117 456 5486. Hear it running.
 ## How it is bought
 
 
-A dimension of the framework, never a ticket contract 
+A domain of the framework, never a ticket contract 
 
 
 
@@ -12793,7 +12793,7 @@ On its own
 
 Any single domain can be owned on its own, priced in conversation. If the run is the thing that hurts, the work starts there and the rest of the framework map waits its turn.
 
-Either way, this page describes a dimension of the framework. There is no ticket contract behind it and no day-rate meter running in the corner.
+Either way, this page describes a domain of the framework. There is no ticket contract behind it and no day-rate meter running in the corner.
 
 
 
@@ -12889,7 +12889,7 @@ The rhythm
 
 ## First we listen. Then visible progress, scoped at diagnose. Then it's your call.
 
-The same rhythm as how we work across the whole framework, whichever dimension the work starts in.
+The same rhythm as how we work across the whole framework, whichever domain the work starts in.
 
 
 
@@ -12924,7 +12924,7 @@ No. The MSP, or your internal team, runs the queue. We define the service levels
 
 
 
-## How is the operations dimension bought?
+## How is the operations domain bought?
 
 Through the Fractional Head of IT seat, from £4,750 a month for one day a week, which covers all ten domains. Operations can also be owned on its own, priced in conversation. Nothing here bills by the ticket.
 
@@ -13264,7 +13264,7 @@ Software development sits alongside Cost, Cyber security, Compliance, Infrastruc
 
 It leans hardest on three neighbours: AI for the agents and automation that ship, Operations for what happens after release, and Vendor management for who builds and who answers for it.
 
-This page describes a dimension of the framework. It carries no price of its own. The routes in are below.
+This page describes a domain of the framework. It carries no price of its own. The routes in are below.
 
 
 
@@ -13765,7 +13765,7 @@ Every contract has an owner. Every AI feature on a renewal is a decision you mad
 
 You keep the MSP if it works. We govern it: scope, service levels, renewals and escalation, held by a named Head of IT who sits on your side of the table.
 
-Vendor management is one dimension of The Technology Framework . Owned through the seat, or on its own.
+Vendor management is one domain of The Technology Framework . Owned through the seat, or on its own.
 
 
 Start the conversation → 
@@ -13822,7 +13822,7 @@ The practice
 
 ## The MSP, the contracts, who does what: governed.
 
-Most firms of 50-200 people pay an MSP, a Microsoft partner, a telecoms provider and a shelf of software vendors. Nobody sits above them, and now every one of them is selling AI. AI fails on estates where the vendor layer is ungoverned. This dimension puts one owner there.
+Most firms of 50-200 people pay an MSP, a Microsoft partner, a telecoms provider and a shelf of software vendors. Nobody sits above them, and now every one of them is selling AI. AI fails on estates where the vendor layer is ungoverned. This domain puts one owner there.
 
 
 
@@ -13911,7 +13911,7 @@ We do not sell AI features, and we do not resell anyone else's. The work is know
 
 When a vendor's AI feature is genuinely useful, the firm switches it on with confidence. When it adds cost without adding capability, the firm says no, with evidence.
 
-Strategy through to production sits in the neighbouring domain, AI . Vendor AI spend rolls up into the cost dimension : one bill somebody reads.
+Strategy through to production sits in the neighbouring domain, AI . Vendor AI spend rolls up into the cost domain : one bill somebody reads.
 
 
 
@@ -13925,7 +13925,7 @@ Strategy through to production sits in the neighbouring domain, AI . Vendor AI s
 ## How it is bought
 
 
-A dimension of the framework, never a menu item 
+A domain of the framework, never a menu item 
 
 
 
@@ -13935,7 +13935,7 @@ Through the seat
 
 ## Most firms own this through the fractional Head of IT
 
-The seat covers all ten dimensions of the framework, vendor management among them. One or two days a week, in the room, governing the MSP and every contract around it.
+The seat covers all ten domains of the framework, vendor management among them. One or two days a week, in the room, governing the MSP and every contract around it.
 
 From £4,750 a month for one day a week
 
@@ -13950,11 +13950,11 @@ Read the Fractional Head of IT offer →
 
 On its own 
 
-## Or owned as a single dimension
+## Or owned as a single domain
 
-Some firms need one thing fixed first: the vendor estate. Any single dimension can be owned on its own, priced in conversation.
+Some firms need one thing fixed first: the vendor estate. Any single domain can be owned on its own, priced in conversation.
 
-See where vendor management sits in the full framework map , alongside the other nine dimensions.
+See where vendor management sits in the full framework map , alongside the other nine domains.
 
 
 
@@ -14015,7 +14015,7 @@ IN WEEKS
 
 ## Deliver
 
-Visible progress in weeks, with a board-readable outcome. For this dimension, often the vendor map, the renewal calendar and the first proper MSP review.
+Visible progress in weeks, with a board-readable outcome. For this domain, often the vendor map, the renewal calendar and the first proper MSP review.
 
 
 
@@ -14050,7 +14050,7 @@ The rhythm
 
 ## First we listen. Then visible progress, scoped at diagnose. Then it's your call.
 
-The same rhythm as how we work across every dimension of the framework.
+The same rhythm as how we work across every domain of the framework.
 
 
 
@@ -14108,7 +14108,7 @@ Ask what it does, what it costs and where the data goes, in writing. If the answ
 
 ## How is vendor management priced?
 
-It is a dimension of the framework, never a menu item. Most firms own it through the fractional Head of IT seat , from £4,750 a month. It can also be owned on its own, priced in conversation.
+It is a domain of the framework, never a menu item. Most firms own it through the fractional Head of IT seat , from £4,750 a month. It can also be owned on its own, priced in conversation.
 
 
 
@@ -14126,7 +14126,7 @@ A named senior. The person in the conversation is the person who reads the contr
 
 
 
-Vendor management borders three other dimensions. 
+Vendor management borders three other domains. 
 Renewals feed the bill, service levels feed the daily run, and supplier access shapes the firm's security. 
 
 
