@@ -13084,14 +13084,14 @@ Talk to us
 
 ---
 
-# AI-ready software delivery | The Technology Framework
+# AI-ready software development | The Technology Framework
 
 URL: https://www.thetechnologyframework.com/framework/software-development/
 Last updated: 2026-08-27
 
-Copilots in the pipeline, agents in the workflow, delivery still governed. Named ownership for firms of 50-200, under one framework.
+AI-ready software development: copilots in the pipeline, agents in the workflow, and delivery still governed. Named ownership for firms of 50-200.
 
-AI-ready software delivery | The Technology Framework 
+AI-ready software development | The Technology Framework 
 
 
 - 
@@ -13166,7 +13166,7 @@ Book a meeting 0117 456 5486
 The framework · Software development 
 
 
-AI-ready software delivery , under one framework. 
+AI-ready software development , under one framework. 
 Copilots in the pipeline, agents in the workflow, and everything that ships still carries a named owner, a cost and a finish date the board can read.
 
 Everyone tells firms to adopt AI. In software it arrives as copilots in the pipeline and agents in the workflow, and it fails where delivery is ungoverned. Most firms of 50-200 buy and configure far more than they build; the decisions still need an owner.
@@ -13291,7 +13291,7 @@ The lens
 
 ## Copilots in the pipeline, agents in the workflow, delivery still governed
 
-That is this domain's line on the framework map. Making software delivery AI-ready is specific work:
+That is this domain's line on the framework map. Making software development AI-ready is specific work:
 
 
 
@@ -13351,7 +13351,7 @@ ALL TEN DOMAINS
 
 Walk into every board meeting with the answers.
 
-The seat governs software delivery alongside the other nine domains: the build-or-buy position, the supplier's delivery, the automation pipeline, and the paper the board reads. One or two days a week, in the room.
+The seat governs software development alongside the other nine domains: the build-or-buy position, the supplier's delivery, the automation pipeline, and the paper the board reads. One or two days a week, in the room.
 
 Read the Fractional Head of IT offer →
 
@@ -13505,7 +13505,7 @@ Questions
 
 
 
-## What is software delivery governance?
+## What is software development governance?
 
 The decisions and controls around the software a firm builds, buys and configures: who owns each piece of delivery, what it costs, when it ships, and what happens to it in production. It is one of the ten domains of The Technology Framework.
 
