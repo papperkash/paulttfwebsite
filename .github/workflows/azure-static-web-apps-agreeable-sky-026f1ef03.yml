@@ -19,6 +19,11 @@ jobs:
         with:
           submodules: true
           lfs: false
+          # full history: seo-freshness stamps sitemap lastmod from per-file commit dates
+          fetch-depth: 0
+      # Regenerate llms-full.txt and stamp sitemap lastmod before upload
+      - name: SEO freshness (llms-full.txt + sitemap lastmod)
+        run: node tools/seo-freshness.js
       # trailingSlash:auto 301s root *.html to the extensionless path. Keep
       # google521d6f0a2ad2eeae.html in git; serve the exact .html URL via rewrite
       # from gsc/ so Google still gets HTTP 200 at that path.
