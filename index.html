@@ -2151,9 +2151,29 @@ footer{
   if(talkAgent){
     talkAgent.addEventListener("click", function(){
       var w = document.querySelector("elevenlabs-convai");
-      var launcher = (w && w.shadowRoot) ? w.shadowRoot.querySelector("button") : null;
-      if(launcher){
+      var root = (w && w.shadowRoot) ? w.shadowRoot : null;
+      var launcher = null, hiddenLauncher = null, reopen = null;
+      var panel = root ? root.querySelector(".sheet") : null;
+      if(root){
+        var agentButtons = root.querySelectorAll("button");
+        for(var i = 0; i < agentButtons.length; i++){
+          var b = agentButtons[i];
+          var label = (b.getAttribute("aria-label") || b.textContent || "").replace(/\s+/g, " ").trim();
+          var wrap = b.closest ? b.closest("[data-shown]") : null;
+          var shown = !(wrap && wrap.getAttribute("data-shown") === "false");
+          if(label === "Talk to an agent"){ if(shown && !launcher){ launcher = b; } else if(!shown && !hiddenLauncher){ hiddenLauncher = b; } }
+          if(label === "Open chat" && !reopen){ reopen = b; }
+        }
+        if(!launcher && !hiddenLauncher && agentButtons.length){ launcher = agentButtons[0]; }
+      }
+      if(panel && panel.getAttribute("data-shown") === "true"){
+        /* the conversation panel is already open, nothing to do */
+      }else if(launcher){
         launcher.click();
+      }else if(hiddenLauncher && reopen){
+        /* the visitor dismissed the widget earlier: bring it back, then start */
+        reopen.click();
+        setTimeout(function(){ hiddenLauncher.click(); }, 350);
       }else if(w){
         w.scrollIntoView({ behavior:"smooth", block:"end" });
       }else{
@@ -2173,21 +2193,8 @@ footer{
 </script>
 
 <style>
-  .agent-dock{ position:fixed; left:max(1.15rem, env(safe-area-inset-left)); bottom:max(1.25rem, env(safe-area-inset-bottom)); z-index:105; }
-  .agent-dock elevenlabs-convai{ position:static; display:block; }
-  .agent-close{
-    display:none;
-  }
-  .agent-dock.agent-ready .agent-close{
-    position:absolute; top:-10px; right:-10px; z-index:2;
-    width:26px; height:26px; border-radius:50%; cursor:pointer;
-    background:#FFFFFF; color:#261C40;
-    border:1px solid rgba(38,28,64,.25);
-    box-shadow:0 4px 12px rgba(38,28,64,.18);
-    display:flex; align-items:center; justify-content:center; padding:0;
-  }
-  .agent-close:hover{ color:#0095A8; border-color:rgba(0,149,168,.5); }
-  .agent-close svg{ width:10px; height:10px; display:block; }
+  .agent-dock{ display:contents; }
+  .agent-close{ display:none; }
 </style>
 <script>
 (function(){
@@ -2264,7 +2271,7 @@ footer{
   <button class="agent-close" id="agentClose" type="button" aria-label="Hide the agent">
     <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/></svg>
   </button>
-  <elevenlabs-convai agent-id="agent_3501m02qhmeeegbr47yphctb93a4" dismissible="true" action-text="Talk to an agent" start-call-text="Talk to an agent"></elevenlabs-convai>
+  <elevenlabs-convai agent-id="agent_3501m02qhmeeegbr47yphctb93a4" placement="bottom-left" dismissible="true" action-text="Talk to an agent" start-call-text="Talk to an agent"></elevenlabs-convai>
 </div>
 <script>
 (function(){
@@ -2286,7 +2293,16 @@ footer{
   }
 })();
 </script>
-<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+<style>
+  /* Narrow screens: lift the voice agent above the floating Talk to us pill while that pill is showing. */
+  @media (max-width: 540px){
+    elevenlabs-convai{ transition: bottom .4s ease; }
+    .float-cta.show ~ .agent-dock elevenlabs-convai,
+    .float-cta.show ~ elevenlabs-convai{ bottom: 64px; }
+  }
+</style>
+<!-- Voice agent widget. The version is pinned on purpose so an upstream release cannot change the widget under us; bump it deliberately after testing. Placement is set with the placement attribute. Do not position or size this element with page CSS: the widget lays itself out as a fixed full-viewport layer and collapses to nothing if the host is overridden. -->
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed@0.18.0/dist/index.js" async type="text/javascript"></script>
 <script>document.querySelectorAll(".tile").forEach(function(t){var s=document.createElement("span");s.className="tring";s.setAttribute("aria-hidden","true");t.appendChild(s);});</script>
 </body>
 </html>
