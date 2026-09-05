@@ -4,4 +4,5 @@ Disallow: /docs/
 Disallow: /gsc/
 
 # llms: https://www.thetechnologyframework.com/llms.txt
+# humans: https://www.thetechnologyframework.com/humans.txt
 Sitemap: https://www.thetechnologyframework.com/sitemap.xml
